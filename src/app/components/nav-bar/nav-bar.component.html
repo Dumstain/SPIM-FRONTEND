@@ -1,0 +1,27 @@
+<!-- nav-bar.component.html -->
+<div class="nav-bar">
+  <div class="logo-section">
+    <img src="assets/icons/logomor.png" alt="Logomor" class="logo">
+    <img src="assets/icons/logopol.png" alt="Logopol" class="logo">
+  </div>
+  <div class="title-section">
+    <img src="assets/icons/movialia.png" alt="Movialia" class="title-image">
+  </div>
+  <div class="timer-menu-section">
+
+    <app-countdown-timer> </app-countdown-timer>
+    <img src="assets/icons/menu.png" alt="Menu" class="icon" (click)="toggleMenu()">
+
+  </div>
+</div>
+<div class="menu-list" [class.visible]="isMenuVisible">
+  <ul>
+    <li><span class="icono-cuenta">👤</span> Mi cuenta</li>
+    <li><span class="icono-tiempo">⏰</span> Tiempo restante <span class="tiempo">{{ remainingTime }}</span></li>
+    <li class="cerrar-sesion" (click)="cerrarSesion()"><span class="icono-cerrar">🚪</span> Cerrar sesión</li>
+
+  </ul>
+</div>
+<div>
+  <img src="assets/icons/tira.jpeg" alt="banda" class="banda-inf">
+</div>

@@ -1,0 +1,23 @@
+<div class="search-container">
+    <div class="form-header">
+        Búsqueda de Vehículo
+    </div>
+    <form class="vehicle-search-form">
+        <div class="input-wrapper">
+            <label class="radio-option">
+                <input type="radio" name="searchType" value="PLACAS" checked>
+                Placas
+            </label>
+            <label class="radio-option">
+                <input type="radio" name="searchType" value="VIN">
+                VIN
+            </label>
+        </div>
+        <div class="input-wrapper">
+            <input type="text" placeholder="Ingrese identificador" class="input-field" />
+        </div>
+        <div class="button-wrapper">
+            <button type="submit" class="search-btn" (click)="irAPagina('perfil-vehicular')" >Buscar</button>
+        </div>
+    </form>
+</div>

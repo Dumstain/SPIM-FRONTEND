@@ -1,0 +1,183 @@
+/* Estilos para el encabezado h1 */
+h1 {
+  text-align: center; /* Alinea el texto al centro horizontalmente */
+  width: 100%; /* Asegura que el elemento h1 ocupe toda la anchura disponible */
+  margin-top: 0; /* Elimina el margen superior por defecto del h1 */
+  margin-bottom: 0.5em; /* Añade un pequeño margen inferior para separación */
+}
+
+/* Estilos para el contenedor de contenido */
+.content {
+  padding: 0 1.25rem; /* 20px convertido a rem */
+  max-width: 60rem; /* 960px convertido a rem */
+  margin: 7.5rem auto; /* 120px convertido a rem, centrado horizontalmente */
+  margin-top: 5%;
+}
+
+.content.h1 {
+  align-items: center; /* Alineación vertical de los elementos dentro de .content.h1 */
+}
+
+/* Estilos para los contenedores de iconos y puntos */
+.icon-line-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 6.25rem; /* 100px convertido a rem */
+  margin-top: 10rem;
+}
+
+.icon {
+  width: 3.125rem; /* 50px convertido a rem */
+  height: auto;
+  margin: 0 0.0625rem; /* 1px convertido a rem */
+}
+
+.dots {
+  flex-grow: 1;
+  margin: 0 0.625rem; /* 10px convertido a rem */
+  background-image: linear-gradient(to right, 
+  transparent, 
+  transparent 0.875rem, /* 14px convertido a rem */
+  #030303 0.9375rem, /* 15px convertido a rem */
+  transparent 1.25rem); /* 20px convertido a rem */
+  background-size: 1.25rem 100%; /* Ancho y alto de cada repetición del patrón */
+  background-repeat: repeat-x;
+  min-height: 0.3125rem; /* 5px convertido a rem */
+}
+
+
+
+/*Formulario */
+/*Formulario */
+/*Formulario */
+/* Estilos generales para el formulario */
+.vehicle-form {
+  display: flex;
+  flex-direction: row; /* Alineación horizontal de los elementos del formulario */
+  justify-content: center; /* Centra los elementos del formulario horizontalmente */
+  align-items: center; /* Alinea los elementos del formulario verticalmente */
+  max-width: 100%;
+  width: 100%;
+  min-height: 50vh; /* Uso de unidades de viewport para la altura mínima */
+  margin: 0 auto; /* Centrado horizontal */
+  padding: 1.25rem; /* 20px convertido a rem */
+  gap: 1.25rem; /* 20px convertido a rem */
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* Sombra suave para el formulario */
+} 
+
+/* Estilos para las columnas dentro del formulario */
+.form-column {
+  display: flex;
+  flex-direction: column; /* Alineación vertical de los elementos */
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+  padding: 0 0.9375rem; /* 15px convertido a rem */
+}
+
+/* Estilos para los grupos de formularios */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 1.875rem; /* 30px convertido a rem */
+}
+
+/* Estilos para los selectores y botones dentro de los grupos de formularios */
+.form-group select, .form-group button {
+  width: auto; /* Permite que el elemento se ajuste al contenido */
+  padding: 0.75rem; /* 12px convertido a rem */
+  border: 1px solid #ccc;
+  border-radius: 0.25rem; /* 4px convertido a rem */
+  background-color: white;
+  min-width: 15.625rem; /* 250px convertido a rem */
+  max-width: 100%; /* Asegura que no exceda el ancho del contenedor */
+  box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
+}
+
+@media (max-width: 768px) {
+  .vehicle-form {
+    flex-direction: column; /* Cambia la disposición a vertical en pantallas pequeñas */
+  }
+  .form-column {
+    width: 100%; /* Las columnas ocupan el ancho completo en pantallas pequeñas */
+  }
+}
+
+/* Estilos para el selector de colores */
+.color-picker {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Cuatro columnas de igual ancho */
+  gap: 0.625rem; /* 10px convertido a rem */
+  margin-bottom: 0.625rem; /* 10px convertido a rem */
+}
+
+/* Estilos para las opciones de colores individuales */
+.color-option {
+  width: 2.5rem; /* 40px convertido a rem */
+  height: 2.5rem; /* 40px convertido a rem */
+  border-radius: 50%; /* Hace que los botones sean completamente redondos */
+  cursor: pointer;
+  border: 2px solid transparent; /* Borde inicialmente transparente */
+}
+  
+.color.selected {
+  border-color: #000; /* Borde negro cuando el color está seleccionado */
+}
+
+.selected-color-display {
+  display: inline-block;
+  width: 2.5rem; /* 40px convertido a rem */
+  height: 2.5rem; /* 40px convertido a rem */
+  border-radius: 50%; /* Hace que el display de color seleccionado sea redondo */
+  margin-left: 0.625rem; /* 10px convertido a rem */
+}
+
+.form-group.color {
+  display: flex;
+  align-items: center;
+}
+
+.form-group.color .selected-color-display {
+  margin-left: auto; /* Empuja el display hacia la derecha */
+  margin-top: -2.5rem; /* 40px convertido a rem y negativo para alinear verticalmente */
+}
+
+/* Estilos para el botón de navegación a la siguiente página */
+.next-page-button {
+  position: fixed;
+  right: 0.625rem; /* 10px convertido a rem */
+  top: 50%; /* Centra verticalmente */
+  transform: translateY(-50%); /* Ajuste fino de la posición vertical */
+  bottom: 0.625rem; /* 10px convertido a rem */
+  z-index: 1000; /* Asegura que el botón esté sobre otros elementos */
+  background-color: #011D4D; /* Color de fondo azul oscuro */
+  color: white; /* Color de texto blanco */
+  border: none;
+  border-top-left-radius: 1.875rem; /* 30px convertido a rem para bordes redondeados */
+  width: 3.125rem; /* 50px convertido a rem */
+  height: 3.125rem; /* 50px convertido a rem */
+  font-size: 1.5rem; /* 24px convertido a rem */
+  line-height: 3.125rem; /* 50px convertido a rem */
+  text-align: center;
+  cursor: pointer; /* Indica que el botón es clickeable */
+  box-shadow: -0.125rem 0.125rem 0.3125rem rgba(0, 0, 0, 0.2); /* Sombra para efecto 3D */
+}
+
+/* Estilos para botones de navegación dentro de un contenedor */
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-button {
+  background-color: #0044cc; /* Fondo azul */
+  color: white; /* Texto blanco */
+  border: none;
+  padding: 0.625rem 1.25rem; /* 10px y 20px convertidos a rem */
+  font-size: 1rem; /* 16px convertido a rem */
+  border-radius: 0.3125rem; /* 5px convertido a rem */
+  cursor: pointer; /* Estilo del cursor para indicar que es clickeable */
+}

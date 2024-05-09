@@ -1,0 +1,202 @@
+h2 {
+  text-align: left; /* Alinea el texto a la izquierda horizontalmente */
+  width: 100%; /* Asegura que el elemento h2 ocupe toda la anchura disponible */
+  margin-bottom: 2.5em; /* Añade un margen inferior para separarlo del contenido debajo */
+  font-family: 'Bellota Text', sans-serif; /* Establece la fuente a 'Bellota Text' */
+  font-size: 1.5em; /* Establece un tamaño de fuente grande */
+  color: #020202; /* Establece el color del texto a oscuro */
+  text-transform: uppercase; /* Transforma el texto a mayúsculas */
+  letter-spacing: 0.125em; /* Añade un espaciado entre letras, convertido a em */
+  text-shadow: 0.125em 0.125em 0.25em rgba(0, 0, 0, 0.3); /* Añade sombra al texto para dar un efecto 3D, convertido a em */
+  margin-left: 0.5em; /* Añade un margen izquierdo */
+  padding-left: 0.2em; /* Añade un relleno interno en el lado izquierdo */
+}
+
+/*----------------CONTENEDOR DE BUSQUEDA VEHICULO--------------*/
+
+/*------------BOTONES PIE DE PÁGINA------------*/
+.historial-footer {
+  display: flex; /* Activa Flexbox para un diseño flexible de los elementos */
+  justify-content: center; /* Centra los elementos horizontalmente en el contenedor */
+  gap: 1em; /* Establece un espacio entre los elementos del contenedor */
+  padding: 0px; /* Sin relleno alrededor del contenedor */
+  margin-top: 8.5%; /* Margen superior para separar del contenido anterior */
+  font-family: 'Bellota Text', sans-serif; /* Usa la fuente Bellota Text para coherencia */
+}
+
+.botones {
+  width: calc(200px / 16); /* Ancho fijo para los botones convertido a rem */
+  margin-top: 3.5rem; /* Espacio superior para separar del contenido anterior */
+  border: none; /* Sin bordes para los botones */
+  border-radius: 0.5rem; /* Bordes redondeados */
+  color: #ffffff; /* Color de texto blanco */
+  padding: 0.5em 5em; /* Ajusta el relleno para que el texto no se envuelva */
+  font-size: 1em; /* Tamaño de fuente estándar */
+  display: flex; /* Activa Flexbox dentro del botón */
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center; /* Centra el contenido verticalmente */
+  text-align: center; /* Asegura el centrado del texto (por seguridad) */
+  white-space: nowrap; /* Evita que el texto se envuelva en líneas adicionales */
+}
+#primer-btn {
+  background-color: #333; /* Color de fondo oscuro para el primer botón */
+  margin-right: 1em; /* Margen derecho para separar del siguiente botón */
+}
+#primer-btn:hover {
+  background-color: #000; /* Color de fondo más oscuro al pasar el mouse */
+}
+
+#segundo-btn {
+  background-color: #011D4D; /* Color de fondo azul oscuro para el segundo botón */
+  margin-left: 1em; /* Margen izquierdo para separar del botón anterior */
+}
+#segundo-btn:hover {
+  background-color: #0c3170; /* Color de fondo azul más oscuro al pasar el mouse */
+}
+
+/*----------------CONTENEDOR DE BUSQUEDA VEHICULO--------------*/
+.historial-list {
+  /* Contenedor principal para la lista de historiales de vehículos */
+}
+
+.historial-item {
+  display: flex; /* Usa Flexbox para un layout flexible */
+  align-items: center; /* Alinea los ítems verticalmente en el centro */
+  margin-bottom: 1.25rem; /* Espacio entre ítems, convertido a em */
+}
+
+.icon-section-left, .icon-section-right {
+  position: relative; /* Posicionamiento relativo para los íconos dentro */
+}
+
+.icono-celda-izquierda, .icono-celda-derecha {
+  /* Estilos para las imágenes decorativas en las celdas */
+  width: 30%; /* Ancho en porcentaje para escalar automáticamente */
+}
+
+.text-section {
+  flex-grow: 1; /* Permite que esta sección crezca y llene el espacio disponible */
+  padding: 0 1.25rem; /* Espacio alrededor del texto, convertido a em */
+}
+
+h3, ul {
+  margin: 0; /* Elimina márgenes por defecto */
+  padding: 0; /* Elimina rellenos por defecto */
+}
+
+ul {
+  list-style-type: none; /* Elimina los estilos de lista para una lista limpia */
+}
+.info-button {
+  background: none; /* Sin fondo para hacerlo transparente */
+  border: none; /* Sin borde */
+  cursor: pointer; /* Indica que es interactivo */
+  padding: 0; /* Elimina el relleno por defecto */
+  position: relative; /* Necesario para el posicionamiento relativo de los hijos */
+  font-family: 'Bellota Text', sans-serif; /* Establece la fuente para todos los elementos internos */
+}
+
+.icono-informacion {
+  cursor: pointer; /* Indica que el ícono es interactivo */
+  position: absolute; /* Posicionamiento absoluto para colocarlo sobre el fondo del botón */
+  top: 50%; /* Ajuste de posición vertical */
+  left: 50%; /* Ajuste de posición horizontal */
+  transform: translate(-150%, -95%); /* Ajuste fino para el centrado */
+  width: 5em; /* Ancho del ícono en em para adaptabilidad */
+  height: auto; /* Altura automática para mantener la proporción */
+  transition: background-color 0.3s ease; /* Suaviza la transición de color de fondo */
+}
+
+.etiqueta-informacion {
+  display: block; /* Hace que la etiqueta sea un bloque para posicionarse debajo del ícono */
+  text-align: center; /* Asegura que el texto esté centrado bajo el ícono */
+  font-size: 0.8em; /* Tamaño de fuente más pequeño para la etiqueta */
+  color: #555; /* Color del texto de la etiqueta */
+  opacity: 0; /* Empieza con la etiqueta invisible */
+  transition: opacity 0.3s ease; /* Transición suave para la opacidad */
+  position: absolute; /* Posicionamiento absoluto con respecto al botón */
+  width: 100%; /* Asegura que ocupe el ancho total del botón para centrar el texto correctamente */
+  left: 0; /* Alinea al borde izquierdo del botón */
+  bottom: -1.5em; /* Posiciona la etiqueta debajo del ícono */
+}
+
+.info-button:hover .etiqueta-informacion {
+  opacity: 1; /* Hace la etiqueta visible cuando se pasa el ratón por encima */
+}
+
+/* Efecto al pasar el ratón, cambio de color del ícono */
+.info-button:hover .icono-informacion {
+  background-color: rgba(9, 82, 207, 0.1); /* Cambia ligeramente el color de fondo del ícono */
+}
+
+
+
+
+
+
+/*---------RESPONSIVIDAD-----------------*/
+/* Media query para dispositivos móviles */
+@media (max-width: 600px) {
+  h2 {
+    font-size: 1.2em; /* Reduce el tamaño de fuente en dispositivos móviles */
+    text-align: center; /* Centra el texto horizontalmente en dispositivos móviles */
+    padding-left: 0; /* Elimina el relleno izquierdo en dispositivos móviles */
+    margin-left: 0; /* Elimina el margen izquierdo en dispositivos móviles */
+  }
+}
+
+/*----------------RESPONSIVIDAD BOTONES------------------------*/
+/* Media query para dispositivos móviles */
+@media (max-width: 600px) {
+  .botones {
+      width: 100%; /* Ancho completo para aprovechar el espacio en dispositivos móviles */
+      margin-top: 1rem; /* Reduce el margen superior */
+      padding: 0.8em; /* Aumenta el relleno para un toque más fácil */
+  }
+
+  .historial-footer {
+      flex-direction: column; /* Cambia la dirección de los elementos a vertical */
+      gap: 0.5em; /* Reduce el espacio entre botones */
+  }
+
+  #primer-btn, #segundo-btn {
+      margin-right: 0; /* Elimina el margen derecho para el primer botón */
+      margin-left: 0; /* Elimina el margen izquierdo para el segundo botón */
+  }
+}
+
+/*------------RESPONSIVIDAD DE LAS CELDAS Y TEXTO-----------------*/
+
+/* Media query para dispositivos móviles */
+@media (max-width: 33.875em) {
+  .historial-item {
+    flex-direction: column;
+    align-items: flex-start; /* Alinea los ítems al inicio */
+    margin-bottom: 1.25em; /* Espacio entre ítems ajustado a em */
+  }
+
+  .icon-section-left, .icon-section-right {
+    position: static; /* Cambio si es necesario según el layout */
+    width: 100%; /* Íconos usan todo el ancho disponible */
+  }
+
+  .icono-celda-izquierda, .icono-celda-derecha {
+    width: auto; /* Ajusta el ancho a auto o a un porcentaje específico */
+    margin: 0 auto; /* Centra los íconos horizontalmente */
+  }
+
+  .text-section {
+    padding: 0 1em; /* Relleno horizontal para el texto ajustado a em */
+  }
+
+  .icono-informacion {
+    position: static; /* Cambio de posicionamiento si es necesario */
+    margin-top: 1em; /* Espacio arriba ajustado a em */
+    transform: none; /* Quita cualquier transformación previa */
+  }
+
+  .info-button:hover .icono-informacion,
+  .info-button:active .icono-informacion {
+    transform: scale(1); /* Evita escalar el ícono para una interacción más natural en táctiles */
+  }
+}

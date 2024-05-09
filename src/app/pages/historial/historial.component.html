@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Historial</title>
+</head>
+<body>
+  <header class="historial-header">
+    <!--Especifico que sí quiero mostrar el count-down-timer -->
+    <app-nav-bar></app-nav-bar>
+  </header>
+
+  <main class="content">
+    <h2>HISTORIAL</h2>
+    <!-- Lista de búsquedas -->
+    <section class="search-history">
+       <div class="historial-list">
+  <div *ngFor="let item of historialItems" class="historial-item">
+    <div class="icon-section-left">
+      <img src="assets/icons/icono-celda.png" alt="" class="icono-celda-izquierda">
+    </div>
+    <div class="text-section">
+      <h3>{{ item.titulo }}</h3>
+      <ul>
+        <li *ngFor="let descripcion of item.descripciones">{{ descripcion }}</li>
+      </ul>
+    </div>
+    <div class="icon-section-right">
+      <img src="assets/icons/icono-celda2.png" alt="celda-dos" class="icono-celda-derecha">
+      <button class="info-button" aria-label="Más información">
+        <img src="assets/icons/icono-informacion.png" alt="Ícono de información" class="icono-informacion"/>
+        <span class="etiqueta-informacion">Información</span>
+      </button>
+          
+    </div>
+  </div>
+</div>
+    </section>
+
+    <!-- Botones de acción -->
+    <div class="action-buttons">
+     
+    </div>
+  </main>
+  
+  <footer class="historial-footer">
+    <button type="submit" class="botones" id="primer-btn">VER MÁS</button>
+    <button type="submit" class="botones" id="segundo-btn">ATRÁS</button>
+  </footer>
+</body>
+</html>

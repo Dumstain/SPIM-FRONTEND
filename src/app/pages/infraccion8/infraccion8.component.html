@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="infraccion8.component.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bellota+Text:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=ABeeZee&display=swap" rel="stylesheet">
+
+  <title>Infraccion8</title>
+</head>
+<body>
+  <!--CABECERA -->
+  <div class="toolbar"  role="banner">
+  <app-nav-bar-infraccion8></app-nav-bar-infraccion8>
+
+  </div>
+  <div class="contenedor-inicio">
+    <app-icon-line-container></app-icon-line-container>
+    <h2 id="icon-line-letrero">¡Sólo un paso más!</h2>
+  </div>
+  <!-- Contenedor principal para los dos contenedores del contenido del centro -->
+<div class="contenedor-principal">
+  <!-- Contenedor de la izquierda -->
+  <div class="contenedor-izquierda">
+    <h2 id="contenedor-izquierda-letrero">Ingresa los siguientes datos:</h2>
+    <!--Elegir Ubicación-->
+    <div class="ubicacion">
+      <!-- Icono de Ubicación -->
+    <img id="icono-ubicacion" src="assets/images/marcador.png" alt="Icono de Ubicación" />
+    <!-- Botón para Elegir Ubicación -->
+    <button id="boton-ubicacion">Elegir Ubicación</button>
+</div>
+ <!-- Línea Horizontal -->
+<div class="linea-horizontal">
+  <img id="imagen-linea" src="assets/images/lineaH.png" alt="Línea Horizontal" />
+    </div>
+  <!-- Nombre e Input -->
+  <div class="Nombre">
+    <label id="nombre">Nombre:</label> <!-- Etiqueta para el campo -->
+    <input id="nombre-input" type="btn"  placeholder="Ingresa nombre" /> <!-- Campo de entrada -->
+  </div>
+
+    <app-botones-laterales></app-botones-laterales>
+    
+  </div>
+  
+  <!-- Contenedor de la derecha -->
+  <div class="contenedor-derecha" >
+    <h2 id="contenedor-derecha-letrero">Agregar fotos</h2>
+    <app-ventana-pop-up></app-ventana-pop-up>
+  </div>
+</div>
+
+
+</body>
+</html>

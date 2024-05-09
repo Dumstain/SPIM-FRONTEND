@@ -1,0 +1,153 @@
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes expandFromCenter {
+  from {
+    transform: scaleX(0);
+    opacity: 0;
+    /* La línea comienza invisible */
+  }
+
+  to {
+    transform: scaleX(1);
+    opacity: 1;
+    /* La línea se hace visible al final */
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.circle {
+  /* ... otros estilos existentes ... */
+  animation: float 5s ease-in-out infinite;
+}
+
+.title {
+  animation: slideInFromLeft 1s ease-out forwards;
+}
+
+.subtitle {
+  animation: fadeIn 2s ease-in forwards;
+  animation-delay: 0s;
+  /* Esperamos a que la animación del título termine */
+}
+
+.division {
+  /* Estilos existentes... */
+  background-color: #000;
+  /* Color de la línea */
+  height: 2px;
+  /* Ajusta el grosor de la línea */
+  width: 100%;
+  /* Ancho de la línea */
+  transform: scaleX(0);
+  /* Iniciar con escala cero */
+  transform-origin: center;
+  /* La transformación se origina en el centro */
+  animation: expandFromCenter 3s ease-out forwards;
+  animation-delay: 0s;
+  /* Comienza después de que el texto ha terminado su animación */
+}
+
+
+.main-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100vh;
+  /* O el alto que prefieras */
+}
+
+.text-container {
+  text-align: left;
+  font-family: 'Bellota Text';
+  margin-bottom: 7rem;
+  margin-right: 8rem;
+}
+
+.title {
+  font-size: 3.5rem;
+  /* Hacemos este texto más grande */
+  margin-bottom: 3rem;
+  /* Espacio entre el título y el subtítulo */
+}
+
+.subtitle {
+  font-size: 2rem;
+  /* Tamaño más pequeño para el subtítulo */
+  line-height: 1;
+}
+
+.circle-container {
+  display: flex;
+  align-items: center;
+}
+
+#circle1 {
+  position: absolute;
+  border-radius: 50%;
+  width: 19rem;
+  /* Tamaño de los círculos */
+  height: 19rem;
+  background-color: blue;
+  /* Color de fondo de los círculos */
+  left: 57rem;
+  top: 29rem;
+  background: linear-gradient(50.08deg, #011D4D 29.06%, #A5BFEC 80.1%);
+}
+
+#circle2 {
+  position: absolute;
+  border-radius: 50%;
+  width: 20rem;
+  /* Tamaño de los círculos */
+  height: 20rem;
+  background-color: rgb(255, 0, 0);
+  /* Color de fondo de los círculos */
+  left: 88rem;
+  top: 10rem;
+  background: linear-gradient(300.08deg, #011D4D 29.06%, #011D4D 29.06%, #A5BFEC 80.1%);
+  transform: rotate(105deg);
+}
+
+.division {
+  border: none;
+  height: .01rem;
+  /* Ajusta el grosor de la línea */
+  background-color: #000;
+  /* Color de la línea */
+  width: 100%;
+  /* Ancho de la línea */
+  margin: .1rem;
+  /* Espaciado arriba y abajo y centrado horizontalmente */
+  margin-top: 3rem;
+}

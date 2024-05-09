@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil Vehicular Registrado</title>
+    <link rel="stylesheet" href="perfil-vehicular-registrado.component.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bellota+Text:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=ABeeZee&display=swap" rel="stylesheet">
+</head>
+<body>
+     <!--CABECERA -->
+  <div class="toolbar" role="banner">
+    <app-nav-bar></app-nav-bar>
+</div>
+  <!-- Contenedor principal que contiene los dos subcontenedores -->
+  <div class="contenedor-principal">
+
+    <!-- Semicírculos del Fondo de Interfaz -->
+    
+    <div id="semicirculo-superior"></div>
+    <div id="semicirculo-inferior"></div>
+
+    <!-- Contenedor inicial -->
+    <div class="contenedor-inicio">
+        <div class="perfil-usuario">
+            <img id="user-image" src="assets/icons/icon-user.png" alt="User Image">
+            <div class="usuario-info">
+                <p id="nombre">Nombre del ciudadano</p>
+                <p id="marca">Marca de vehículo</p>
+                <p id="modelo">Modelo de vehículo</p>
+                <p id="pais">País</p>
+                <p id="estado">Estado</p>
+            </div>
+        </div>
+    </div>
+  
+    <!-- Contenedor final -->
+    <div class="contenedor-final">
+        
+        <div class="botones-contenedor-final">
+        <img id="carImage" src="" alt="Car Image">
+        <button id="historial">Historial</button>
+        <button id="infraccionar">Infraccionar</button>
+        </div>
+    </div>
+
+  </div>
+  
+  <script src="perfil-vehicular-registrado.component.js"></script>
+</body>
+</html>

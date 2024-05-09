@@ -1,0 +1,39 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="content">
+  <div class="icon-line-container">
+    <img src="assets/icons/check.png" alt="Icono de check" class="icon" />
+    <span class="dots"></span>
+    <img src="assets/icons/check.png" alt="Icono de check" class="icon" />
+    <span class="dots"></span>
+    <img src="assets/icons/check.png" alt="Icono de check" class="icon" />
+  </div>
+
+  <div class="content-container">
+    <app-botones></app-botones>
+    <div class="summary">
+      <h2>Resumen de infracción:</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at ex nibh.
+        Nullam vel ullamcorper ligula, sit amet imperdiet tortor.
+      </p>
+      <p>
+        Vestibulum felis magna, egestas ut erat sed, ultrices sagittis arcu.
+        Integer cursus pharetra ante. Integer sem ex, tristique vehicula laculis
+        eu, fringilla eget mauris. Nulla at tellus sed quam ornare molestie in
+        nec tellus. Nullam iaculis hendrerit ligula ullamcorper accumsan. Etiam
+        vitae risus felis. Cras et augue consectetur, lacinia mi ut, mollis mi.
+      </p>
+      <div class="actions">
+        <button class="btn">Ver más</button>
+      </div>
+    </div>
+    <div class="footer">
+      <button class="btn btn-blue" (click)="downloadPdf()">Imprimir</button>
+
+      <button class="btn btn-red" (click)="irAPagina('ingreso-de-placas')">
+        Finalizar
+      </button>
+    </div>
+  </div>
+</div>

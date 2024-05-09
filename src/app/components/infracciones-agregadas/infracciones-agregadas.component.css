@@ -1,0 +1,63 @@
+.card-form {
+  margin-bottom: 15px;
+}
+
+.card-form input {
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid #ced4da;
+}
+
+.card-form button {
+  padding: 5px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.card-form button:hover {
+  background-color: #0056b3;
+}
+.card {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 250px; /* o la anchura que prefieras */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  background: #fff;
+  margin: 20px;
+}
+
+.card-header {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.close-button {
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  font-size: 1.2rem;
+}
+
+.card-body {
+  padding: 10px;
+}
+
+.article,
+.uma {
+  margin: 5px 0;
+}
+
+.content {
+  max-height: 150px; /* Establece una altura máxima para el área de contenido */
+  overflow-y: auto; /* Habilita el desplazamiento vertical si el contenido supera max-height */
+  margin-top: 10px;
+}

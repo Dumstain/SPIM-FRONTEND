@@ -1,0 +1,39 @@
+/* countdown-timer.component.css */
+.countdown-container {
+  display: flex;
+  flex-direction: column; /* Organiza los elementos en una columna */
+  align-items: center; /* Centra los elementos hijos en el eje horizontal */
+  color: white;
+  margin-right: 8rem;
+  margin-bottom: 1rem;
+}
+
+.label {
+  padding: 0.5rem;
+  font-size: .8rem; /* Ajustar según el diseño */
+  font-family: 'Inter';
+}
+
+.progress-bar-container {
+  /* Esto asegurará que la barra de progreso ocupe todo el ancho disponible */
+  width: 150%;
+  display: flex; /* Hace que este contenedor use flexbox */
+}
+
+.progress-bar-background {
+  width: 150%; /* Asegura que el fondo de la barra ocupe todo el ancho */
+  background-color: rgb(133, 132, 132); /* Color de fondo */
+  border-radius: 0.5rem;
+  height: .8rem;
+  position: relative; /* Posición relativa para que la barra de progreso pueda ser absoluta */
+}
+
+.progress-bar-foreground {
+  position: absolute; /* Posicionamiento absoluto dentro de su contenedor relativo */
+  top: 0;
+  left: 0;
+  height: .8rem;
+  background-color: rgb(255, 255, 255); /* Color del progreso */
+  border-radius: 0.5rem;
+  transition: width 1s linear;
+}

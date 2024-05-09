@@ -1,0 +1,72 @@
+.icon-line-container {
+  /* Usamos Flexbox para alinear íconos horizontalmente y centrar contenido */
+  display: flex; 
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 6.25rem; /* Agregamos espacio interno en el eje horizontal */
+  margin-top: 2%;
+}
+
+.icon {
+  /* Establecemos tamaño del ícono y proporción */
+  width: 3.125rem;
+  height: auto;
+  margin: 0 0.0625rem; /* Margen horizontal para separar íconos ligeramente */
+}
+
+.dots {
+  flex-grow: 1; /* Permitimos que la línea de puntos crezca para llenar el espacio */
+  margin: 0 0.625rem; /* Agregamos margen para separación entre íconos y la línea de puntos */
+
+  /* Configuramos el patrón de línea de puntos con gradientes */
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    transparent 0.875rem, /* Espacio transparente al inicio de cada patrón */
+    #030303 0.9375rem,  /* Color de la línea*/
+    transparent 1.25rem /* Espacio transparente al final de cada patrón */
+  );
+
+  /* Tamaño de cada repetición del patrón en términos de ancho y altura */
+  background-size: 1.25rem 100%; /* Anchura y altura del patrón */
+  background-repeat: repeat-x; /* Repetimos horizontalmente */
+
+  min-height: 0.3125rem; /* Altura mínima para asegurar visibilidad de la línea */
+}
+
+
+/*---------------------RESPONSIVIDAD------------------------------*/
+/* Estilos para tablets */
+@media (max-width: 768px) {
+  .icon-line-container {
+    padding: 0 3rem; /* Reducimos el espacio interno para pantallas más pequeñas */
+  }
+
+  .icon {
+    width: 2.5rem; /* Reducimos el tamaño del ícono */
+  }
+
+  .dots {
+    margin: 0 0.5rem; /* Ajustamos los márgenes */
+  }
+}
+
+/* Estilos para celulares */
+@media (max-width: 480px) {
+  .icon-line-container {
+    flex-direction: column; /* Cambiamos la orientación a vertical */
+    padding: 1rem 0; /* Ajustamos el padding para un manejo vertical */
+  }
+
+  .icon {
+    width: 2rem; /* Más reducción en el tamaño del ícono */
+    margin: 0.5rem 0; /* Ajustamos los márgenes para la orientación vertical */
+  }
+
+  .dots {
+    width: 90%; /* Ajustamos la anchura de la línea de puntos */
+    height: 0.2rem; /* Ajustamos la altura para ser más delgada */
+    margin: 0.5rem auto; /* Centramos la línea de puntos horizontalmente */
+    background-size: 0.8rem 100%; /* Ajustamos el tamaño del patrón de puntos */
+  }
+}

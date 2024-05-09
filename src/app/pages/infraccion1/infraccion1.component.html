@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infraccion11</title>
+  <link rel="stylesheet" href="infraccion1.component.css">
+</head>
+<body>
+
+  <!-- Navbar al principio -->
+  <app-nav-bar></app-nav-bar>
+
+  <!-- Línea de iconos después -->
+  <div class="icon-line-container">
+    <img
+      src="assets/images/iconPatrulla.png"
+      alt="Icono de coche de policía"
+      class="icon"
+    />
+    <span class="dots"></span>
+    <img
+      src="assets/images/bandera_roja.png"
+      alt="Icono de bandera"
+      class="icon"
+    />
+    <span class="dots"></span>
+    <img
+      src="assets/images/stop.png"
+      alt="Icono de señal de stop"
+      class="icon"
+    />
+  </div>
+
+  <!-- El resto del contenido después de la icon-line -->
+  <div class="content">
+
+    <!-- Título y formulario -->
+    <h1>¡Comencemos!</h1>
+    <form class="vehicle-form">
+      <div class="form-column">
+        <!-- Elementos de la columna izquierda -->
+        <div class="form-group">
+          <input
+            type="text"
+            id="license"
+            class="form-control"
+            placeholder="TEC - 1234"
+          />
+        </div>
+        <div class="form-group state">
+          <label para="state">Estado:</label>
+          <select id="state" name="state">
+            <option *ngFor="let state of mexicanStates" [value]="state">
+              {{ state }}
+            </option>
+          </select>
+        </div>
+        <div class="form-group color">
+          <button (click)="openModal()">Color</button>
+          <div
+            class="selected-color-display"
+            [style.background]="selectedColor"
+            *ngIf="selectedColor"
+          ></div>
+          <app-color-picker-modal
+            *ngIf="isModalOpen"
+            (colorSelected)="setColor($event)"
+          ></app-color-picker-modal>
+        </div>
+      </div>
+
+      <div class="form-column">
+        <!-- Elementos de la columna derecha -->
+        <div class="form-group brand">
+          <label para="brand">Marca:</label>
+          <select id="brand">
+            <option value="">Seleccionar --</option>
+            <!-- Opciones de marcas de coches -->
+          </select>
+        </div>
+        <div class="form-group model">
+          <label para="model">Modelo:</label>
+          <select id="model">
+            <option value="">Seleccionar --</option>
+            <!-- Opciones de modelo -->
+          </select>
+        </div>
+        <div class="form-group year">
+          <label para="year">Año:</label>
+          <select id="year">
+            <option value="">Seleccionar --</option>
+            <!-- Opciones de años -->
+          </select>
+        </div>
+      </div>
+    </form>
+    
+    <!-- Otros componentes o elementos adicionales -->
+    <app-botones-laterales></app-botones-laterales>
+
+  </div>
+
+</body>
+</html>

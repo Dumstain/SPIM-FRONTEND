@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="data-entry">
+    <form>
+      <div class="form-group">
+        <label for="folio">Folio:</label>
+        <input type="text" id="folio" name="folio" />
+      </div>
+
+      <div class="form-group">
+        <label for="zone">Zona:</label>
+        <input type="text" id="zone" name="zone" />
+      </div>
+
+      <div class="form-group">
+        <label for="reason">Motivo de multa:</label>
+        <input type="text" id="reason" name="reason" />
+      </div>
+    </form>
+  </div>
+
+  <div class="add-infractions">
+    <!-- Card para hacer clic y abrir el pop-up -->
+    <div class="image-card" (click)="togglePopup()">
+      <label for="zone">Agregar Infracciones</label>
+      <!-- Añade tu contenido de imagen o texto aquí -->
+      <img class="icono" src="assets/images/Infraccion.png" alt="Añadir fotos" (click)="irAPagina('Filtro-infracciones')" />
+    </div>
+  </div>
+</div>

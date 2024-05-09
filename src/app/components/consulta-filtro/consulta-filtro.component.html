@@ -1,0 +1,34 @@
+<!-- search-filter.component.html -->
+<div class="search-filter">
+  <h1>Filtro de Busqueda</h1>
+  <div class="filter-section">
+    <label for="document-input">Ingresar documento:</label>
+    <input
+      type="text"
+      id="document-input"
+      placeholder="Número de licencia, serie, placa, permiso"
+    />
+    <button type="button" class="btn btn-primary" (click)="onSearchDocument()">
+      <i class="fa fa-search"></i> Buscar
+    </button>
+  </div>
+
+  <div class="date-filter">
+    <label for="">Filtro por Fecha</label>
+
+    <div class="date-section">
+      <label for="start-date">Inicio</label>
+
+      <input type="date" id="start-date" />
+    </div>
+
+    <div class="date-section">
+      <label for="end-date">Fin</label>
+
+      <input type="date" id="end-date" />
+    </div>
+    <button type="button" class="btn btn-primary" (click)="onSearchByDate()">
+      <i class="fa fa-search"></i> Buscar
+    </button>
+  </div>
+</div>

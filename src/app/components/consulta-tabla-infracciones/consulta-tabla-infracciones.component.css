@@ -1,0 +1,103 @@
+.Tabla-infracciones {
+  margin-top: 5%;
+  margin-left: 8%;
+  margin-right: 8%;
+}
+
+table {
+  width: 100%;
+  align-items: center;
+  border-collapse: collapse; /* Cambiado a 'separate' para permitir bordes redondeados */
+  border-spacing: 0; /* Elimina el espacio entre celdas */
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px; /* Establece los bordes redondeados */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+tbody tr {
+  cursor: pointer; /* Cambia el cursor a un puntero para indicar interactividad */
+}
+
+tbody tr:hover {
+  background-color: #e8f4f8; /* Un color de fondo al hacer hover para feedback visual */
+}
+
+th,
+td {
+  text-align: center;
+  padding: 8px; /* Espaciado interno para texto */
+}
+
+td {
+  border-bottom: 1px solid #ddd; /* Borde gris para las celdas */
+}
+
+th {
+  text-align: center;
+  background-color: #011d4d; /* Color de fondo para los encabezados */
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9; /* Color de fondo para las filas pares */
+  border-radius: 10px; /* Establece los bordes redondeados */
+}
+
+.details {
+  background-color: #f9f9f9; /* Color de fondo para la vista detallada */
+}
+
+.details td {
+  padding: 10px;
+  border-top: none; /* Opcional: elimina el borde superior para fusionar visualmente con la fila */
+}
+.detail-layout {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #ccc; /* Bordes al contenedor general para mejorar la visibilidad */
+  padding: 15px;
+  margin-top: 10px;
+}
+
+.detail-info,
+.vehicle-info {
+  width: 48%;
+  padding: 10px;
+  background-color: #f9f9f9; /* Fondo ligeramente diferente para resaltar las secciones */
+}
+
+.vehicle-info {
+  border-left: 2px solid #ddd; /* Añade un borde para separar la información del vehículo */
+  text-align: left;
+  position: relative; /* Para el posicionamiento de los elementos internos */
+}
+
+.vehicle-info h3 {
+  color: #333;
+  margin-top: 0;
+}
+
+.vehicle-images {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 10px; /* Espacio antes de las imágenes */
+}
+
+.vehicle-images img {
+  width: 100%;
+  height: auto;
+  border: 1px solid #ddd; /* Bordes para las imágenes */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave para las imágenes */
+}
+
+/* Estilo adicional para mejorar la legibilidad de los textos */
+.detail-info p,
+.vehicle-info p {
+  line-height: 1.5; /* Espaciado de línea */
+  margin: 5px 0; /* Espaciado vertical entre elementos */
+  font-size: 0.95rem; /* Tamaño de fuente adecuado para detalles */
+}

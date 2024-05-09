@@ -1,0 +1,63 @@
+/* Estado por defecto */
+.dashboard {
+  display: flex;
+  height: 85vh;
+  align-items: center;
+  justify-content: space-around;
+  background: linear-gradient(to bottom right, #FFF 50%, #fff 50%);
+  transition: background 0.01s ease; /* Transición suave para el cambio de fondo */
+}
+
+/* Hover en el panel izquierdo */
+.dashboard.left-hover {
+  background: linear-gradient(to bottom right, #6d7b93 50%, #FFF 50%);
+}
+
+/* Hover en el panel derecho */
+.dashboard.right-hover {
+  background: linear-gradient(to bottom right, #FFF 50%, #6d7b93 50%);
+}
+
+.left-panel,
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.panel-button {
+  text-align: center;
+  text-decoration: none;
+  color: #333;
+}
+
+.icon {
+  width: 12.5em; /* 200px/16px = 12.5em */
+  height: 12.5em; /* 200px/16px = 12.5em */
+  transition: transform 0.30s ease; /* Transición suave para la transformación del icono */
+}
+
+/* Aumento del tamaño del icono al hacer hover */
+.panel-button:hover .icon {
+  transform: scale(1.1); /* Aumenta el tamaño del icono al 110% */
+}
+
+.panel-button:hover span {
+  text-decoration: underline;
+}
+
+.left-panel .panel-button {
+  padding-bottom: 12.5em; /* 200px/16px = 12.5em */
+}
+
+.right-panel .panel-button {
+  padding-top: 12.5em; /* 200px/16px = 12.5em */
+}
+
+.left-panel span,
+.right-panel span {
+  display: block;
+  font-size: 1.2em;
+}

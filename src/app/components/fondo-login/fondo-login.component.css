@@ -1,0 +1,64 @@
+body {
+  background-color: #d9d9d9;
+}
+.half-circle {
+  width: 70vh; /* Diameter of the full circle */
+  height: 70vh; /* Should be the same as width for a perfect circle */
+  background-color: #011d4d; /* Or any color */
+  border-radius: 50%;
+  overflow: hidden; /* This will hide the right half of the circle */
+  position: absolute;
+  left: 10%; /* Push the circle's center to the left border */
+  transform: translateX(-100%); /* Shift it left by its own radius */
+  top: 20vh; /* Adjust the vertical position as needed */
+}
+/* File path: src/app/login/login.component.css */
+
+.striped-circle {
+  width: 50vw; /* Diameter of the circle */
+  height: 50vw; /* Should be the same as width for a perfect circle */
+  background-image: repeating-linear-gradient(
+    -45deg,
+    /* Tilt the stripes */ #011d4d 0%,
+    #011d4d 3.33%,
+    /* Colored stripe: 3.33% of the diameter */ transparent 3.33%,
+    transparent 6.66% /* Transparent stripe: Another 3.33% of the diameter */
+  );
+  border-radius: 50%;
+  position: absolute;
+  top: 1%; /* Center vertically */
+  left: 105%; /* Center horizontally */
+  transform: translate(-50%, -50%);
+}
+
+@media (min-width: 992px) {
+  .half-circle {
+    width: 70vh; /* Diameter of the full circle */
+    height: 70vh; /* Should be the same as width for a perfect circle */
+    background-color: #011d4d; /* Or any color */
+    border-radius: 50%;
+    overflow: hidden; /* This will hide the right half of the circle */
+    position: absolute;
+    left: 10%; /* Push the circle's center to the left border */
+    transform: translateX(-100%); /* Shift it left by its own radius */
+    top: 20vh; /* Adjust the vertical position as needed */
+  }
+  /* File path: src/app/login/login.component.css */
+
+  .striped-circle {
+    width: 50vh; /* Diameter of the circle */
+    height: 50vh; /* Should be the same as width for a perfect circle */
+    background-image: repeating-linear-gradient(
+      -45deg,
+      /* Tilt the stripes */ #011d4d 0%,
+      #011d4d 3.33%,
+      /* Colored stripe: 3.33% of the diameter */ transparent 3.33%,
+      transparent 6.66% /* Transparent stripe: Another 3.33% of the diameter */
+    );
+    border-radius: 50%;
+    position: absolute;
+    top: 0%; /* Center vertically */
+    left: 100%; /* Center horizontally */
+    transform: translate(-50%, -50%);
+  }
+}

@@ -1,0 +1,263 @@
+/* Estilos Generales */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  background-color: white;
+  margin: auto;
+  max-width: 75%;
+  display: flex; /* Añadido para usar Flexbox */
+  flex-direction: column;
+  align-items: flex-start; /* Alinea los elementos al principio de la dirección transversal */
+}
+
+/* Navegación */
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.nav-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.nav-button:hover {
+  background-color: #0056b3;
+}
+
+/* Mensaje de estado */
+.status-message {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #d4edda;
+  color: #155724;
+  border-left: 5px solid #28a745;
+}
+
+.status-icon {
+  margin-right: 10px;
+}
+
+/* Sección del formulario y botón de agregar */
+.content {
+  display: flex; /* Utiliza flexbox para posicionar form y botón lado a lado */
+  width: 100%;
+}
+
+/* Formulario de ingreso de datos */
+.data-entry {
+  flex: 1; /* Toma el espacio restante */
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px; /* Espacio entre cada grupo del formulario */
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-family: "Bellota Text", sans-serif;
+  font-style: normal;
+  font-size: 3vh;
+  color: #333333;
+}
+
+input[type="text"] {
+  width: 160%; /* Ocupa el ancho del contenedor */
+  padding: 10px;
+  border: 1px solid #ced4da;
+}
+
+/* Botón de agregar infracciones */
+.add-infractions {
+  text-align: center;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Alinea el botón con el inicio del contenedor */
+}
+
+.add-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.add-button:hover {
+  background-color: #1e7e34;
+}
+
+/* Estilos para los componentes de cabecera y pie de página */
+app-header,
+app-footer {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+.image-card {
+  cursor: pointer;
+  /* Añade estilos para posicionar la imagen */
+  position: relative;
+  top: calc(
+    40px + 50%
+  ); /* Alinea la parte superior de la imagen con la mitad de la altura del botón */
+}
+
+.image-card:hover {
+  transform: scale(
+    1.05
+  ); /* Aumenta ligeramente el tamaño de la imagen al pasar el mouse por encima */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Agrega una sombra suave alrededor de la imagen */
+}
+
+.icono {
+  width: 80%;
+}
+
+@media (min-width: 992px) {
+  /* Estilos Generales */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+  }
+
+  .container {
+    background-color: white;
+    margin: auto;
+    max-width: 70%;
+    display: flex; /* Añadido para usar Flexbox */
+    flex-direction: unset;
+    align-items: flex-start; /* Alinea los elementos al principio de la dirección transversal */
+  }
+
+  /* Navegación */
+  .navigation {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+  }
+
+  .nav-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+
+  .nav-button:hover {
+    background-color: #0056b3;
+  }
+
+  /* Mensaje de estado */
+  .status-message {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #d4edda;
+    color: #155724;
+    border-left: 5px solid #28a745;
+  }
+
+  .status-icon {
+    margin-right: 10px;
+  }
+
+  /* Sección del formulario y botón de agregar */
+  .content {
+    display: flex; /* Utiliza flexbox para posicionar form y botón lado a lado */
+    width: 100%;
+  }
+
+  /* Formulario de ingreso de datos */
+  .data-entry {
+    flex: 1; /* Toma el espacio restante */
+    padding: 20px;
+  }
+
+  .form-group {
+    margin-bottom: 15px; /* Espacio entre cada grupo del formulario */
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-family: "Bellota Text", sans-serif;
+    font-style: normal;
+    font-size: 3vh;
+    color: #333333;
+  }
+
+  input[type="text"] {
+    width: 100%; /* Ocupa el ancho del contenedor */
+    padding: 10px;
+    border: 1px solid #ced4da;
+  }
+
+  /* Botón de agregar infracciones */
+  .add-infractions {
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinea el botón con el inicio del contenedor */
+  }
+
+  .add-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+
+  .add-button:hover {
+    background-color: #1e7e34;
+  }
+
+  /* Estilos para los componentes de cabecera y pie de página */
+  app-header,
+  app-footer {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .image-card {
+    cursor: pointer;
+    /* Añade estilos para posicionar la imagen */
+    position: relative;
+    top: calc(
+      40px + 50%
+    ); /* Alinea la parte superior de la imagen con la mitad de la altura del botón */
+  }
+
+  .image-card:hover {
+    transform: scale(
+      1.05
+    ); /* Aumenta ligeramente el tamaño de la imagen al pasar el mouse por encima */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Agrega una sombra suave alrededor de la imagen */
+  }
+
+  .icono {
+    width: 80%;
+  }
+}

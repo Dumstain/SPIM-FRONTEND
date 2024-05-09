@@ -1,0 +1,23 @@
+<app-nav-bar></app-nav-bar>
+<div class="dashboard" [ngClass]="{'left-hover': leftHover, 'right-hover': rightHover}">
+  <div class="left-panel" 
+       (mouseenter)="onLeftPanelHover()" 
+       (mouseleave)="onMouseLeave()">
+      <!-- Aquí parece que quieres ir a la página de consulta de infracciones -->
+      <a class="panel-button">
+        <img src="assets/icons/busquedaimg.png" alt="Consulta de Infracciones" class="icon" (click)="irAPagina('historial')">
+        <span>Consulta de Infracciones</span>
+      </a>
+  </div>
+    
+  <div class="right-panel" 
+       (mouseenter)="onRightPanelHover()" 
+       (mouseleave)="onMouseLeave()">
+      <!-- Usamos routerLink para ir a la página de perfil vehicular -->
+      <a  class="panel-button">
+        <img src="assets/icons/multaimg.png" alt="Registrar Infracción" class="icon" (click)="irAPagina('infraccion-1')">
+        <span>Registrar Infracción</span>
+      </a>
+  </div>
+      
+</div>

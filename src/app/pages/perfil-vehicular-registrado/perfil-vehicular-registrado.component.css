@@ -1,0 +1,274 @@
+
+/*----------DEFINICION DE CONTENEDORES (CABECERA Y FOOTER)----*/
+.contenedor-principal {
+    display: flex; /* Usamos Flexbox para disposición flexible */
+    flex-direction: column; /* Organizamos los contenedores verticalmente */
+    justify-content: flex-start; /* Alineamos verticalmente desde el inicio */
+    align-items: center; /* Alineamos horizontalmente al centro */
+    
+  }
+ 
+  .contenedor-inicio {
+    width: 100%; /* Aseguramos que el contenedor ocupe todo el ancho */
+    padding: 1rem; /* Espaciado interno para separación */
+  }
+  
+  .contenedor-final {
+    width: 100%; /* Aseguramos que el contenedor ocupe todo el ancho */
+    padding: 1rem; /* Espaciado interno para separación */
+  }
+
+/*-----------ELEMENTOS FONDO DECORATIVO (CIRCULOS)----------*/
+#semicirculo-superior{
+    position: absolute;
+    width: 15.75rem; /*Ancho circulo */
+    height: 15.75rem;/*Altura circulo*/
+    background-color: #003366; /* Ajusta el color según tu diseño */
+    border-radius: 50%;
+    right:-8%;
+    margin-top: 3%;
+    z-index: 1000; /* Asegurar que estén detrás del contenido */
+}
+#semicirculo-inferior{
+    position: absolute;
+    width: 10.75rem; /*Ancho circulo */
+    height: 10.75rem;/*Altura circulo*/
+    background-color: #003366; /* Ajusta el color según tu diseño */
+    border-radius: 50%;
+    margin-top: 19%;
+    right:-6%;
+    z-index: 1000; /* Asegurar que estén detrás del contenido */
+}
+
+
+
+
+/*------ELEMENTOS DEL CONTENEDOR DE INICIO--------------------*/
+.perfil-usuario{
+    margin-top: 5%;/* Margen superior para separar los elementos dentro del contenedor*/
+    display: flex;
+    align-items: center;/*alineamos los elementos en el centro*/
+}
+#user-image{
+    width: 12.25rem; /* Ancho Imagen Usuario*/
+    height: 10.25rem; /* Altura Imagen Usuario */
+    border-radius: 50%; /* Circular image */
+    margin-left: 12.25rem;   /*Margen de separacion (izquierda)*/
+}
+.usuario-info{
+    margin-left: 10rem; /*Margen de separacion (izquierda) de la información del usuario*/
+}
+
+#nombre{
+    font-family: 'Bellota Text', sans-serif; /* Aplicamos la fuente "Bellota Text" */
+    text-align: center; /* Alineamos el texto al centro horizontalmente */
+    font-size: 1em; /* Tamaño del texto*/
+    color: #020202; /* Color para el texto */
+    font-weight: bold;
+}
+#marca{
+    font-family: 'Bellota Text', sans-serif; /* Aplicamos la fuente "Bellota Text" */
+    font-size: 1em; /* Tamaño del texto*/
+    color: #020202; /* Color para el texto */
+    font-weight: bold;
+}
+#modelo{
+    font-family: 'Bellota Text', sans-serif; /* Aplicamos la fuente "Bellota Text" */
+    font-size: 1em; /* Tamaño del texto*/
+    color: #020202; /* Color para el texto */
+    font-weight: bold;
+}
+#pais{
+    font-family: 'Bellota Text', sans-serif; /* Aplicamos la fuente "Bellota Text" */
+    font-size: 1em; /* Tamaño del texto*/
+    color: #020202; /* Color para el texto */
+    font-weight: bold;
+}
+#estado{
+    font-family: 'Bellota Text', sans-serif; /* Aplicamos la fuente "Bellota Text" */
+    font-size: 1em; /* Tamaño del texto*/
+    color: #020202; /* Color para el texto */
+    font-weight: bold;
+}
+
+/*------ELEMENTOS DEL CONTENEDOR FINAL--------------------*/
+.botones-contenedor-final{
+    display: flex; /* Hacer que los elementos hijos estén en la misma línea */
+    gap: 1rem;
+    margin-top: 10%;
+    
+}
+#historial{
+    margin: 0.625rem 0; /* Márgenes arriba y abajo */
+    padding: 0.3rem 4.5rem; /* Padding arriba/abajo y a los lados */
+    font-size: 1rem; /* Tamaño de fuente */
+    cursor: pointer; /* Cursor de puntero */
+    border: 0.125rem solid #011D4D; /* Borde del botón*/
+    background-color: #011D4D; /* Color de fondo del botón */
+    border-radius: 0.4em; /* Bordes redondeados para suavizar el botón */
+    transition: all 0.2s ease-in-out; /* Transición suave para cambios */
+
+    font-family: 'Bellota Text', sans-serif; /* Aplicamos la fuente "Bellota Text" */
+    text-align: center; /* Alineamos el texto al centro horizontalmente */
+    font-size: 1em; /* Tamaño del texto*/
+    color: #FFF; /* Color para el texto */
+    font-weight: bold;    
+}
+/* Efecto hover para 'historial' */
+#historial:hover {
+    background-color: #004080; /* Cambia el color de fondo al pasar el ratón */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño del botón */
+}
+
+#infraccionar{
+    margin: 0.625rem 0; /* Márgenes arriba y abajo */
+    padding: 0.3rem 4rem; /* Padding arriba/abajo y a los lados */
+    font-size: 1rem; /* Tamaño de fuente */
+    cursor: pointer; /* Cursor de puntero */
+    border: 0.125rem solid #940A0A; /* Borde del botón*/
+    background-color: #940A0A; /* Color de fondo del botón */
+    border-radius: 0.4em; /* Bordes redondeados para suavizar el botón */
+    transition: all 0.2s ease-in-out; /* Transición suave para cambios */
+
+    font-family: 'Bellota Text', sans-serif; /* Aplicamos la fuente "Bellota Text" */
+    text-align: center; /* Alineamos el texto al centro horizontalmente */
+    font-size: 1em; /* Tamaño del texto*/
+    color: #FFF; /* Color para el texto */
+    font-weight: bold;   
+}
+
+#infraccionar:hover {
+    background-color: #c42b2b; /* Cambia el color de fondo al pasar el ratón */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño del botón */
+}
+
+#carImage {
+    width: 10%; /* Ancho relativo, ajustable */
+    height: auto; /* Mantener la relación de aspecto */
+    padding: 0 15%; /* Espacio interno a la izquierda y derecha */
+
+}
+
+
+
+
+/*-------------------RESPONSIVIDAD--------------------*/
+/*-----CIRCULOS  RESPONSIVIDAD------------------*/
+/* Reglas para pantallas pequeñas (hasta 480px) */
+@media (max-width: 480px) {
+    #semicirculo-superior {
+        width: 10rem; /* Reducir el ancho */
+        height: 10rem; /* Reducir la altura */
+        right: -5%; /* Cambiar la posición para que no salga de la vista */
+        margin-top: 2rem; /* Ajustar el margen superior */
+    }
+
+    #semicirculo-inferior {
+        width: 7rem; /* Reducir el ancho */
+        height: 7rem; /* Reducir la altura */
+        right: -4%; /* Ajustar posición derecha */
+        margin-top: 15%; /* Ajustar margen superior para mantener la proporción */
+    }
+}
+
+/* Reglas para pantallas medianas (481px a 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    #semicirculo-superior {
+        width: 10rem; /* Ajustar ancho para pantallas medianas */
+        height: 10rem; /* Ajustar altura */
+        right: -7%; /* Cambiar la posición para que encaje mejor */
+        margin-top: 2rem; /* Ajustar el margen superior */
+    }
+
+    #semicirculo-inferior {
+        width: 7rem; /* Ajustar ancho para pantallas medianas */
+        height: 7rem; /* Ajustar altura */
+        right: -7%; /* Ajustar posición derecha */
+        margin-top: 25%;
+
+    }
+}
+/*-----CONTENEDOR INICIO RESPONSIVIDAD------------------*/
+@media (max-width: 480px) {
+    .perfil-usuario {
+        margin-top: 2rem; /* Espacio superior reducido para pantallas pequeñas */
+    }
+
+    #user-image {
+        width: 10rem;  /* Ancho Imagen Usuario*/
+        height: 8.33rem;  /*Altura Imagen Usuario */
+        border-radius: 50%;  /* Imagen circular */
+        margin-left: 6rem;  /*Margen de separacion (izquierda)*/
+    }
+
+    .usuario-info {
+        margin-left: 2rem; /*Margen de separacion (izquierda) Informacion del usuario*/
+    }
+}
+
+/*---- Responsividad para pantallas medianas (481px a 768px) ----*/
+@media (min-width: 481px) and (max-width: 768px) {
+    .perfil-usuario {
+        margin-top: 3%; /* Espacio superior reducido para pantallas medianas */
+    }
+
+    #user-image {
+        width: 8.25rem;  /* Ancho Imagen Usuario */
+        height: 7rem;  /* Altura Imagen Usuario */
+        border-radius: 50%;  /* Imagen circular */
+        margin-left: 2rem; /*Margen de separacion (izquierda)*/
+    }
+
+    .usuario-info {
+        margin-left: 0.7rem; /*Margen de separacion (izquierda) Información del usuario*/
+    }
+}
+
+/*-----CONTENEDOR FINAL RESPONSIVIDAD------------------*/
+/* Reglas para pantallas pequeñas, hasta 480px */
+@media (max-width: 480px) {
+    .botones-contenedor-final {
+        flex-direction: column; /* Alinear los botones en columna */
+        gap: 0.5rem; /* Menor espacio entre elementos */
+        margin-top: 5%; /* Reducir el margen superior */
+    }
+
+    #historial{
+        padding: 0.3rem 3rem; /* Menos padding para ajustar al tamaño pequeño */
+        font-size: 0.8rem; /* Disminuir el tamaño de fuente para que se adapte */
+    }
+    #infraccionar {
+        padding: 0.3rem 3rem; /* Menos padding para ajustar al tamaño pequeño */
+        font-size: 0.8rem; /* Disminuir el tamaño de fuente para que se adapte */
+    }
+
+    #carImage {
+        width: 50%; /* Ajustar el ancho de la imagen para dispositivos pequeños */
+        margin-right: 0; /* Sin margen adicional a la derecha */
+        padding: 0; /* Sin espacio interno adicional */
+    }
+}
+
+/* Reglas para pantallas medianas, entre 481px y 768px */
+@media (min-width: 481px) and (max-width: 768px) {
+    .botones-contenedor-final {
+        flex-direction: row; /* Mantener disposición en fila */
+        gap: 0.75rem; /* Espacio entre elementos */
+        margin-top: 7%; /* Margen superior moderado */
+    }
+
+    #historial{
+        padding: 0.3rem 2.5rem; /* Ajustar padding para dispositivos medianos */
+        font-size: 0.9rem; /* Tamaño de fuente moderado */
+    }
+    #infraccionar {
+        padding: 0.3rem 1.5rem; /* Ajustar padding para dispositivos medianos */
+        font-size: 0.9rem; /* Tamaño de fuente moderado */
+    }
+
+    #carImage {
+        width: 20%; /* Ajustar el ancho de la imagen para pantallas medianas */
+        margin-right: 10%; /* Espacio adicional a la derecha */
+        padding: 0 10%; /* Ajustar padding para mantener espacio interno */
+    }
+}

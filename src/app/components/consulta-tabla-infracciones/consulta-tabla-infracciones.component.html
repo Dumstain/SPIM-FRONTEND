@@ -1,0 +1,56 @@
+<div class="Tabla-infracciones">
+  <table>
+    <thead>
+      <tr>
+        <th>CLAVE</th>
+        <th>OFICIAL</th>
+        <th>FECHA</th>
+        <th>PLACA VEHICULAR</th>
+        <th>TIPO DE LICENCIA</th>
+        <th>ESTADO</th>
+        <th>ACCIÓN</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let record of records; index as i">
+        <tr (click)="toggleDetail(i)">
+          <td>{{ record.clave }}</td>
+          <td>{{ record.oficial }}</td>
+          <td>{{ record.fecha }}</td>
+          <td>{{ record.placaVehicular }}</td>
+          <td>{{ record.tipoDeLicencia }}</td>
+          <td>{{ record.estado }}</td>
+          <td>-</td>
+        </tr>
+        <tr *ngIf="expandedIndex === i" class="details" class="info">
+          <td colspan="7" >
+            <div class="detail-layout">
+              <div class="detail-info">
+                <h3>Detalle de la infracción</h3>
+                <p>Folio del ayuntamiento: {{ record.folio }}</p>
+                <p>Artículo de la infracción: {{ record.articulo }}</p>
+                <p>Dirección de la infracción: {{ record.direccion }}</p>
+                <p>Nombre del infractor: {{ record.infractor }}</p>
+                <p>Motivo de la infracción: {{ record.motivo }}</p>
+              </div>
+              <div class="vehicle-info">
+                <h3>Vehículo</h3>
+                <p>Marca: {{ record.marca }}</p>
+                <p>Modelo: {{ record.modelo }}</p>
+                <p>Color: {{ record.color }}</p>
+                <p>Año: {{ record.ano }}</p>
+                <p>Estado: {{ record.estadoVehiculo }}</p>
+              </div>
+              <div class="vehicle-images">
+                <img src="{{ record.imagenUrl1 }}" alt="Foto 1" />
+                <img src="{{ record.imagenUrl2 }}" alt="Foto 2" />
+                <img src="{{ record.imagenUrl3 }}" alt="Foto 3" />
+                <img src="{{ record.imagenUrl4 }}" alt="Foto 4" />
+              </div>
+            </div>
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</div>

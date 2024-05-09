@@ -1,0 +1,39 @@
+
+.color-picker-modal {
+    /* Estilos para el modal en general, si necesitas */
+  }
+  
+  .color-grid {
+
+    padding: 10px; /* Espacio interior para que los círculos no toquen el borde */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Ajusta para que coincida con el número de colores por fila */
+    gap: 10px; /* Espacio entre los círculos de colores */
+    background: white; /* Fondo blanco para el área de la grilla de colores */
+    margin: auto; /* Centra la grilla horizontalmente */
+  }
+  
+  .color-option {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  
+  .color {
+    width: 40px; /* o el tamaño que prefieras */
+    height: 40px; /* o el tamaño que prefieras */
+    border-radius: 50%; /* para hacerlos círculos */
+    cursor: pointer;
+    border: 2px solid transparent; /* borde transparente, se cambiará en selección */
+  }
+  
+  .color.selected {
+    border-color: #000; /* borde negro para el color seleccionado */
+  }
+  
+  .accept-button {
+    /* estilos para el botón de aceptar */
+  }
+  

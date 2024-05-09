@@ -1,0 +1,84 @@
+/* search-filter.component.css */
+.search-filter {
+  width: 100%;
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-filter h1 {
+  color: #011d4d;
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+}
+
+.search-filter div {
+  margin-bottom: 20px;
+}
+
+label {
+  color: #011d4d;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+}
+
+input[type="text"],
+input[type="date"] {
+  width: calc(100% - 90px);
+  padding: 8px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #011d4d;
+  font-family: "Inter", sans-serif;
+}
+
+button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #011d4d;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+.filter-section {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+}
+
+.date-filter {
+  display: flex;
+  justify-content: left; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+}
+
+.date-section {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2%;
+  width: 30%;
+}
+.date-section-label {
+  margin-bottom: 1%;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px; /* Espacio entre el icono y el texto */
+}
+
+button i,
+button img,
+button svg {
+  margin-right: 5px; /* Espacio entre el icono y el texto */
+}

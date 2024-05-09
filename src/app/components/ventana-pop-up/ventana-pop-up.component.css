@@ -1,0 +1,142 @@
+/* --------------ESTILOS PARA LA TARJETA DE IMAGEN---------------------------- */
+.image-card {
+  cursor: pointer; /* Indicamos que es interactiva */
+  position: absolute; /* Posicionamiento absoluto */
+  right: 16%; /* Posicionamiento desde el borde derecho en % */
+  margin-top: 1%; /* Margen superior en % */
+}
+
+.image-card img {
+  width: 15.7rem; /*Tamaño de tarjeta */
+  height: auto; /* Mantenemos proporción de aspecto */
+}
+
+/* Estilos para el efecto hover sobre la tarjeta de imagen */
+.image-card:hover {
+  transform: scale(1.05); /* Efecto de escala al pasar el mouse */
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+/*-----------------ESTILOS PARA EL FONDO "GLASS"---------------*/
+/* Estilos para el fondo oscurecido con efecto de enfoque */
+.overlay {
+  width: 100%; /* Ocupamos todo el ancho del viewport */
+  height: 100%; /* Ocupamos todo el alto del viewport */
+  backdrop-filter: blur(1rem); /* Aplicamos un efecto de desenfoque con unidades relativas */
+}
+
+/*-----------------ESTILOS PARA LA VENTANA POP-UP---------------*/
+/* Estilos para el fondo oscurecido con efecto de enfoque */
+.overlay {
+  position: fixed; /* Mantenemos el fondo fijo */
+  top: 0; /* Desde la parte superior */
+  left: 0; /* Desde la parte izquierda */
+  width: 100%; /* Cobertura total */
+  height: 100%; /* Cobertura total */
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+  z-index: 1000; /* Aseguramos que esté por encima de otros elementos */
+}
+
+/* Estilos para el pop-up */
+.popup {
+  position: absolute; /* Posicionamiento absoluto para centrar */
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); /* Centrado */
+  background-color: rgba(222, 222, 222, 0.7); /* Fondo gris con opacidad */
+  padding: 1.25rem; /* Espaciado interno */
+  border-radius: 1rem; /* Bordes redondeados */
+  width: 50%; /* Ocupa la mitad del contenedor */
+  max-width: 25rem; /* Máximo ancho del pop-up */
+  box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1); /* Sombra para profundidad */
+  backdrop-filter: blur(1rem); /* Efecto de desenfoque para un estilo "glass" */
+}
+
+/* Estilos para el botón de cierre del pop-up */
+.close-button {
+  background: none; /* Fondo transparente */
+  border: none; /* Sin borde */
+  font-size: 1.3rem; /* Tamaño del texto del botón */
+  cursor: pointer; /* Indicamos que es interactivo */
+  color: white; /* Texto en color blanco para contraste */
+  transition: all 0.3s ease; /* Transición suave */
+  border-radius: 0.3125rem; /* Bordes redondeados (aproximadamente 5px) */
+  padding: 0.3125rem 0.5rem; /* Espaciado para el botón de cierre */
+  margin-top: -1.25rem; /* Ajuste para posicionar el botón de cierre */
+  margin-left: -0.625rem; /* Ajuste para posicionar el botón de cierre */
+}
+
+.close-button:hover {
+  background-color: #0c3170; /* Fondo azul en hover */
+  transform: scale(1.1); /* Efecto de escala al pasar el mouse */
+}
+
+/* Contenedor para los botones dentro del pop-up */
+.popup-buttons {
+  text-align: center; /* Centra horizontalmente los botones */
+}
+
+/* Estilos para los botones de acción en el pop-up */
+.popup-buttons button {
+  font-family: 'ABeeZee', sans-serif; /* Aplica la fuente "ABeeZee" */
+  margin: 0.625rem; /* Espacio alrededor de cada botón */
+  padding: 0.625rem 1.25rem; /* Espaciado interno */
+  background-color: #0c3170; /* Fondo azul oscuro */
+  color: white; /* Texto blanco para contraste */
+  border: none; /* Sin borde */
+  border-radius: 0.3125rem; /* Bordes redondeados */
+  cursor: pointer; /* Indicamos que es interactivo */
+  transition: background-color 0.3s ease; /* Transición suave */
+}
+
+.popup-buttons button:hover {
+  background-color: #2959ac; /* Fondo azul más claro en hover */
+}
+
+h2{
+  font-family: 'Bellota Text', sans-serif; /* Aplica la fuente "Bellota Text" */
+  text-align: center;
+}
+
+
+/* ----- RESPONSIVIDAD ----- */
+@media (max-width: 480px) {
+    .image-card {
+        right: 10%; /* Ajuste para pantallas pequeñas */
+        margin-top: 5%; /* Menor margen superior */
+    }
+
+    .image-card img {
+        width: 9.375rem; /* Tamaño para pantallas pequeñas */
+    }
+
+    .popup {
+      width: 80%; /* Aumenta el ancho para pantallas pequeñas */
+      padding: 0.5rem; /* Reducción de padding para pantallas más pequeñas */
+    }
+    .close-button {
+      font-size: 1.1rem; /* Reduce el tamaño del texto para adaptarse a pantallas pequeñas */
+    }
+  
+    .popup-buttons button {
+      padding: 0.5rem 1rem; /* Ajuste del padding para botones en pantallas pequeñas */
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px)  {
+    .image-card {
+      /* Ajustamos posición para pantallas medianas */
+        right: 8%; 
+        margin-top: 1%; 
+    }
+
+    .image-card img {
+
+        width: 10.25rem; /*tamaño para pantallas medianas */
+        
+    }
+
+    .popup {
+        padding: 1rem; /* Ajuste de padding para pantallas medianas */
+    }
+}

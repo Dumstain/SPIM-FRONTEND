@@ -1,0 +1,32 @@
+<head><link href="https://fonts.googleapis.com/css2?family=ABeeZee&display=swap" rel="stylesheet"></head>
+
+<!-- Componente de tarjeta que abre el pop-up al hacer clic -->
+<div class="image-card" role="button" (click)="togglePopup()">
+  <!-- Contenido de la tarjeta: imagen con atributos mejorados -->
+  <img
+    src="assets/icons/card.png"
+    alt="Añadir fotos"
+    aria-label="Añadir fotos"
+  />
+</div>
+
+<!-- Pop-up que aparece cuando `isPopupVisible` es verdadero -->
+<div class="overlay" *ngIf="isPopupVisible">
+  <!-- Contenedor del pop-up con estilo de enfoque tipo glass -->
+  <div class="popup">
+    <!-- Cabecera del pop-up -->
+    <div class="popup-header">
+      <!-- Botón para cerrar el pop-up, usando `togglePopup()` -->
+      <button class="close-button" (click)="togglePopup()" aria-label="Cerrar">X</button>
+    </div>
+    <!-- Título del pop-up -->
+    <h2>¿Qué desea hacer?</h2>
+    <!-- Botones de acción -->
+    <div class="popup-buttons">
+      <!-- Botón para tomar una foto -->
+      <button (click)="takePhoto()">Tomar Foto</button>
+      <!-- Botón para elegir una imagen de la galería -->
+      <button (click)="chooseFromGallery()">Elegir de Galería</button>
+    </div>
+  </div>
+</div>

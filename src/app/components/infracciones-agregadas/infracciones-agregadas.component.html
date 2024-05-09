@@ -1,0 +1,21 @@
+<div class="card-form">
+    <input type="text" [(ngModel)]="newCard.title" placeholder="Título"/>
+    <input type="text" [(ngModel)]="newCard.article" placeholder="Artículo"/>
+    <input type="text" [(ngModel)]="newCard.uma" placeholder="UMA"/>
+    <button (click)="addCard()">Agregar Tarjeta</button>
+  </div>
+  
+  <div *ngFor="let card of cards; let i = index" class="card">
+    <div class="card-header">
+      <span class="title">{{ card.title }}</span>
+      <button class="close-button" (click)="removeCard(i)">&times;</button>
+    </div>
+    <div class="card-body">
+      <p class="article">{{ card.article }}</p>
+      <p class="uma">{{ card.uma }}</p>
+      <div class="content">
+        <!-- Contenido dinámico -->
+      </div>
+    </div>
+  </div>
+  
