@@ -98,6 +98,24 @@ h2{
   text-align: center;
 }
 
+/* Boton eliminar fotos*/
+.button-close {
+  cursor: pointer;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button-close:hover {
+  background-color: darkred;
+}
+
 
 /* ----- RESPONSIVIDAD ----- */
 @media (max-width: 480px) {

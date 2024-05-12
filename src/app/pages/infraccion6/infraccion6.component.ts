@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { GeolocationService } from '../../services/geolocation.service';
+import { Component, OnInit } from '@angular/core';
+import { GeocodingService } from 'src/app/services/geocoding.service';
 
 @Component({
   selector: 'app-infraccion6',
@@ -7,48 +7,61 @@ import { GeolocationService } from '../../services/geolocation.service';
   styleUrls: ['./infraccion6.component.css']
 })
 export class Infraccion6Component {
-  address: string = '';  // Inicialmente sin dirección
+  public address: string | null = null;
+  private apiKey = 'AIzaSyBSSmZmL-_X25xY6L4I5o5cwu2fB8bwFAw'; // Sustituye con tu clave API real
 
-  constructor(private geoService: GeolocationService) {}
+  constructor(private geocodingService: GeocodingService) {}
 
-  onGetLocation() {
-    // Limpiar dirección anterior
-    this.address = 'Fetching location...';
-
-    // Solicitar permiso y obtener la ubicación
+  /*onGetLocation(): void {
+    // Coordenadas estáticas para propósitos de prueba
+    const latitude = 19.7229386;
+    const longitude = -101.1858201;
+  
+    this.displayLocation(latitude, longitude);
+  }
+  
+  private displayLocation(latitude: number, longitude: number): void {
+    this.geocodingService.getGeocode(latitude, longitude, this.apiKey).subscribe(
+      (response: any) => {
+        if (response.status === 'OK') {
+          this.address = response.results[0].formatted_address; // Asegúrate de que esta línea corresponde con la estructura de la respuesta
+        } else {
+          console.error('Geocoding failed: ' + response.status);
+        }
+      },
+      (error) => {
+        console.error('Geocoding error: ', error);
+      }
+    );
+  }*/
+  
+  onGetLocation(): void {
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const coords = position.coords;
-          this.geoService.getHumanReadableAddress(coords.latitude, coords.longitude).subscribe(
-            address => this.address = address,
-            error => {
-              console.error('Error retrieving address:', error);
-              this.address = 'No address found';
-            }
-          );
-        },
-        (error) => {
-          console.error('Error obtaining location:', error);
-          switch(error.code) {
-            case error.PERMISSION_DENIED:
-              this.address = "User denied the request for Geolocation.";
-              break;
-            case error.POSITION_UNAVAILABLE:
-              this.address = "Location information is unavailable.";
-              break;
-            case error.TIMEOUT:
-              this.address = "The request to get user location timed out.";
-              break;
-            default:
-              this.address = "An unknown error occurred.";
-              break;
-          }
-        },
-        { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 } // Opciones para alta precisión
-      );
+      navigator.geolocation.getCurrentPosition(position => {
+        this.displayLocation(position.coords.latitude, position.coords.longitude);
+      }, this.handleError, {
+        enableHighAccuracy: true,
+        timeout: 10000,
+        maximumAge: 0
+      });
     } else {
-      this.address = "Geolocation is not supported by this browser.";
+      console.error("Geolocation is not supported by this browser.");
     }
+  }
+
+  displayLocation(latitude: number, longitude: number): void {
+    this.geocodingService.getGeocode(latitude, longitude, this.apiKey).subscribe(response => {
+      if (response.status === 'OK') {
+        this.address = response.results[0].formatted_address;
+      } else {
+        console.error('Geocoding failed:', response.status);
+      }
+    }, error => {
+      console.error('Geocoding error:', error);
+    });
+  }
+
+  handleError(error: any): void {
+    console.error('Geolocation error:', error);
   }
 }

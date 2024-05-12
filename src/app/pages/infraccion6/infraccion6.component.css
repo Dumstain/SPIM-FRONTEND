@@ -71,20 +71,15 @@
     transform: scale(1.05); /* Efecto de escala en hover */
     border: 0.125rem solid #0c3170; /* Borde en hover */
   }
-  
-  #contenedor-direccion {
-    display: flex;
-    flex-direction: column; /* Disposición vertical para el contenedor de dirección */
-    align-items: flex-start; /* Alinea los elementos a la izquierda */
-    padding: 0.625rem; /* Espaciado interno */
-    background-color: #f0f0f0; /* Color de fondo del contenedor de dirección */
-    border-radius: 0.3125rem; /* Bordes redondeados */
-    margin-top: 0.625rem; /* Margen superior */
-  }
-  
+  #direccion {
+    padding: 0.2rem; /* Utilizamos 'rem' para mantener el tamaño de fuente escalable */
+    position: absolute;
+    margin-top: 10%;
+    
+}
   .linea-horizontal {
     text-align: center; /* Alineación centrada */
-    margin-top: 1rem; /* Margen entre el contenedor de dirección y la línea horizontal */
+    margin-top: -10%;
   }
   
   #imagen-linea {
@@ -113,6 +108,7 @@
       margin-bottom: 1em; /* Margen inferior para separar del contenido inferior */
     }
   }
+
   
   /*---- Responsividad para pantallas medianas (481px a 768px) ----*/
   @media (min-width: 481px) and (max-width: 768px) {
@@ -140,6 +136,11 @@
     #boton-ubicacion {
       padding: 0.2em 0.9em; /* Menos padding para pantallas pequeñas */
       font-size: 0.9rem; /* Reduce el tamaño de la fuente */
+    }
+    #direccion {
+      margin-top: 5%; /* Porcentaje del viewport height */
+      margin-left: 5%; /* Porcentaje del viewport width */
+      font-size: 0.1rem; /* Tamaño de fuente más pequeño en 'rem' */
     }
   
     #imagen-linea {
@@ -171,9 +172,13 @@
       padding: 0.25em 1.1em; /* Ajusta el padding */
       font-size: 0.95rem; /* Ajusta el tamaño de la fuente */
     }
-  
+    #direccion {
+      margin-top: 12%; /* Porcentaje del viewport height */
+      margin-left: -5%; /* Porcentaje del viewport width */
+      font-size: 0.5rem; /* Tamaño de fuente mediano en 'rem' */
+  }
     #imagen-linea {
       width: 11rem; /* Ancho ajustado para pantallas medianas */
-      margin-inline: 28%; /* Ajusta el margen horizontal */
+       /* Ajusta el margen horizontal */
     }
 }

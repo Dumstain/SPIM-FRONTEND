@@ -1,48 +1,48 @@
+/*Contenedor pdf visualizacion infraccion*/
+.summary{
+  margin-left: 15%;
+}
 
-/*Iconos y puntos  */
+
+/* Iconos y puntos */
 .content {
-    padding: 0 0px; /* Esto añadirá un espacio a los lados del contenido */
-    max-width: 960px; /* Puedes ajustar esto según el ancho máximo que prefieras para tu contenedor */
-    margin: 80px auto; /* Esto centra el contenedor y añade espacio arriba */
-  }
-.content.h1{
-  align-items: center;
+  padding: 0; /* No padding initially for better mobile view */
+  max-width: 60rem; /* Adaptable max-width based on root font size */
+  margin: 5rem auto; /* Responsive vertical spacing */
 }
 
 .icon-line-container {
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  padding: 0 100px; /* Esto agrega un espacio de 20px a ambos lados del contenedor */
+  justify-content: center;
+  padding: 0 6.25rem; /* Responsive padding */
 }
 
 .icon {
-  width: 50px; /* Tamaño de los íconos */
+  width: 3.125rem; /* Icon size adjusted with rem */
   height: auto;
-  margin: 0 1px; /* Margen opcional para asegurarse de que los íconos no toquen los puntos */
+  margin: 0 0.0625rem; /* Slight margin for separation */
 }
 
 .dots {
   flex-grow: 1;
-  margin: 0 10px; /* Espacio entre los íconos y las líneas */
+  margin: 0 0.625rem; /* Responsive spacing */
   background-image: linear-gradient(to right, 
-  transparent, 
-  transparent 14px, /* Espacio transparente antes de la línea */
-  #030303 15px, /* La línea negra */
-  transparent 20px); /* Espacio transparente después de la línea */
-background-size: 20px 100%; /* Ancho y alto de cada repetición del patrón */
-
+                                    transparent, 
+                                    transparent 0.875rem, /* Responsive transparent spacing */
+                                    #030303 0.9375rem, /* Responsive black line */
+                                    transparent 1.25rem); /* Responsive transparent spacing after line */
+  background-size: 1.25rem 100%; /* Responsive width and height of pattern */
   background-repeat: repeat-x;
-  min-height: 5px; /* Esto le da altura a tu línea de puntos */
+  min-height: 0.3125rem; /* Responsive height of the dots line */
 }
-
 
 .container {
   font-family: 'Arial', sans-serif;
   background-color: #f0f4f8;
-  padding: 20px;
-  border-radius: 10px;
-  max-width: 600px;
+  padding: 1.25rem;
+  border-radius: 0.625rem;
+  max-width: 37.5rem;
   margin: auto;
   color: #333;
 }
@@ -50,40 +50,31 @@ background-size: 20px 100%; /* Ancho y alto de cada repetición del patrón */
 .content-container {
   display: flex;
   justify-content: space-between;
-  
-}
-
-h1 {
-  color: #0044cc;
-  text-align: center;
 }
 
 .summary {
   background-color: #ffffff;
-  padding: 20px;
-  border-radius: 5px;
-  margin-bottom: 20px;
+  padding: 1.25rem;
+  border-radius: 0.3125rem;
+  margin-bottom: 1.25rem;
 }
+
 .summary, .footer {
-  flex-basis: 48%; /* Ajusta el ancho de cada columna al 48% para que se ajusten a una sola línea */
+  flex-basis: 100%; /* 100% on mobile and smaller devices */
 }
 
-h2 {
-  color: #333;
-  margin-bottom: 10px;
-}
-
-p {
-  font-size: 14px;
+h2, p {
+  margin-bottom: 0.625rem;
+  font-size: 0.875rem;
   line-height: 1.6;
   color: #666;
 }
 
 .actions {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 1.25rem;
   border-top: 1px solid #ccc;
-  padding-top: 20px;
+  padding-top: 1.25rem;
 }
 
 .button-container {
@@ -91,43 +82,55 @@ p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 200px; /* O la altura que desees para tu contenedor */
+  height: 12.5rem; /* Responsive height */
 }
+
 .footer {
   display: flex;
-  flex-direction: column; /* Stack buttons vertically */
-  align-items: center; /* Center buttons horizontally */
-  gap: 30px; /* Add space between buttons */
-  margin-top: 70px;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.875rem;
+  margin-top: 4.375rem;
 }
+
 .btn {
-  padding: 15px 60px;
+  padding: 0.9375rem 3.75rem;
   border: none;
-  border-radius: 5px;
-  margin: 5px ; 
+  border-radius: 0.3125rem;
+  margin: 0.3125rem; 
   background-color: #011D4D;
   color: white;
-  font-size: 16px;
+  font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s;
 }
+
 .btn:hover {
+  background-color: #011D4D;
   opacity: 0.8;
 }
 
 .btn-blue {
   background-color: #011D4D;
+  color: white;
 }
 
 .btn-red {
   background-color: #940A0A;
+  color: white;
 }
+
+.actions .btn {
+  padding: 0.3125rem 2.25rem;
+}
+
 @media (max-width: 768px) {
-  .content-container {
-    flex-direction: column;
+  .content-container, .summary, .footer {
+      flex-direction: column;
+      flex-basis: auto;
   }
 
-  .summary, .footer {
-    flex-basis: auto;
+  .icon-line-container {
+      padding: 0 2rem; /* Less padding on smaller screens */
   }
 }

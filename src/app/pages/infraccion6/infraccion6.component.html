@@ -29,8 +29,8 @@
         <!-- Icono de Ubicación -->
         <img id="icono-ubicacion" src="assets/images/marcador.png" alt="Icono de Ubicación" />
        <!-- Botón para Elegir Ubicación -->
-      <button id="boton-ubicacion" (click)="onGetLocation()">Elegir Ubicación</button>
-      <div *ngIf="address">{{ address }}</div>  <!-- Muestra la dirección aquí -->
+      <button id="boton-ubicacion" (click)="onGetLocation()">Obtener Ubicación</button>
+      <div id="direccion" *ngIf="address">{{ address }}</div>  <!-- Muestra la dirección aquí -->
       </div>
      
     </div> 

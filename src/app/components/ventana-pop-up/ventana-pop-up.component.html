@@ -27,6 +27,15 @@
       <button (click)="takePhoto()">Tomar Foto</button>
       <!-- Botón para elegir una imagen de la galería -->
       <button (click)="chooseFromGallery()">Elegir de Galería</button>
+      <!-- Contenedor para mostrar las imágenes seleccionadas -->
+      <div style="margin-top: 20px;"> <!-- Añadido un margen superior para separar del contenido superior -->
+     <!-- Itera sobre el array de imágenes 'images' y muestra cada una en un div con su respectivo botón para eliminar -->
+    <div *ngFor="let image of images; let i = index" style="position: relative; display: inline-block; margin: 10px;">
+    <!-- Imagen a mostrar -->
+    <img [src]="image" [alt]="'Imagen ' + (i + 1)" style="width: 150px; height: auto;">
+    <!-- Botón para eliminar la imagen actual -->
+    <button class="button-close" (click)="removeImage(i)">X</button>
+      </div>
     </div>
   </div>
 </div>
