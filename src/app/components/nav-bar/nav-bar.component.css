@@ -1,97 +1,250 @@
-/* nav-bar.component.css */
-.nav-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: rgb(1, 29, 77);
-  height: 5rem;
-  width: 100%;
+/* Estilos base, móviles pequeños */
+@media (max-width: 1080px) {
+
+  /* nav-bar.component.css */
+  .nav-bar {
+    /* Asegura que el navbar ocupe todo el ancho */
+    box-sizing: border-box;
+    /* Incluye padding y border en el cálculo del ancho */
+    margin: 0;
+    /* Elimina márgenes externos */
+    padding: 0;
+    /* Elimina el padding interno */
+    display: flex;
+    /* Usa flexbox para organizar los elementos internos */
+    justify-content: space-between;
+    /* Distribuye el espacio entre los elementos internos */
+    background-color: rgb(1, 29, 77);
+    height: 6rem;
+    width: 100%;
+  }
+
+  /*INICIA FUNCIONALIDAD DE MENÚ*/
+  .logo,
+  .title-image {
+
+    height: 6rem;
+    /* Asegura un tamaño consistente para las imágenes */
+  }
+
+  .icon {
+    cursor: pointer;
+    height: 4rem;
+    margin: 0;
+    /* Elimina márgenes que puedan desplazar el ícono */
+  }
+
+  /* nav-bar.component.css */
+  .icon:hover {
+    transform: scale(1.2);
+    /* Agrandar la imagen un 10% */
+    cursor: pointer;
+    /* Cambia el cursor a una mano para indicar que es interactivo */
+  }
+
+  /* en tu componente .css */
+  .menu-list {
+    display: none; /* Oculta el menú por defecto */
+    position: absolute;
+    top: 110%; /* Posiciona debajo del ícono */
+    left: 100%; /* Alinea el inicio del menú con el centro del ícono */
+    transform: translateX(-100%); /* Centra el menú respecto al ícono */
+    width: 13rem; /* Ajusta el ancho según el contenido, o establece un máximo */
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    z-index: 1000;
 }
 
-.logo-section, .title-section, .timer-menu-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+  .menu-list.visible {
+    display: block;
+  }
 
-.logo-section {
-  flex: 1; /* Ocupa 1/3 del espacio disponible */
-  justify-content: flex-start; /* Alinea los logos a la izquierda */
-}
+  .menu-list ul {
+    list-style: none;
+    /* Remueve los bullets de la lista */
+    margin: 0;
+    padding: 0;
+  }
 
-.timer-menu-section {
-  flex: 1; /* Ocupa 1/3 del espacio disponible */
-  justify-content: flex-end; /* Alinea el temporizador y el menú a la derecha */
-  /* Se remueve el margin-left del icono para evitar empujarlo más de la cuenta */
-}
+  .menu-list li {
+    padding: 1rem 1rem;
+    /* Añade un poco de padding para los items */
+    border-bottom: 1px solid #eee;
+    /* Línea divisora */
+    cursor: pointer;
+    /* Indica que los items son clickeables */
+  }
 
-/*INICIA FUNCIONALIDAD DE MENÚ*/
-.logo, .title-image {
-  height: 4rem; /* Asegura un tamaño consistente para las imágenes */
-}
+  .menu-list li:last-child {
+    border-bottom: none;
+    /* No necesitas línea en el último ítem */
+  }
 
-.icon {
-  height: 3rem;
-  margin-right: 1rem;
-  /* margin-right se puede mantener si quieres separación adicional del borde */
-}
+  /* Aplica estilos de hover solo al ítem 'Cerrar sesión' */
+  .menu-list li.cerrar-sesion:hover {
+    background-color: #c0c0c0;
+    /* Color de fondo al hacer hover */
+    cursor: pointer;
+    /* Cambia el cursor a una mano para indicar que es interactivo */
+  }
 
-/* nav-bar.component.css */
-.icon:hover {
-  transform: scale(1.2); /* Agrandar la imagen un 10% */
-  cursor: pointer; /* Cambia el cursor a una mano para indicar que es interactivo */
-}
+  /* Para los otros ítems, puedes especificar que el cursor sea el default */
+  .menu-list li:not(.cerrar-sesion) {
+    cursor: default;
+    /* Mantiene el cursor por defecto */
+  }
 
-/* en tu componente .css */
-.menu-list {
-  display: none;
-  font-family: 'Bellota Text';
-  display: none; /* Oculta el menú inicialmente */
-  position: absolute; /* Posicionamiento absoluto */
-  top: 9.4%; /* Coloca el menú justo debajo del botón del menú */
-  right: 0%; /* Alinea el menú a la derecha */
-  z-index: 1000; /* Asegura que el menú esté sobre otros elementos */
-  background-color: #fff; /* Fondo blanco para el menú */
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1); /* Sombra para un efecto 3D */
-  border-radius: 4px; /* Bordes redondeados */
-  overflow: hidden; /* Para que los hijos no sobresalgan de los bordes redondeados */
-  width: 16rem;
-  /* Resto de tu CSS para el menú */
-}
+  /*TERMINA FUNCIONALIDAD DE MENÚ*/
+  .banda-inf {
+    width: 100%;
+    /* Hace que la imagen ocupe el 100% del ancho de su contenedor */
+    height: 1rem;
+  }
 
-.menu-list.visible {
-  display: block; /* Se muestra cuando se añade la clase 'visible' */
+  .timer-menu-section {
+    display: flex;
+    align-items: center;
+    /* Asegura que todos los elementos estén alineados verticalmente en el centro */
+    justify-content: flex-end;
+    /* Alinea los elementos hacia la derecha de la sección */
+  }
+  .menu-icon-container {
+    position: relative; /* Permite un posicionamiento relativo para el menú */
 }
-
-.menu-list ul {
-  list-style: none; /* Remueve los bullets de la lista */
-  margin: 0;
-  padding: 0;
 }
+/*/////////////////////////////////*/
+/*/////////////////////////////////*/
+/*/////////////////////////////////*/
+/*/////////////////////////////////*/
+/*/////////////////////////////////*/
+/* Estilos para pantallas intermedias y grandes */
+@media (min-width: 1081px) {
 
-.menu-list li {
-  padding: 1rem 1rem; /* Añade un poco de padding para los items */
-  border-bottom: 1px solid #eee; /* Línea divisora */
-  cursor: pointer; /* Indica que los items son clickeables */
-}
+  /* nav-bar.component.css */
+  .nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(1, 29, 77);
+    height: 3rem;
+    width: 100%;
+  }
 
-.menu-list li:last-child {
-  border-bottom: none; /* No necesitas línea en el último ítem */
-}
+  .logo-section,
+  .title-section,
+  .timer-menu-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-/* Aplica estilos de hover solo al ítem 'Cerrar sesión' */
-.menu-list li.cerrar-sesion:hover {
-  background-color: #c0c0c0; /* Color de fondo al hacer hover */
-  cursor: pointer; /* Cambia el cursor a una mano para indicar que es interactivo */
-}
+  .logo-section {
+    flex: 1;
+    /* Ocupa 1/3 del espacio disponible */
+    justify-content: flex-start;
+    /* Alinea los logos a la izquierda */
+  }
 
-/* Para los otros ítems, puedes especificar que el cursor sea el default */
-.menu-list li:not(.cerrar-sesion) {
-  cursor: default; /* Mantiene el cursor por defecto */
-}
+  .timer-menu-section {
+    flex: 1;
+    /* Ocupa 1/3 del espacio disponible */
+    justify-content: flex-end;
+    /* Alinea el temporizador y el menú a la derecha */
+    /* Se remueve el margin-left del icono para evitar empujarlo más de la cuenta */
+  }
 
-/*TERMINA FUNCIONALIDAD DE MENÚ*/
-.banda-inf{
-  width: 100%; /* Hace que la imagen ocupe el 100% del ancho de su contenedor */
-  height: 1.3rem;
+  /*INICIA FUNCIONALIDAD DE MENÚ*/
+  .logo,
+  .title-image {
+    height: 3rem;
+    /* Asegura un tamaño consistente para las imágenes */
+  }
+
+  .icon {
+    height: 3rem;
+    margin-right: 1rem;
+    /* margin-right se puede mantener si quieres separación adicional del borde */
+  }
+
+  /* nav-bar.component.css */
+  .icon:hover {
+    transform: scale(1.2);
+    /* Agrandar la imagen un 10% */
+    cursor: pointer;
+    /* Cambia el cursor a una mano para indicar que es interactivo */
+  }
+
+  /* en tu componente .css */
+  .menu-list {
+    display: none;
+    font-family: 'Bellota Text';
+    display: none;
+    /* Oculta el menú inicialmente */
+    position: absolute;
+    /* Posicionamiento absoluto */
+    top: 9.4%;
+    /* Coloca el menú justo debajo del botón del menú */
+    right: 0%;
+    /* Alinea el menú a la derecha */
+    z-index: 1000;
+    /* Asegura que el menú esté sobre otros elementos */
+    background-color: #fff;
+    /* Fondo blanco para el menú */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    /* Sombra para un efecto 3D */
+    border-radius: 4px;
+    /* Bordes redondeados */
+    overflow: hidden;
+    /* Para que los hijos no sobresalgan de los bordes redondeados */
+    width: 16rem;
+    /* Resto de tu CSS para el menú */
+  }
+
+  .menu-list.visible {
+    display: block;
+    /* Se muestra cuando se añade la clase 'visible' */
+  }
+
+  .menu-list ul {
+    list-style: none;
+    /* Remueve los bullets de la lista */
+    margin: 0;
+    padding: 0;
+  }
+
+  .menu-list li {
+    padding: 1rem 1rem;
+    /* Añade un poco de padding para los items */
+    border-bottom: 1px solid #eee;
+    /* Línea divisora */
+    cursor: pointer;
+    /* Indica que los items son clickeables */
+  }
+
+  .menu-list li:last-child {
+    border-bottom: none;
+    /* No necesitas línea en el último ítem */
+  }
+
+  /* Aplica estilos de hover solo al ítem 'Cerrar sesión' */
+  .menu-list li.cerrar-sesion:hover {
+    background-color: #c0c0c0;
+    /* Color de fondo al hacer hover */
+    cursor: pointer;
+    /* Cambia el cursor a una mano para indicar que es interactivo */
+  }
+
+  /* Para los otros ítems, puedes especificar que el cursor sea el default */
+  .menu-list li:not(.cerrar-sesion) {
+    cursor: default;
+    /* Mantiene el cursor por defecto */
+  }
+
+  /*TERMINA FUNCIONALIDAD DE MENÚ*/
+  .banda-inf {
+    width: 100%;
+    /* Hace que la imagen ocupe el 100% del ancho de su contenedor */
+    height: 1.3rem;
+  }
 }

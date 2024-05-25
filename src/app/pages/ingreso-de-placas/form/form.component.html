@@ -2,7 +2,7 @@
     <div class="form-header">
         Búsqueda de Vehículo
     </div>
-    <form class="vehicle-search-form">
+    <form action="/busqueda-lograda" class="vehicle-search-form"> <!--AQUI SE DEFINE LA RUTA AL BUSCAR-->
         <div class="input-wrapper">
             <label class="radio-option">
                 <input type="radio" name="searchType" value="PLACAS" checked>
@@ -17,7 +17,7 @@
             <input type="text" placeholder="Ingrese identificador" class="input-field" />
         </div>
         <div class="button-wrapper">
-            <button type="submit" class="search-btn" (click)="irAPagina('perfil-vehicular')" >Buscar</button>
+            <button type="submit" class="search-btn">Buscar</button>
         </div>
     </form>
 </div>

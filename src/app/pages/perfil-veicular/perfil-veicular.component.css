@@ -1,63 +1,198 @@
-/* Estado por defecto */
-.dashboard {
-  display: flex;
-  height: 85vh;
-  align-items: center;
-  justify-content: space-around;
-  background: linear-gradient(to bottom right, #FFF 50%, #fff 50%);
-  transition: background 0.01s ease; /* Transición suave para el cambio de fondo */
+@media (max-width: 1080px) {
+
+  /* Estado por defecto */
+  .dashboard {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+    background: linear-gradient(to bottom right, #FFF 50%, #fff 50%);
+    transition: background 0.3s ease-in-out; /* Transición suave para el cambio de fondo */
+    position: relative; /* Necesario para los pseudo-elementos */
+  }
+
+  /* Hover en el panel izquierdo */
+  .dashboard.left-hover {
+    background: linear-gradient(to bottom right, #6d7b93 50%, #FFF 50%);
+  }
+
+  /* Hover en el panel derecho */
+  .dashboard.right-hover {
+    background: linear-gradient(to bottom right, #FFF 50%, #6d7b93 50%);
+  }
+
+  .left-panel,
+  .right-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 45%; /* Ajuste de ancho para que no se sobrepongan */
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Transición suave para la transformación y opacidad */
+  }
+
+  .left-panel:hover,
+  .right-panel:hover {
+    transform: translateY(-10px); /* Movimiento discreto hacia arriba */
+    opacity: 0.95; /* Ligera reducción de opacidad */
+  }
+
+  .panel-button {
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    opacity: 0.9; /* Ligera transparencia */
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* Transición suave para la opacidad y la transformación */
+    overflow: hidden; /* Para que el texto no se desborde */
+  }
+
+  .panel-button:hover {
+    opacity: 1; /* Opacidad total al hacer hover */
+    transform: translateY(-5px); /* Movimiento discreto hacia arriba */
+  }
+
+  .icon {
+    width: 20em; /* Ajuste de tamaño del icono */
+    height: 20em; /* Ajuste de tamaño del icono */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Transición suave para la transformación del icono */
+    opacity: 0; /* Inicio invisible */
+    position: relative;
+  }
+
+  /* Aumento del tamaño del icono al hacer hover */
+  .panel-button:hover .icon {
+    transform: scale(1.05); /* Aumenta el tamaño del icono al 105% */
+  }
+
+  .left-panel .panel-button {
+    padding-bottom: 30em; /* Ajuste de padding */
+  }
+
+  .right-panel .panel-button {
+    padding-top: 40em; /* Ajuste de padding */
+  }
+
+  .left-panel span,
+  .right-panel span {
+    display: block;
+    font-size: 2em;
+    font-weight: 100;
+    opacity: 0; /* Inicio invisible */
+    transform: translateY(20px); /* Desplazamiento inicial */
+    transition: opacity 0.6s ease, transform 0.6s ease; /* Transición suave para opacidad y desplazamiento */
+  }
+
+  .left-panel .icon {
+    animation: slideInLeft 0.6s forwards; /* Animación desde la izquierda */
+  }
+
+  .right-panel .icon {
+    animation: slideInRight 0.6s forwards; /* Animación desde la derecha */
+  }
+
+  .left-panel:hover span,
+  .right-panel:hover span {
+    opacity: 1; /* Aparece el texto */
+    transform: translateY(0); /* Mueve a su posición */
+  }
+
+  @keyframes slideInLeft {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
 }
 
-/* Hover en el panel izquierdo */
-.dashboard.left-hover {
-  background: linear-gradient(to bottom right, #6d7b93 50%, #FFF 50%);
-}
+/*LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL*/
+/*LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL*/
+/*LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL*/
+/*LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL*/
+/*LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL*/
+@media (min-width: 1081px) {
 
-/* Hover en el panel derecho */
-.dashboard.right-hover {
-  background: linear-gradient(to bottom right, #FFF 50%, #6d7b93 50%);
-}
+  /* Estado por defecto */
+  .dashboard {
+    display: flex;
+    height: 88.6%;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+    background: linear-gradient(to bottom right, #FFF 50%, #fff 50%);
+    transition: background 0.3s in-ease;
+    /* Transición suave para el cambio de fondo */
+  }
 
-.left-panel,
-.right-panel {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
+  /* Hover en el panel izquierdo */
+  .dashboard.left-hover {
+    background: linear-gradient(to bottom right, #6d7b93 50%, #FFF 50%);
+  }
 
-.panel-button {
-  text-align: center;
-  text-decoration: none;
-  color: #333;
-}
+  /* Hover en el panel derecho */
+  .dashboard.right-hover {
+    background: linear-gradient(to bottom right, #FFF 50%, #6d7b93 50%);
+  }
 
-.icon {
-  width: 12.5em; /* 200px/16px = 12.5em */
-  height: 12.5em; /* 200px/16px = 12.5em */
-  transition: transform 0.30s ease; /* Transición suave para la transformación del icono */
-}
+  .left-panel,
+  .right-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
 
-/* Aumento del tamaño del icono al hacer hover */
-.panel-button:hover .icon {
-  transform: scale(1.1); /* Aumenta el tamaño del icono al 110% */
-}
+  .panel-button {
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+  }
 
-.panel-button:hover span {
-  text-decoration: underline;
-}
+  .icon {
+    width: 12.5em;
+    /* 200px/16px = 12.5em */
+    height: 12.5em;
+    /* 200px/16px = 12.5em */
+    transition: transform 0.30s ease;
+    /* Transición suave para la transformación del icono */
+  }
 
-.left-panel .panel-button {
-  padding-bottom: 12.5em; /* 200px/16px = 12.5em */
-}
+  /* Aumento del tamaño del icono al hacer hover */
+  .panel-button:hover .icon {
+    transform: scale(1.1);
+    /* Aumenta el tamaño del icono al 110% */
+  }
 
-.right-panel .panel-button {
-  padding-top: 12.5em; /* 200px/16px = 12.5em */
-}
+  .left-panel .panel-button {
+    padding-bottom: 13em;
+    /* 200px/16px = 12.5em */
+  }
 
-.left-panel span,
-.right-panel span {
-  display: block;
-  font-size: 1.2em;
+  .right-panel .panel-button {
+    padding-top: 12.5em;
+    /* 200px/16px = 12.5em */
+  }
+
+  .left-panel span,
+  .right-panel span {
+    display: block;
+    font-size: 1.7em;
+  }
 }

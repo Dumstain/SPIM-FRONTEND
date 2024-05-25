@@ -1,16 +1,32 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import jsPDF from 'jspdf';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-infraccion9',
   templateUrl: './infraccion9.component.html',
   styleUrls: ['./infraccion9.component.css'],
 })
-export class Infraccion9Component {
+export class Infraccion9Component implements OnInit {
   isExpanded: boolean = false;
+  infractor: any;
+  direccion: string | null = null;
+  coche: any;
+  folio: string | null = null;
+  observaciones: string | null = null;
+  infracciones: string | null = null;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private http: HttpClient) {}
+
+  ngOnInit(): void {
+    this.infractor = JSON.parse(sessionStorage.getItem('infractor') || '{}');
+    this.direccion = sessionStorage.getItem('direccion');
+    this.coche = JSON.parse(localStorage.getItem('coche') || '{}');
+    this.folio = localStorage.getItem('folio');
+    this.observaciones = sessionStorage.getItem('observaciones');
+    this.infracciones = sessionStorage.getItem('infracciones');
+  }
 
   toggleContent(): void {
     this.isExpanded = !this.isExpanded;
@@ -24,125 +40,115 @@ export class Infraccion9Component {
     });
 
     const logo = new Image();
-    logo.src = 'assets/images/logop.png'; // Asegúrate de que el archivo es accesible y en formato PNG
+    logo.src = 'assets/images/logop.png';
     logo.onload = () => {
       doc.addImage(logo, 'PNG', 20, 10, 30, 30);
       this.addTextContent(doc);
     };
     logo.onerror = (e) => {
       console.error('Error loading logo:', e);
-      // Continúa generando el PDF sin el logo en caso de error
       this.addTextContent(doc);
     };
   }
 
   private addTextContent(doc: jsPDF) {
-  
-    doc.setFont('helvetica', 'bold'); // Cambia el estilo a negrita
-    doc.setFontSize(20);  // Tamaño de fuente estándar
-    doc.setTextColor(100);  // Color gris oscuro para texto regular
-    doc.text('POLICIA DE MORELIA ', 105, 20, { align: 'center' });
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(20);
+    doc.setTextColor(100);
+    doc.text('POLICIA DE MORELIA', 105, 20, { align: 'center' });
 
-    // Texto con tamaño mayor
-    doc.setFontSize(14);  // Aumenta el tamaño de la fuente
-    doc.setTextColor(150, 0, 0);  // Color rojo
+    doc.setFontSize(14);
+    doc.setTextColor(150, 0, 0);
     doc.text('BOLETA DE INFRACCIÓN', 105, 30, { align: 'center' });
-    doc.text('Folio ', 190, 20, { align: 'right' });
-    doc.text('NO. 092812', 200, 30, { align: 'right' });
+    doc.text('Folio', 190, 20, { align: 'right' });
+    doc.text('NO. ' + this.folio, 200, 30, { align: 'right' });
 
- 
     doc.setFontSize(10);
-    doc.setTextColor(0);  // Vuelve al color negro  
-
-    // Continúa añadiendo más contenido con el tamaño de fuente estándar
+    doc.setTextColor(0);
     doc.text('Morelia, Michoacan', 170, 40);
     doc.text('Fecha:', 150, 50);
     doc.text('Hora:', 180, 50);
- 
 
-
-    // Volver al tamaño de fuente estándar para el resto del texto
-    doc.setFontSize(10);
-    doc.setTextColor(0);  // Vuelve al color negro  
-    doc.setFont('helvetica', 'bold'); // Cambia el estilo a negrita
-    // Continúa añadiendo más contenido con el tamaño de fuente estándar
+    doc.setFont('helvetica', 'bold');
     doc.text('PROBABLE INFRACTOR', 20, 50);
     doc.text('LUGAR DE INFRACCION', 20, 70);
     doc.text('VEHICULO', 20, 90);
     doc.text('Observaciones:', 20, 210);
 
-    doc.setDrawColor(0);  // Color negro para la línea
-    doc.setLineWidth(0.5);  // Grosor de la línea
-    doc.line(20, 225, 115, 225);// Desde (x1, y1) hasta (x2, y2)     // FIRMA 1
-    doc.line(120, 225, 190, 225);// Desde (x1, y1) hasta (x2, y2)     // FIRMA 1
+    doc.setDrawColor(0);
+    doc.setLineWidth(0.5);
+    doc.line(20, 225, 115, 225);
+    doc.line(120, 225, 190, 225);
 
-    doc.text('Nombre , firma y numero de placa del Policia de Morelia ', 20, 230);
-    doc.text('Firma de notificacion al probable infractor ', 120, 230);
+    doc.text('Nombre, firma y numero de placa del Policia de Morelia', 20, 230);
+    doc.text('Firma de notificacion al probable infractor', 120, 230);
 
-
-
-    // Datos del infractor
-    doc.setFontSize(12);  // Tamaño intermedio
+    doc.setFontSize(12);
     doc.setFont('helvetica', 'normal');
-    doc.text('Nombre:', 20, 60); 
-    doc.text('Telefono:', 20, 65); 
+    doc.text('Nombre: ' + this.infractor.nombre, 20, 60);
+    doc.text('Placas: ' + this.coche.placas, 20, 65);
 
-  // Datos de la ubicacion 
-    doc.setFontSize(12);  // Tamaño intermedio
-    doc.setFont('helvetica', 'normal');
-    doc.text('Ubicacion:', 20, 75); 
+    doc.text('Ubicacion: ' + this.direccion, 20, 75);
 
+    doc.text('Marca: ' + this.coche.marca, 20, 95);
+    doc.text('Linea: ' + this.coche.linea, 60, 95);
+    doc.text('Tipo: ' + this.coche.tipo, 90, 95);
+    doc.text('Modelo: ' + this.coche.modelo, 120, 95);
+    doc.text('Color: ' + this.coche.color, 150, 95);
 
-    // Datos de Vehiculo
-    doc.setFontSize(12);  // Tamaño intermedio
-    doc.setFont('helvetica', 'normal');
-    doc.text('Marca:', 20, 95); 
-    doc.text('Linea:', 60, 95); 
-    doc.text('Tipo:', 90, 95); 
-    doc.text('Modelo:', 120, 95); 
-    doc.text('Color:', 150, 95); 
-
-
+    doc.setFont('helvetica', 'bold');
     doc.setFontSize(10);
-    doc.setTextColor(0);  // Vuelve al color negro  
-    doc.setFont('helvetica', 'bold'); // Cambia el estilo a negrita
-    // Continúa añadiendo más contenido con el tamaño de fuente estándar
-    doc.text('REGLAMENTO DE TRÁNSITO Y VIALIDAD DEL MUNICIPIO DE MORELIA MICHOACÁN', 30, 105  );
+    doc.text('REGLAMENTO DE TRÁNSITO Y VIALIDAD DEL MUNICIPIO DE MORELIA MICHOACÁN', 30, 105);
     doc.setFontSize(8);
-    doc.text('CONUDCTA Y/0 MOTIVO DE LA INFRACCION ', 20, 115  );
-    doc.text('FUNDAMENTO LEGAL', 85, 115  );
-    doc.text('ARTICULO', 85, 120  );
-    doc.text('FRACCIÓN', 103, 120  );
+    doc.text('CONUDCTA Y/0 MOTIVO DE LA INFRACCION', 20, 115);
+    doc.text('FUNDAMENTO LEGAL', 85, 115);
+    doc.text('ARTICULO', 85, 120);
+    doc.text('FRACCIÓN', 103, 120);
     doc.setFontSize(7);
-    doc.text('CAUSA INMEDIATAS QUE SE TIENEN EN', 120, 115  );
-    doc.text('CONSIDERACION PARA LA EMISION DEL ACTO', 120, 120  );
+    doc.text('CAUSA INMEDIATAS QUE SE TIENEN EN', 120, 115);
+    doc.text('CONSIDERACION PARA LA EMISION DEL ACTO', 120, 120);
     doc.setFontSize(10);
-    doc.text('SANCIÓN', 180, 115  );
-    doc.text('UMA', 185, 120  );
+    doc.text('SANCIÓN', 180, 115);
+    doc.text('UMA', 185, 120);
 
+    doc.setDrawColor(0);
+    doc.setLineWidth(0.5);
 
+    doc.line(83, 110, 83, 200);
+    doc.line(102, 117, 102, 200);
+    doc.line(119, 110, 119, 200);
+    doc.line(178, 110, 178, 200);
 
-    doc.setDrawColor(0);  // Color negro para la línea
-    doc.setLineWidth(0.5);  // Grosor de la línea
-
-    // Línea vertical a la izquierda
-
-    doc.line(83, 110, 83, 200);  // Desde (x1, y1) hasta (x2, y2)     LINEA VERTICAL-1
-    doc.line(102, 117, 102, 200);  // Desde (x1, y1) hasta (x2, y2)   LINEA VETTICAL -2
-    doc.line(119, 110, 119, 200);  // Desde (x1, y1) hasta (x2, y2)   LINEA VERTICAL -3
-
-    doc.line(178, 110, 178, 200);  // Desde (x1, y1) hasta (x2, y2)   LINEA VERTICAL -4
-
-    // lineas a horizontales
-    doc.line(20, 110, 200, 110);// Desde (x1, y1) hasta (x2, y2)     LINEA horizontal 1
-    doc.line(83, 117, 119, 117);// Desde (x1, y1) hasta (x2, y2)     LINEA horizontal 2
-    doc.line(20, 122, 200, 122);// Desde (x1, y1) hasta (x2, y2)     LINEA horizontal 3
-
+    doc.line(20, 110, 200, 110);
+    doc.line(83, 117, 119, 117);
+    doc.line(20, 122, 200, 122);
 
     doc.save('Infraccion.pdf');
+  }
+
+  guardarDocumento() {
+    const documento = {
+      detalle_id: null, // Este valor deberá ser llenado apropiadamente
+      oficial_nombre: 'Nombre del Oficial', // Cambia esto según tus necesidades
+      direccion_id: sessionStorage.getItem('direccionId') || '',
+      folio: this.folio,
+      imagen: 'URL de la imagen si es necesario', // Cambia esto según tus necesidades
+      formato_documento: 'PDF'
+    };
+
+    this.http.post('http://localhost:3000/api/documentos', documento).subscribe({
+      next: res => {
+        console.log('Documento guardado correctamente', res);
+        this.router.navigate(['ingreso-de-placas']);
+      },
+      error: err => {
+        console.error('Error al guardar el documento', err);
+      }
+    });
   }
 
   irAPagina(titulo: string): void {
     this.router.navigate([titulo]);
   }
+  
 }

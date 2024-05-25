@@ -1,111 +1,378 @@
-  @keyframes float {
+@media (max-width: 1080px) {
+    @keyframes float {
 
-      0%,
-      100% {
-          transform: translateY(0);
-      }
+        0%,
+        100% {
+            transform: translateY(0);
+        }
 
-      50% {
-          transform: translateY(-15px);
-      }
-  }
+        50% {
+            transform: translateY(-15px);
+        }
+    }
 
-  .circle {
-      /* ... otros estilos existentes ... */
-      animation: float 5s ease-in-out infinite;
-  }
+    .circle {
+        /* ... otros estilos existentes ... */
+        animation: float 5s ease-in-out infinite;
+    }
 
-  .main-content {
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      height: 100vh;
-      /* O el alto que prefieras */
-  }
+    .main-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        height: 100vh;
+        /* O el alto que prefieras */
+    }
 
-  .text-container {
-      text-align: left;
-      font-family: 'Bellota Text';
-      margin-bottom: 7rem;
-      margin-right: 8rem;
-  }
+    .text-container {
+        margin: 0%;
+        opacity: 0; /* Asegúrate de que esté inicialmente invisible */
+    }
 
-  .title {
-      font-size: 3.5rem;
-      /* Hacemos este texto más grande */
-      margin-bottom: 3rem;
-      /* Espacio entre el título y el subtítulo */
-  }
+    .circle-container {
+        display: flex;
+        align-items: center;
+    }
 
-  .subtitle {
-      font-size: 2rem;
-      /* Tamaño más pequeño para el subtítulo */
-      line-height: 1;
-  }
+    #circle1 {
+        position: relative;
+        border-radius: 50%;
+        width: 30rem;
+        /* Tamaño de los círculos */
+        height: 30rem;
+        background-color: blue;
+        /* Color de fondo de los círculos */
+        left: -9rem;
+        top: 17rem;
+        background: linear-gradient(50.08deg, #011D4D 29.06%, #A5BFEC 80.1%);
+    }
 
-  .circle-container {
-      display: flex;
-      align-items: center;
-  }
+    #circle2 {
+        position: relative;
+        border-radius: 50%;
+        width: 30rem;
+        /* Tamaño de los círculos */
+        height: 30rem;
+        background-color: rgb(255, 0, 0);
+        /* Color de fondo de los círculos */
+        left: 9rem;
+        top: -21rem;
+        background: linear-gradient(300.08deg, #011D4D 29.06%, #011D4D 29.06%, #A5BFEC 80.1%);
+        transform: rotate(105deg);
+    }
 
-  #circle1 {
-      position: absolute;
-      border-radius: 50%;
-      width: 19rem;
-      /* Tamaño de los círculos */
+    .division {
+        border: none;
+        height: .01rem;
+        /* Ajusta el grosor de la línea */
+        background-color: #000;
+        /* Color de la línea */
+        width: 100%;
+        /* Ancho de la línea */
+        margin: .1rem;
+        /* Espaciado arriba y abajo y centrado horizontalmente */
+        margin-top: 3rem;
+    }
+
+    .search-container {
+        backdrop-filter: blur(13px);
+        /* Ajusta el nivel de desenfoque como desees */
+        background-color: rgba(161, 159, 159, .1);
+        /* Asegúrate de tener algo de transparencia */
+        border-radius: 15px;
+        /* Bordes redondeados */
+        padding: 3rem;
+        /* Espaciado interno */
+        width: 28rem;
+        /* O el ancho que prefieras */
+        height: 32rem;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, .7);
+        /* Sombra más pronunciada */
+        margin: auto;
+        /* Centrar el formulario */
+        position: absolute;
+        /* Posicionamiento absoluto según la imagen */
+        top: 55%;
+        /* Ajustar según sea necesario */
+        left: 53%;
+        transform: translate(-50%, -50%);
+        /* Centrado exacto */
+        z-index: 10;
+        /* Asegúrate de que esté sobre los otros elementos */
+        overflow: hidden;
+        /* Asegúrate de que los pseudo-elementos no sobresalgan */
+    }
+
+    .search-container::before,
+    .search-container::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        pointer-events: none;
+        /* Para que no interfieran con la interacción del usuario */
+        border-radius: 15px;
+        /* Asegúrate de que coincida con el border-radius del contenedor */
+    }
+
+    /* Pseudo-elemento para el efecto de sombreado desvanecido */
+    .search-container::before {
+        background: radial-gradient(ellipse at top left,
+                rgba(51, 51, 51, 0.3) 10%,
+                transparent 50%),
+            radial-gradient(ellipse at top right,
+                rgba(0, 0, 0, 0.2) 0%,
+                transparent 100%),
+            radial-gradient(ellipse at bottom left,
+                rgba(0, 0, 0, 0.2) 0%,
+                transparent 100%),
+            radial-gradient(ellipse at bottom right,
+                rgba(225, 225, 225, 0.2) 0%,
+                transparent 90%);
+        z-index: 1;
+    }
+
+    /* Pseudo-elemento para el efecto de borde mixto */
+    .search-container::after {
+        background: linear-gradient(to left,
+                rgba(255, 255, 255, 0),
+                rgba(51, 51, 51, 0.1));
+        z-index: 2;
+        mix-blend-mode: exclusion;
+        /* Esto mezclará los colores del borde con los de abajo */
+    }
+
+    .search-container1 img {
+        width: 20rem;
+        /* O el ancho que prefieras */
+        height: 20rem;
+        position: relative;
+        /* Posicionamiento absoluto según la imagen */
+        bottom: 63rem;
+        /* Ajustar según sea necesario */
+        left: 53%;
+        transform: translate(-50%, -50%);
+        /* Centrado exacto */
+        z-index: 10;
+        /* Asegúrate de que esté sobre los otros elementos */
+    }
+
+    .search-container1 h1 {
+        width: 30rem;
+        /* O el ancho que prefieras */
+        height: 3rem;
+        position: relative;
+        /* Posicionamiento absoluto según la imagen */
+        bottom: 74rem;
+        /* Ajustar según sea necesario */
+        left: 56%;
+        transform: translate(-50%, -50%);
+        /* Centrado exacto */
+        z-index: 10;
+        /* Asegúrate de que esté sobre los otros elementos */
+        font-family: 'Bellota Text';
+        font-weight: normal;
+        font-size: 2.8rem;
+    }
+}
+
+/*_______________________________________________________________________________________________________*/
+/*_______________________________________________________________________________________________________*/
+/*_______________________________________________________________________________________________________*/
+/*_______________________________________________________________________________________________________*/
+/*_______________________________________________________________________________________________________*/
+@media (min-width: 1081px) {
+    @keyframes float {
+
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-15px);
+        }
+    }
+
+    .circle {
+        /* ... otros estilos existentes ... */
+        animation: float 5s ease-in-out infinite;
+    }
+
+    .main-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        height: 100vh;
+        /* O el alto que prefieras */
+    }
+
+    .text-container {
+        text-align: left;
+        font-family: 'Bellota Text';
+        margin-bottom: 7rem;
+        margin-right: 0rem;
+    }
+
+    .title {
+        font-size: 2rem;
+        /* Hacemos este texto más grande */
+        margin-bottom: 3rem;
+        /* Espacio entre el título y el subtítulo */
+    }
+
+    .subtitle {
+        font-size: 1.5rem;
+        /* Tamaño más pequeño para el subtítulo */
+        line-height: 1;
+    }
+
+    .circle-container {
+        display: flex;
+        align-items: center;
+    }
+
+    #circle1 {
+        position: relative;
+        border-radius: 50%;
+        width: 15rem;
+        /* Tamaño de los círculos */
+        height: 15rem;
+        background-color: blue;
+        /* Color de fondo de los círculos */
+        left: -1rem;
+        top: 8rem;
+        background: linear-gradient(50.08deg, #011D4D 29.06%, #A5BFEC 80.1%);
+    }
+
+    #circle2 {
+        position: relative;
+        border-radius: 50%;
+        width: 17rem;
+        /* Tamaño de los círculos */
+        height: 17rem;
+        background-color: rgb(255, 0, 0);
+        /* Color de fondo de los círculos */
+        left: 12rem;
+        top: -10rem;
+        background: linear-gradient(300.08deg, #011D4D 29.06%, #011D4D 29.06%, #A5BFEC 80.1%);
+        transform: rotate(105deg);
+    }
+
+    .division {
+        border: none;
+        height: .01rem;
+        /* Ajusta el grosor de la línea */
+        background-color: #000;
+        /* Color de la línea */
+        width: 100%;
+        /* Ancho de la línea */
+        margin: .1rem;
+        /* Espaciado arriba y abajo y centrado horizontalmente */
+        margin-top: 3rem;
+    }
+
+    .search-container {
+      backdrop-filter: blur(13px);
+      /* Ajusta el nivel de desenfoque como desees */
+      background-color: rgba(161, 159, 159, .1);
+      /* Asegúrate de tener algo de transparencia */
+      border-radius: 15px;
+      /* Bordes redondeados */
+      padding: 3rem;
+      /* Espaciado interno */
+      width: 15rem;
+      /* O el ancho que prefieras */
       height: 19rem;
-      background-color: blue;
-      /* Color de fondo de los círculos */
-      left: 57rem;
-      top: 29rem;
-      background: linear-gradient(50.08deg, #011D4D 29.06%, #A5BFEC 80.1%);
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, .7);
+      /* Sombra más pronunciada */
+      margin: auto;
+      /* Centrar el formulario */
+      position: relative;
+      /* Posicionamiento absoluto según la imagen */
+      top: -51.5%;
+      /* Ajustar según sea necesario */
+      left: 38.2%;
+      transform: translate(-50%, -50%);
+      /* Centrado exacto */
+      z-index: 10;
+      /* Asegúrate de que esté sobre los otros elementos */
+      overflow: hidden;
+      /* Asegúrate de que los pseudo-elementos no sobresalgan */
   }
 
-  #circle2 {
+  .search-container::before,
+  .search-container::after {
+      content: '';
       position: absolute;
-      border-radius: 50%;
-      width: 20rem;
-      /* Tamaño de los círculos */
-      height: 20rem;
-      background-color: rgb(255, 0, 0);
-      /* Color de fondo de los círculos */
-      left: 88rem;
-      top: 10rem;
-      background: linear-gradient(300.08deg, #011D4D 29.06%, #011D4D 29.06%, #A5BFEC 80.1%);
-      transform: rotate(-105deg);
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      pointer-events: none;
+      /* Para que no interfieran con la interacción del usuario */
+      border-radius: 15px;
+      /* Asegúrate de que coincida con el border-radius del contenedor */
   }
 
-  .division {
-      border: none;
-      height: .01rem;
-      /* Ajusta el grosor de la línea */
-      background-color: #000;
-      /* Color de la línea */
-      width: 100%;
-      /* Ancho de la línea */
-      margin: .1rem;
-      /* Espaciado arriba y abajo y centrado horizontalmente */
-      margin-top: 3rem;
+  /* Pseudo-elemento para el efecto de sombreado desvanecido */
+  .search-container::before {
+      background: radial-gradient(ellipse at top left,
+              rgba(51, 51, 51, 0.3) 10%,
+              transparent 50%),
+          radial-gradient(ellipse at top right,
+              rgba(0, 0, 0, 0.2) 0%,
+              transparent 100%),
+          radial-gradient(ellipse at bottom left,
+              rgba(0, 0, 0, 0.2) 0%,
+              transparent 100%),
+          radial-gradient(ellipse at bottom right,
+              rgba(225, 225, 225, 0.2) 0%,
+              transparent 90%);
+      z-index: 1;
   }
 
-  .search-container img{
-    width: 16rem; /* O el ancho que prefieras */
-    height: 16rem;
-    position: absolute; /* Posicionamiento absoluto según la imagen */
-    top: 60%; /* Ajustar según sea necesario */
-    left: 76%;
-    transform: translate(-50%, -50%); /* Centrado exacto */
-    z-index: 10; /* Asegúrate de que esté sobre los otros elementos */
+  /* Pseudo-elemento para el efecto de borde mixto */
+  .search-container::after {
+      background: linear-gradient(to left,
+              rgba(255, 255, 255, 0),
+              rgba(51, 51, 51, 0.1));
+      z-index: 2;
+      mix-blend-mode: exclusion;
+      /* Esto mezclará los colores del borde con los de abajo */
   }
-  .search-container h1{
-    width: 19rem; /* O el ancho que prefieras */
-    height: 3rem;
-    position: absolute; /* Posicionamiento absoluto según la imagen */
-    top: 40%; /* Ajustar según sea necesario */
-    left: 76.3%;
-    transform: translate(-50%, -50%); /* Centrado exacto */
-    z-index: 10; /* Asegúrate de que esté sobre los otros elementos */
-    font-family: 'Bellota Text';
-    font-weight: normal;
-    font-size: xx-large;
-  }
+    .search-container1 img {
+        width: 12rem;
+        /* O el ancho que prefieras */
+        height: 12rem;
+        position: relative;
+        /* Posicionamiento absoluto según la imagen */
+        bottom: 49rem;
+        /* Ajustar según sea necesario */
+        left: 76%;
+        transform: translate(-50%, -50%);
+        /* Centrado exacto */
+        z-index: 10;
+        /* Asegúrate de que esté sobre los otros elementos */
+    }
+
+    .search-container1 h1 {
+        width: 19rem;
+        /* O el ancho que prefieras */
+        height: 3rem;
+        position: relative;
+        /* Posicionamiento absoluto según la imagen */
+        bottom: 55rem;
+        /* Ajustar según sea necesario */
+        left: 76.3%;
+        transform: translate(-50%, -50%);
+        /* Centrado exacto */
+        z-index: 10;
+        /* Asegúrate de que esté sobre los otros elementos */
+        font-family: 'Bellota Text';
+        font-weight: normal;
+        font-size: xx-large;
+    }
+}

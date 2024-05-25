@@ -50,6 +50,7 @@
 .content-container {
   display: flex;
   justify-content: space-between;
+  margin-top: 3rem;
 }
 
 .summary {
@@ -119,7 +120,30 @@ h2, p {
   background-color: #940A0A;
   color: white;
 }
-
+@media (max-width: 1080px) {
+  .btn-blue {
+    background-color: #011D4D;
+    color: white;
+    font-size: 1.5rem;
+  }
+  
+  .btn-red {
+    background-color: #940A0A;
+    color: white;
+    font-size: 1.5rem;
+  }
+  .content-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+  }
+  .content-container h2{
+    font-size: 2rem;
+  }
+  .content-container p,h3{
+    font-size: 1rem;
+  }
+}
 .actions .btn {
   padding: 0.3125rem 2.25rem;
 }

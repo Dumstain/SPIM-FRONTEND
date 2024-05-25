@@ -2,11 +2,11 @@
 
 <div class="content">
   <div class="icon-line-container">
-    <img src="assets/icons/check.png" alt="Icono de check" class="icon" />
+    <img src="assets/icons/checking.png" alt="Icono de check" class="icon" />
     <span class="dots"></span>
-    <img src="assets/icons/check.png" alt="Icono de check" class="icon" />
+    <img src="assets/icons/checking.png" alt="Icono de check" class="icon" />
     <span class="dots"></span>
-    <img src="assets/icons/check.png" alt="Icono de check" class="icon" />
+    <img src="assets/icons/checking.png" alt="Icono de check" class="icon" />
   </div>
 
   <div class="content-container">
@@ -14,17 +14,18 @@
     <div class="summary">
       <h2>Resumen de infracción:</h2>
       <h3>PROBABLE INFRACTOR:</h3>
-      <p>Nombre:<br>Telefono:</p>
+      <p>Nombre: {{ infractor.nombre }}<br>Placas: {{ coche.placas }}</p>
       <h3>Lugar de infracción</h3>
-      <p>Ubicación:</p>
+      <p>Ubicación: {{ direccion }}</p>
        <!-- Contenido adicional oculto por defecto -->
       <div *ngIf="isExpanded">
         <h3>Vehículo</h3>
         <p>
-          Marca:<br>Linea:<br>Tipo:<br>Modelo:<br>Color:
+          Marca: {{ coche.marca }}<br>Linea: {{ coche.linea }}<br>Tipo: {{ coche.tipo }}<br>Modelo: {{ coche.modelo }}<br>Color: {{ coche.color }}
         </p>
         <h3>Infracciones</h3>
-        <p>Agregar Infracciones y observaciones</p>
+        <p>{{ infracciones }}</p>
+        <p>Observaciones: {{ observaciones }}</p>
       </div>
       <div class="actions">
         <button class="btn btn-blue" (click)="toggleContent()">{{ isExpanded ? 'Ver menos' : 'Ver más' }}</button>
@@ -33,7 +34,7 @@
     <div class="footer">
       <button class="btn btn-blue" (click)="downloadPdf()">Imprimir</button>
 
-      <button class="btn btn-red" (click)="irAPagina('ingreso-de-placas')">Finalizar</button>
+      <button class="btn btn-red" (click)="guardarDocumento()">Finalizar</button>
     </div>
   </div>
 </div>

@@ -98,7 +98,7 @@ h2{
   text-align: center;
 }
 
-/* Boton eliminar fotos*/
+/* Boton eliminar fotos */
 .button-close {
   cursor: pointer;
   background-color: red;
@@ -116,45 +116,42 @@ h2{
   background-color: darkred;
 }
 
-
 /* ----- RESPONSIVIDAD ----- */
 @media (max-width: 480px) {
-    .image-card {
-        right: 10%; /* Ajuste para pantallas pequeñas */
-        margin-top: 5%; /* Menor margen superior */
-    }
+  .image-card {
+    right: 10%; /* Ajuste para pantallas pequeñas */
+    margin-top: 5%; /* Menor margen superior */
+  }
 
-    .image-card img {
-        width: 9.375rem; /* Tamaño para pantallas pequeñas */
-    }
+  .image-card img {
+    width: 9.375rem; /* Tamaño para pantallas pequeñas */
+  }
 
-    .popup {
-      width: 80%; /* Aumenta el ancho para pantallas pequeñas */
-      padding: 0.5rem; /* Reducción de padding para pantallas más pequeñas */
-    }
-    .close-button {
-      font-size: 1.1rem; /* Reduce el tamaño del texto para adaptarse a pantallas pequeñas */
-    }
-  
-    .popup-buttons button {
-      padding: 0.5rem 1rem; /* Ajuste del padding para botones en pantallas pequeñas */
-    }
+  .popup {
+    width: 80%; /* Aumenta el ancho para pantallas pequeñas */
+    padding: 0.5rem; /* Reducción de padding para pantallas más pequeñas */
+  }
+  .close-button {
+    font-size: 1.1rem; /* Reduce el tamaño del texto para adaptarse a pantallas pequeñas */
+  }
+
+  .popup-buttons button {
+    padding: 0.5rem 1rem; /* Ajuste del padding para botones en pantallas pequeñas */
+  }
 }
 
 @media (min-width: 481px) and (max-width: 768px)  {
-    .image-card {
-      /* Ajustamos posición para pantallas medianas */
-        right: 8%; 
-        margin-top: 1%; 
-    }
+  .image-card {
+    /* Ajustamos posición para pantallas medianas */
+    right: 8%; 
+    margin-top: 1%; 
+  }
 
-    .image-card img {
+  .image-card img {
+    width: 10.25rem; /*tamaño para pantallas medianas */
+  }
 
-        width: 10.25rem; /*tamaño para pantallas medianas */
-        
-    }
-
-    .popup {
-        padding: 1rem; /* Ajuste de padding para pantallas medianas */
-    }
+  .popup {
+    padding: 1rem; /* Ajuste de padding para pantallas medianas */
+  }
 }

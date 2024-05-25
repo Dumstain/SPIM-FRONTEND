@@ -3,10 +3,16 @@
   position: fixed; /* Manténemos el botón fijo en la pantalla */
   left:0; /* Ubicación en el lado izquierdo */
   bottom: 1.25rem; /* Usamos  'bottom' para mantener una posición constante */
- 
-  
+  margin-bottom: 8rem;
 }
-
+@media (max-width: 1080px) {
+  .boton {
+    position: fixed; /* Manténemos el botón fijo en la pantalla */
+    left:0; /* Ubicación en el lado izquierdo */
+    bottom: 1.25rem; /* Usamos  'bottom' para mantener una posición constante */
+    margin-bottom: 50rem;
+  }
+}
 .boton img {
   /* Tamaño del ícono del botón */
   width: 6.5rem; /* Ancho */

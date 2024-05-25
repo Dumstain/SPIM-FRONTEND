@@ -79,13 +79,15 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 0 100px; /* Esto agrega un espacio de 20px a ambos lados del contenedor */
+  padding: 0 0rem; /* Esto agrega un espacio de 20px a ambos lados del contenedor */
+  margin-top: -4rem;
+  margin-left: -1rem;
 }
 
 .icon {
-  width: 50px; /* Tamaño de los íconos */
-  height: auto;
-  margin: 0 1px; /* Margen opcional para asegurarse de que los íconos no toquen los puntos */
+  width: 3.5rem;
+    height: auto;
+    margin: 0 0.1rem;
 }
 
 .dots {
@@ -121,15 +123,6 @@ background-size: 20px 100%; /* Ancho y alto de cada repetición del patrón */
     width: 100%;
     margin-bottom: 30px;
   }
-  @media (max-width: 768px) {
-    .vehicle-form {
-      flex-direction: column; /* Cambia a columna en pantallas pequeñas */
-    }
-    .form-column {
-      width: 100%; /* Las columnas ocupan el ancho completo en pantallas pequeñas */
-    }
-  }
-
 .Movilia {
     float: center; /* Alinea el logo hacia la derecha */
     margin-left: 35%; /* Espacio adicional a la derecha para separar del resto de los elementos */
@@ -343,7 +336,34 @@ h2 {
 }
 
 
+@media (max-width: 1080px) {
+  .icon-line-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0rem 10rem;
+    margin-top: -4rem;
+  }
 
+  .icon {
+    width: 5rem;
+    height: auto;
+    margin: 0 0.1rem;
+  }
+
+  .dots {
+    flex-grow: 1;
+    margin: 0 0.6rem;
+    background-image: linear-gradient(to right,
+        transparent,
+        transparent 0.875rem,
+        #030303 0.9375rem,
+        transparent 1.25rem);
+    background-size: 1.25rem 100%;
+    background-repeat: repeat-x;
+    min-height: 0.3125rem;
+  }
+}
 
 
 

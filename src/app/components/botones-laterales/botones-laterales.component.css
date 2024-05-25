@@ -1,113 +1,88 @@
 /*----- BOTÓN LADO IZQUIERDO/RETROCEDER -----*/
 .boton {
-    position: fixed; /* Manténemos el botón fijo en la pantalla */
-    left:0; /* Ubicación en el lado izquierdo */
-    bottom: 1.25rem; /* Usamos  'bottom' para mantener una posición constante */
-   
-    
+  position: fixed; /* Manténemos el botón fijo en la pantalla */
+  left: 0.5rem; /* Ubicación en el lado izquierdo, más cerca del borde */
+  top: 50%; /* Centra verticalmente */
+  transform: translateY(-50%); /* Ajuste fino para centrar verticalmente */
+  opacity: 0.8; /* Baja un poco la opacidad */
+}
+
+.boton img {
+  /* Tamaño del ícono del botón */
+  width: 3rem; /* Ancho ajustado para pantallas pequeñas */
+  height: auto; /* Mantiene la proporción de aspecto */
+  cursor: pointer; /* Indicamos que es interactivo */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Transición suave para efecto hover y opacidad */
+}
+
+.boton img:hover {
+  transform: scale(1.1); /* Efecto de escala al pasar el mouse */
+  opacity: 1; /* Opacidad completa al pasar el mouse */
+}
+
+/*----- BOTÓN LADO DERECHO/CONTINUAR -----*/
+.Boton {
+  position: fixed; /* Manténemos el botón fijo en la pantalla */
+  right: 0.5rem; /* Ubicación en el lado derecho, más cerca del borde */
+  top: 50%; /* Centra verticalmente */
+  transform: translateY(-50%); /* Ajuste fino para centrar verticalmente */
+  opacity: 0.8; /* Baja un poco la opacidad */
+}
+
+.Boton img {
+  /* Tamaño del ícono del botón */
+  width: 3rem; /* Ancho ajustado para pantallas pequeñas */
+  height: auto; /* Mantiene la proporción de aspecto */
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Transición suave para efecto hover y opacidad */
+}
+
+.Boton img:hover {
+  transform: scale(1.1); /* Efecto de escala al pasar el mouse */
+  opacity: 1; /* Opacidad completa al pasar el mouse */
+}
+
+/* ----- RESPONSIVIDAD ----- */
+@media (min-width: 481px) and (max-width: 768px) {
+  .boton {
+    left: 0rem; /* Botón pegado más cerca del borde izquierdo */
+    top: 50%; /* Centra verticalmente */
+    transform: translateY(-50%); /* Ajuste fino para centrar verticalmente */
   }
-  
+
   .boton img {
-    /* Tamaño del ícono del botón */
-    width: 6.5rem; /* Ancho */
-    height: auto; /* Mantiene la proporción de aspecto */
-    cursor: pointer; /* Indicamos que es interactivo */
-    transition: transform 0.3s ease;/* Transición suave para efecto hover */
+    width: 3rem; /* Ajuste de tamaño para pantallas medianas */
   }
-  
-  .boton img:hover {
-    transform: scale(1.1);/* Efecto de escala al pasar el mouse */
-  }
-  
-  /*----- BOTÓN LADO DERECHO/CONTINUAR -----*/
+
   .Boton {
-    position: fixed; /* Manténemos el botón fijo en la pantalla */
-    right: 0; /* Ubicación en el lado derecho */
-    bottom: 1.25rem; /* Usamos  'bottom' para mantener una posición constante */
-    
-
+    right: 0rem; /* Botón pegado más cerca del borde derecho */
+    top: 50%; /* Centra verticalmente */
+    transform: translateY(-50%); /* Ajuste fino para centrar verticalmente */
   }
-  
+
   .Boton img {
-    /* Tamaño del ícono del botón */
-    width: 5.5rem; 
-    height: auto; /* Mantiene la proporción de aspecto */
-    cursor: pointer;
-    margin-top: -2.6875rem; /* Ajustamos la posición para alinearse con el otro botón */
-    transition: transform 0.3s ease; /* Transición suave para efecto hover */
+    width: 3rem; /* Ajuste de tamaño para pantallas medianas */
   }
-  
-  .Boton img:hover {
-    transform: scale(1.1); /* Efecto de escala al pasar el mouse */
-  }
-  
-  /* ----- RESPONSIVIDAD ----- */
-    @media (max-width: 480px) {
-      .boton {
-        position: fixed;
-        right: 0; /* Botón pegado al borde derecho */
-        bottom: 1rem; /* Más espacio desde la parte inferior para pantallas pequeñas */
-        
-        
-      }
+}
 
-      .boton img {
-          width: 6.7rem; /* Ajuste de tamaño para pantallas más pequeñas */
-          
-      }
-
-      .Boton {
-          bottom: 0.5rem; /* Menos espacio para pantallas más pequeñas */
-      }
-
-      .Boton img {
-          width: 5.5rem; /* Ajuste de tamaño para pantallas más pequeñas */
-         
-      }
+@media (min-width: 769px) {
+  .boton {
+    left: 0rem; /* Botón pegado más cerca del borde izquierdo */
+    top: 50%; /* Centra verticalmente */
+    transform: translateY(-50%); /* Ajuste fino para centrar verticalmente */
   }
 
-  @media (min-width: 481px) and (max-width: 768px) {
-      .boton {
-        position: fixed;
-        right: 0; /* Botón pegado al borde derecho */
-        bottom: 8rem; /* Ajuste de espacio para pantallas medianas */
-          
-      }
-
-      .boton img {
-          width: 2.9rem; /* Ajuste de tamaño para pantallas medianas */
-      }
-
-      .Boton {
-          bottom: 1rem; /* Ajuste de espacio para pantallas medianas */
-      }
-
-      .Boton img {
-        position: fixed;
-        right: 0; /* Botón pegado al borde derecho */
-        bottom: 8rem; /* Ajuste de espacio para pantallas medianas */
-        width: 2.5rem; /* Ajuste de tamaño para pantallas medianas */
-        
-          
-      }
+  .boton img {
+    width: 4rem; /* Tamaño del botón para pantallas grandes */
   }
 
-  @media (min-width: 769px) {
-      .boton {
-          bottom: 1.25rem; /* Ajuste de espacio para pantallas grandes */
-      }
-
-      .boton img {
-          width: 6.5rem; /* Tamaño del botón para pantallas grandes */
-       
-      }
-
-      .Boton {
-          bottom: 1.25rem; /* Ajuste de espacio para pantallas grandes */
-         
-      }
-
-      .Boton img {
-          width: 5.3rem; /* Tamaño del botón para pantallas grandes */
-      }
+  .Boton {
+    right: 0rem; /* Botón pegado más cerca del borde derecho */
+    top: 50%; /* Centra verticalmente */
+    transform: translateY(-50%); /* Ajuste fino para centrar verticalmente */
   }
+
+  .Boton img {
+    width: 4rem; /* Tamaño del botón para pantallas grandes */
+  }
+}
