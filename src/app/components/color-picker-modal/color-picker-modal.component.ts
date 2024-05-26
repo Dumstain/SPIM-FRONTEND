@@ -7,27 +7,26 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class ColorPickerModalComponent {
   colors: string[] = [
-    '#767778',
-    '#1024bd',
-    ' #07ced9 ',
-    ' #352f2c ',
-    ' #acb5b3 ',
-    ' #06d70a ',
-    ' #a3b4b4',
-    ' #b20bcb ',
-    ' #cc0f28 ',
-    '#cbdae4 ',
-    ' #b3b404',
-    '#b61635 ',
-    ' #6a108f ',
-    ' #2d4275 ',
-    ' #088081 ',
-    ' #c48d15 ',
-    ' #ac5f34',
-    ' #593312 ',
-    ' #8b9108 ',
-    ' #585451 ',
-    // ... añade más colores según necesites
+    '#FFFFFF', // Blanco
+    '#000000', // Negro
+    '#808080', // Gris
+    '#C0C0C0', // Plata
+    '#FF0000', // Rojo
+    '#0000FF', // Azul
+    '#008000', // Verde
+    '#FFFF00', // Amarillo
+    '#A52A2A', // Marrón
+    '#FFA500', // Naranja
+    '#000080', // Azul Marino
+    '#F5F5DC', // Beige
+    '#EE82EE', // Violeta
+    '#FFC0CB', // Rosa
+    '#FFD700', // Dorado
+    '#B87333', // Cobre
+    '#808000', // Oliva
+    '#40E0D0', // Turquesa
+    '#800020', // Burgundy
+    '#006400'  // Verde Oscuro
   ];
   selectedColorIndex: number | null = null;
 

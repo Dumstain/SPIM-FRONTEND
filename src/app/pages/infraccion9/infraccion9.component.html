@@ -14,17 +14,22 @@
     <div class="summary">
       <h2>Resumen de infracción:</h2>
       <h3>PROBABLE INFRACTOR:</h3>
-      <p>Nombre:<br>Telefono:</p>
+      <p>Nombre: {{ infractor.nombre }}<br>Placas: {{ coche.placas }}</p>
       <h3>Lugar de infracción</h3>
-      <p>Ubicación:</p>
-       <!-- Contenido adicional oculto por defecto -->
+      <p>Ubicación: {{ direccion.detalles }}</p>
       <div *ngIf="isExpanded">
         <h3>Vehículo</h3>
         <p>
-          Marca:<br>Linea:<br>Tipo:<br>Modelo:<br>Color:
+          Marca: {{ coche.marca }}<br>Linea: {{ coche.linea }}<br>Tipo: {{ cocheTipo }}<br>Modelo: {{ coche.modelo }}<br>Color: {{ coche.color }}<br>Estado de Placas: {{ coche.estado }}
         </p>
         <h3>Infracciones</h3>
-        <p>Agregar Infracciones y observaciones</p>
+        <p *ngFor="let infraccion of infracciones">
+          Artículo: {{ infraccion.articulo }}<br>
+          Fracción: {{ infraccion.fraccion }}<br>
+          Inciso: {{ infraccion.inciso }}<br>
+          Motivo: {{ infraccion.motivo }}<br>
+          Observaciones: {{ infraccion.observaciones }}<br><br>
+        </p>
       </div>
       <div class="actions">
         <button class="btn btn-blue" (click)="toggleContent()">{{ isExpanded ? 'Ver menos' : 'Ver más' }}</button>
@@ -32,8 +37,7 @@
     </div>
     <div class="footer">
       <button class="btn btn-blue" (click)="downloadPdf()">Imprimir</button>
-
-      <button class="btn btn-red" (click)="irAPagina('ingreso-de-placas')">Finalizar</button>
+      <button class="btn btn-red" (click)="guardarDocumento()">Finalizar</button>
     </div>
   </div>
 </div>

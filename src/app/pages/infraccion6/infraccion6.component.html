@@ -1,3 +1,4 @@
+<!-- infraccion6.component.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,51 +7,43 @@
   <link rel="stylesheet" href="infraccion6.component.css">
   <link href="https://fonts.googleapis.com/css2?family=Bellota+Text:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=ABeeZee&display=swap" rel="stylesheet">
-
   <title>Infraccion6</title>
 </head>
 <body>
   <!--CABECERA -->
-  <div class="toolbar"  role="banner">
-  <app-nav-bar-infraccion8></app-nav-bar-infraccion8>
+  <div class="toolbar" role="banner">
+    <app-nav-bar></app-nav-bar>
   </div>
   <div class="contenedor-inicio">
     <app-icon-line-container></app-icon-line-container>
     <h2 id="icon-line-letrero">¡Sólo un paso más!</h2>
   </div>
   <!-- Contenedor principal para los dos contenedores del contenido del centro -->
-<div class="contenedor-principal">
-  <!-- Contenedor de la izquierda -->
-  <div class="contenedor-izquierda">
-    <h2 id="contenedor-izquierda-letrero">Ingresa los siguientes datos:</h2>
-    <!--Elegir Ubicación-->
-    <div class="ubicacion">
-      <div class="barra-ubicacion">
-        <!-- Icono de Ubicación -->
-        <img id="icono-ubicacion" src="assets/images/marcador.png" alt="Icono de Ubicación" />
-       <!-- Botón para Elegir Ubicación -->
-      <button id="boton-ubicacion" (click)="onGetLocation()">Obtener Ubicación</button>
-      <div id="direccion" *ngIf="address">{{ address }}</div>  <!-- Muestra la dirección aquí -->
+  <div class="contenedor-principal">
+    <!-- Contenedor de la izquierda -->
+    <div class="contenedor-izquierda">
+      <h2 id="contenedor-izquierda-letrero">Ingresa los siguientes datos:</h2>
+      <!-- Elegir Ubicación -->
+      <div class="ubicacion">
+        <div class="barra-ubicacion">
+          <!-- Icono de Ubicación -->
+          <img id="icono-ubicacion" src="assets/images/marcador.png" alt="Icono de Ubicación" />
+          <!-- Botón para Elegir Ubicación -->
+          <button id="boton-ubicacion" (click)="onGetLocation()" [disabled]="locationObtained">Obtener Ubicación</button>
+          <div id="direccion" *ngIf="address">{{ address }}</div>  <!-- Muestra la dirección aquí -->
+        </div>
       </div>
-     
-    </div> 
-
-<div class="linea-horizontal">
-  <!-- Línea Horizontal -->
-  <img id="imagen-linea" src="assets/images/lineaH.png" alt="Línea Horizontal" />
+      <div class="linea-horizontal">
+        <!-- Línea Horizontal -->
+        <img id="imagen-linea" src="assets/images/lineaH.png" alt="Línea Horizontal" />
+      </div>
+      <app-botones-laterales></app-botones-laterales>
     </div>
-    <app-botones-laterales></app-botones-laterales>
-    
+    <!-- Contenedor de la derecha -->
+    <div class="contenedor-derecha">
+      <h2 id="contenedor-derecha-letrero">Agregar fotos</h2>
+      <app-ventana-pop-up></app-ventana-pop-up>
+    </div>
   </div>
-  
-  <!-- Contenedor de la derecha -->
-  <div class="contenedor-derecha" >
-    <h2 id="contenedor-derecha-letrero">Agregar fotos</h2>
-    <app-ventana-pop-up></app-ventana-pop-up>
-  </div>
-</div>
-
-
 </body>
 </html>
-

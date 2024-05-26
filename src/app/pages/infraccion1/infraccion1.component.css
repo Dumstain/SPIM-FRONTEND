@@ -115,15 +115,26 @@ h1 {
 
 /* Estilos para las opciones de colores individuales */
 .color-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
   width: 2.5rem; /* 40px convertido a rem */
   height: 2.5rem; /* 40px convertido a rem */
   border-radius: 50%; /* Hace que los botones sean completamente redondos */
-  cursor: pointer;
-  border: 2px solid transparent; /* Borde inicialmente transparente */
+  border: 3px solid black; /* Borde delgado negro */
+  transition: border 0.3s;
 }
-  
-.color.selected {
-  border-color: #000; /* Borde negro cuando el color está seleccionado */
+
+.color-option span {
+  margin-top: 0.5rem; /* Espacio entre la bola de color y el nombre */
+  font-size: 0.875rem; /* Tamaño de fuente pequeño */
+  text-align: center;
+}
+
+.color-option.selected {
+  border: 3px solid black; /* Borde más grueso cuando el color está seleccionado */
 }
 
 .selected-color-display {
@@ -131,6 +142,7 @@ h1 {
   width: 2.5rem; /* 40px convertido a rem */
   height: 2.5rem; /* 40px convertido a rem */
   border-radius: 50%; /* Hace que el display de color seleccionado sea redondo */
+  border: 3px solid rgba(0, 0, 0, 0.11); /* borde negro delgado por defecto */
   margin-left: 0.625rem; /* 10px convertido a rem */
 }
 

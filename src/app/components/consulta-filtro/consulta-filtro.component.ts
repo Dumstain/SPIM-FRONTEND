@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HistorialJuezService, HistorialItem } from '../../services/historial-juez.service';
 
 @Component({
   selector: 'app-consulta-filtro',
@@ -6,16 +7,41 @@ import { Component } from '@angular/core';
   styleUrls: ['./consulta-filtro.component.css']
 })
 export class ConsultaFiltroComponent {
-  constructor() { }
+  identifier: string = '';
+  startDate: string = '';
+  endDate: string = '';
+  historialItems: HistorialItem[] = [];
+
+  constructor(private historialJuezService: HistorialJuezService) { }
 
   onSearchDocument() {
-    console.log('Buscando documento...');
-    // Aquí se implementaría la lógica para buscar el documento
+    console.log('Buscando documento:', this.identifier);
+    this.historialJuezService.getHistorial(this.identifier).subscribe({
+      next: (data) => {
+        console.log('Infracciones encontradas:', data);
+        this.historialItems = data;
+        this.historialJuezService.updateHistorial(data);
+      },
+      error: (err) => {
+        console.error('Error durante la búsqueda de documento:', err);
+      }
+    });
   }
 
   onSearchByDate() {
-    console.log('Buscando por fecha...');
-    // Aquí se implementaría la lógica para buscar por fechas
-  }
+    const adjustedStartDate = this.startDate ? `${this.startDate}T00:00:00` : '';
+    const adjustedEndDate = this.endDate ? `${this.endDate}T23:59:59` : '';
 
+    console.log('Buscando por fecha:', adjustedStartDate, adjustedEndDate);
+    this.historialJuezService.getHistorial(this.identifier, adjustedStartDate, adjustedEndDate).subscribe({
+      next: (data) => {
+        console.log('Infracciones encontradas:', data);
+        this.historialItems = data;
+        this.historialJuezService.updateHistorial(data);
+      },
+      error: (err) => {
+        console.error('Error durante la búsqueda por fecha:', err);
+      }
+    });
+  }
 }

@@ -14,38 +14,44 @@
     <tbody>
       <ng-container *ngFor="let record of records; index as i">
         <tr (click)="toggleDetail(i)">
-          <td>{{ record.clave }}</td>
-          <td>{{ record.oficial }}</td>
-          <td>{{ record.fecha }}</td>
-          <td>{{ record.placaVehicular }}</td>
-          <td>{{ record.tipoDeLicencia }}</td>
+          <td>{{ record.agrupacion_id }}</td>
+          <td>{{ record.infractor_nombre }}</td>
+          <td>{{ record.fecha_procesada }}</td>
+          <td>{{ record.placas }}</td>
+          <td>{{ record.tipos }}</td>
           <td>{{ record.estado }}</td>
           <td>-</td>
         </tr>
-        <tr *ngIf="expandedIndex === i" class="details" class="info">
-          <td colspan="7" >
+        <tr *ngIf="expandedIndex === i" class="details">
+          <td colspan="7">
             <div class="detail-layout">
               <div class="detail-info">
                 <h3>Detalle de la infracción</h3>
-                <p>Folio del ayuntamiento: {{ record.folio }}</p>
-                <p>Artículo de la infracción: {{ record.articulo }}</p>
-                <p>Dirección de la infracción: {{ record.direccion }}</p>
-                <p>Nombre del infractor: {{ record.infractor }}</p>
-                <p>Motivo de la infracción: {{ record.motivo }}</p>
+                <div *ngFor="let infraccion of record.infracciones">
+                  <p>Folio del ayuntamiento: {{ record.folio }}</p>
+                  <p>Artículo de la infracción: {{ infraccion.articulo }}</p>
+                  <p>Fracción de la infracción: {{ infraccion.fraccion }}</p>
+                  <p>Inciso de la infracción: {{ infraccion.inciso }}</p>
+                  <p>Motivo de la infracción: {{ infraccion.motivo }}</p>
+                  <p>Observaciones: {{ infraccion.observaciones }}</p>
+                </div>
               </div>
               <div class="vehicle-info">
                 <h3>Vehículo</h3>
                 <p>Marca: {{ record.marca }}</p>
                 <p>Modelo: {{ record.modelo }}</p>
+                <p>Tipo: {{ record.tipos }}</p>
+                <p>Linea: {{ record.linea }}</p>
                 <p>Color: {{ record.color }}</p>
-                <p>Año: {{ record.ano }}</p>
-                <p>Estado: {{ record.estadoVehiculo }}</p>
+                <p>Placas: {{ record.placas }}</p>
+                <p>Estado: {{ record.estado }}</p>
+
               </div>
               <div class="vehicle-images">
-                <img src="{{ record.imagenUrl1 }}" alt="Foto 1" />
-                <img src="{{ record.imagenUrl2 }}" alt="Foto 2" />
-                <img src="{{ record.imagenUrl3 }}" alt="Foto 3" />
-                <img src="{{ record.imagenUrl4 }}" alt="Foto 4" />
+                <img *ngIf="record.imagenes.foto1" [src]="getImageUrl(record.imagenes.foto1)" alt="Foto 1" (click)="openModal(getImageUrl(record.imagenes.foto1))" />
+                <img *ngIf="record.imagenes.foto2" [src]="getImageUrl(record.imagenes.foto2)" alt="Foto 2" (click)="openModal(getImageUrl(record.imagenes.foto2))" />
+                <img *ngIf="record.imagenes.foto3" [src]="getImageUrl(record.imagenes.foto3)" alt="Foto 3" (click)="openModal(getImageUrl(record.imagenes.foto3))" />
+                <img *ngIf="record.imagenes.foto4" [src]="getImageUrl(record.imagenes.foto4)" alt="Foto 4" (click)="openModal(getImageUrl(record.imagenes.foto4))" />
               </div>
             </div>
           </td>
@@ -53,4 +59,10 @@
       </ng-container>
     </tbody>
   </table>
+</div>
+<div id="imageModal" class="modal">
+  <span class="close" (click)="closeModal()">&times;</span>
+  <div class="modal-content">
+    <img *ngIf="selectedImage" [src]="selectedImage" alt="Imagen Grande">
+  </div>
 </div>

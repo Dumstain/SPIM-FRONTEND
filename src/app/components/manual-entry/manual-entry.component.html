@@ -1,0 +1,42 @@
+<div class="manual-entry">
+  <form [formGroup]="manualEntryForm" (ngSubmit)="onSubmit()">
+    <div class="form-item">
+      <label for="folio">Folio</label>
+      <input type="text" formControlName="folio" [value]="folio" readonly>
+    </div>
+    <div class="form-item">
+      <label for="article">Artículo</label>
+      <select formControlName="article" (change)="onArticleChange()">
+        <option value="">Seleccione un Artículo...</option>
+        <option *ngFor="let article of availableArticles" [value]="article.articulo_id">{{ article.nombre }}</option>
+      </select>
+    </div>
+    <div class="form-item">
+      <label for="fraction">Fracción</label>
+      <select formControlName="fraction" (change)="onFractionChange()">
+        <option value="">Seleccione una Fracción...</option>
+        <option *ngFor="let fraction of availableFractions" [value]="fraction.fraccion_id">{{ fraction.nombre }}</option>
+      </select>
+    </div>
+    <div class="form-item">
+      <label for="incise">Inciso</label>
+      <select formControlName="incise" (change)="onInciseChange()">
+        <option value="">Seleccione un Inciso...</option>
+        <option *ngFor="let incise of availableIncises" [value]="incise.inciso_id">{{ incise.descripcion }}</option>
+      </select>
+    </div>
+    <div class="form-item">
+      <label for="reason">Motivo</label>
+      <input type="text" formControlName="reason" placeholder="Motivo" readonly>
+    </div>
+    <div class="form-item">
+      <label for="observaciones">Observaciones</label>
+      <textarea formControlName="observaciones" placeholder="Ingrese observaciones adicionales..."></textarea>
+    </div>
+    <div class="form-item">
+      <label for="sector">Sector</label>
+      <input type="text" formControlName="sector" placeholder="Ingrese el sector">
+    </div>
+    <button type="submit" [disabled]="!manualEntryForm.valid">Registrar Infracción</button>
+  </form>
+</div>

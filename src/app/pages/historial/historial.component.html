@@ -4,49 +4,54 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Historial</title>
+  <link rel="stylesheet" href="historial.component.css">
 </head>
 <body>
   <header class="historial-header">
-    <!--Especifico que sí quiero mostrar el count-down-timer -->
     <app-nav-bar></app-nav-bar>
   </header>
 
   <main class="content">
     <h2>HISTORIAL</h2>
-    <!-- Lista de búsquedas -->
-    <section class="search-history">
-       <div class="historial-list">
-  <div *ngFor="let item of historialItems" class="historial-item">
-    <div class="icon-section-left">
-      <img src="assets/icons/icono-celda.png" alt="" class="icono-celda-izquierda">
+    <div class="historial-container">
+      <div *ngIf="historialItems.length > 0; else noDataTemplate">
+        <div *ngFor="let agrupacion of historialItems" class="agrupacion-item">
+          <h3>Infracciones </h3>
+          <p>Folio: {{ agrupacion.folio }}</p>
+          <p>Fecha Procesada: {{ agrupacion.fecha_procesada }}</p>
+          <p>Infractor: {{ agrupacion.infractor_nombre }}</p>
+          <p>Vehículo: {{ agrupacion.marca }} {{ agrupacion.linea }} {{ agrupacion.modelo }} {{ agrupacion.tipos }}</p>
+          <p>Color: {{ agrupacion.color }}</p>
+          <p>Placas: {{ agrupacion.placas }}</p>
+          <p>Estado: {{ agrupacion.estado }}</p>
+          <div *ngFor="let infraccion of agrupacion.infracciones" class="infraccion-item">
+            <h4>Infracción ID: {{ infraccion.conjunto_id }}</h4>
+            <p>Artículo: {{ infraccion.articulo }}</p>
+            <p>Fracción: {{ infraccion.fraccion }}</p>
+            <p>Inciso: {{ infraccion.inciso }}</p>
+            <p>Motivo: {{ infraccion.motivo }}</p>
+            <p>Observaciones: {{ infraccion.observaciones }}</p>
+            <hr>
+          </div>
+        </div>
+        <button class="ver-mas-btn" *ngIf="historialItems.length < allHistorialItems.length" (click)="loadMore()">VER MÁS</button>
+      </div>
+      <ng-template #noDataTemplate>
+        <p>{{ noDataMessage }}</p>
+      </ng-template>
     </div>
-    <div class="text-section">
-      <h3>{{ item.titulo }}</h3>
-      <ul>
-        <li *ngFor="let descripcion of item.descripciones">{{ descripcion }}</li>
-      </ul>
-    </div>
-    <div class="icon-section-right">
-      <img src="assets/icons/icono-celda2.png" alt="celda-dos" class="icono-celda-derecha">
-      <button class="info-button" aria-label="Más información">
-        <img src="assets/icons/icono-informacion.png" alt="Ícono de información" class="icono-informacion"/>
-        <span class="etiqueta-informacion">Información</span>
-      </button>
-          
-    </div>
-  </div>
-</div>
-    </section>
 
-    <!-- Botones de acción -->
     <div class="action-buttons">
-     
+      <button class="registrar-btn" (click)="registerInfraccion()">REGISTRAR INFRACCIÓN</button>
+      <button class="terminar-btn" (click)="terminate()">TERMINAR</button>
+    </div>
+    
+    <div *ngIf="isRedirecting" class="redirigiendo">
+      <p>Redirigiendo a la consulta<span>.</span><span>.</span><span>.</span></p>
     </div>
   </main>
   
   <footer class="historial-footer">
-    <button type="submit" class="botones" id="primer-btn">VER MÁS</button>
-    <button type="submit" class="botones" id="segundo-btn">ATRÁS</button>
   </footer>
 </body>
 </html>

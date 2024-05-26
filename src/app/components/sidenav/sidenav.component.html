@@ -1,10 +1,11 @@
+<!-- sidenav.component.html -->
 <div class="sidebar">
   <ul>
     <li class="Policia">
       <div class="parte1">
         <img class="logopol" src="assets/icons/logopol.png" />
       </div>
-      <div class="parte2"><a>Policia Municipal Morelia</a></div>
+      <div class="parte2"><a>Policía Municipal Morelia</a></div>
     </li>
 
     <div class="lineaSuperior"></div>
@@ -13,13 +14,13 @@
       <div class="parte1">
         <img class="logopol" src="assets/icons/IconCorreo.png"/>
       </div>
-      <div class="parte2"><a>Correo</a></div>
+      <div class="parte2"><a>{{ usuario?.correo }}</a></div>
     </li>
 
     <div class="lineaInferior"></div> 
 
     <li class="parte2">
-      <a href="#">Catalogo Infracciones</a>
+      <a href="#">Catálogo Infracciones</a>
     </li>
   </ul>
 </div>
