@@ -31,6 +31,6 @@ export class NavBarComponent implements OnInit {
     // Por ejemplo, borrar el token de autenticación, limpiar el localStorage, etc.
     
     // Redireccionar al usuario a la ruta deseada, como la página de inicio
-    this.router.navigate(['/busqueda-lograda']); // Asegúrate de que la ruta '/inicio' esté definida en tu módulo de rutas
+    this.router.navigate(['/login']); // Asegúrate de que la ruta '/inicio' esté definida en tu módulo de rutas
   }
 }

@@ -150,7 +150,7 @@ export class Infraccion9Component implements OnInit {
         console.log('Documento guardado correctamente', res);
         sessionStorage.clear();
         alert('Infracción registrada con éxito');
-        this.router.navigate(['login']);
+        this.router.navigate(['ingreso-de-placas']);
       },
       error: err => {
         console.error('Error al guardar el documento', err);
