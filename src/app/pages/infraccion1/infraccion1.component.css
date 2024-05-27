@@ -448,6 +448,7 @@
   .form-group.color {
     display: flex;
     align-items: center;
+    flex-direction: row;
   }
 
   .form-group.color .selected-color-display {
