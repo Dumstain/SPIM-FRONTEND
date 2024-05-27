@@ -21,7 +21,7 @@ export class NavBarComponent implements OnInit {
       this.remainingTime = time;
     });
   }
-
+  
   toggleMenu() {
     this.isMenuVisible = !this.isMenuVisible;
   }

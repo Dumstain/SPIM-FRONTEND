@@ -125,6 +125,60 @@
     animation-delay: 6s; /* Ajusta este valor según cuando quieres que comience a aparecer */
     opacity: 0; /* Asegúrate de que esté inicialmente invisible */
   }
+  
+  .register-btn {
+    width: 100%;
+    padding: .8rem 1rem;
+    font-size: 1rem;
+    margin-top: 1rem;
+    border: none;
+    border-radius: .5rem;
+    background-color: #007bff;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .register-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .terminate-btn {
+    width: 100%;
+    padding: .8rem 1rem;
+    font-size: 1rem;
+    margin-top: 1rem;
+    border: none;
+    border-radius: .5rem;
+    background-color: #dc3545;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .terminate-btn:hover {
+    background-color: #a71d2a;
+  }
+  
+  .search-success {
+    text-align: center;
+    color: rgb(1, 5, 99);
+    font-weight: bold;
+  }
+  
+  .search-failure {
+    text-align: center;
+    color: rgb(1, 5, 99);
+    font-weight: bold;
+  }
+  
+  .result-icon {
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+  }
 }
 
 /*_______________________________________________________________________________________________________*/
@@ -142,6 +196,10 @@
     /* Añadir un poco de espaciado debajo del encabezado */
     font-family: 'Bellota Text';
     font-size: 1.5rem;
+  }
+
+  .form-header{
+    margin-top: 1rem;
   }
 
   .radio-group {
@@ -234,5 +292,59 @@
     /* Centrado exacto */
     z-index: 10;
     /* Asegúrate de que esté sobre los otros elementos */
+  }
+
+  .register-btn {
+    width: 100%;
+    padding: .8rem 1rem;
+    font-size: 1rem;
+    margin-top: 1rem;
+    border: none;
+    border-radius: .5rem;
+    background-color: #007bff;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .register-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .terminate-btn {
+    width: 100%;
+    padding: .8rem 1rem;
+    font-size: 1rem;
+    margin-top: 1rem;
+    border: none;
+    border-radius: .5rem;
+    background-color: #dc3545;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .terminate-btn:hover {
+    background-color: #a71d2a;
+  }
+  
+  .search-success {
+    text-align: center;
+    color: rgb(1, 5, 99);
+    font-weight: bold;
+  }
+  
+  .search-failure {
+    text-align: center;
+    color: rgb(1, 5, 99);
+    font-weight: bold;
+  }
+  
+  .result-icon {
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
   }
 }

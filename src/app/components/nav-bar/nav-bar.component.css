@@ -1,37 +1,49 @@
-/* Estilos base, móviles pequeños */
-@media (max-width: 1080px) {
+@media (max-width: 1081px) {
 
   /* nav-bar.component.css */
   .nav-bar {
-    /* Asegura que el navbar ocupe todo el ancho */
-    box-sizing: border-box;
-    /* Incluye padding y border en el cálculo del ancho */
-    margin: 0;
-    /* Elimina márgenes externos */
-    padding: 0;
-    /* Elimina el padding interno */
     display: flex;
-    /* Usa flexbox para organizar los elementos internos */
     justify-content: space-between;
-    /* Distribuye el espacio entre los elementos internos */
+    align-items: center;
     background-color: rgb(1, 29, 77);
     height: 6rem;
     width: 100%;
   }
 
+  .logo-section,
+  .title-section,
+  .timer-menu-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo-section {
+    flex: 1;
+    /* Ocupa 1/3 del espacio disponible */
+    justify-content: flex-start;
+    /* Alinea los logos a la izquierda */
+  }
+
+  .timer-menu-section {
+    flex: 1;
+    /* Ocupa 1/3 del espacio disponible */
+    justify-content: flex-end;
+    /* Alinea el temporizador y el menú a la derecha */
+    /* Se remueve el margin-left del icono para evitar empujarlo más de la cuenta */
+  }
+
   /*INICIA FUNCIONALIDAD DE MENÚ*/
   .logo,
   .title-image {
-
-    height: 6rem;
+    height: 5.5rem;
     /* Asegura un tamaño consistente para las imágenes */
   }
 
   .icon {
-    cursor: pointer;
     height: 4rem;
-    margin: 0;
-    /* Elimina márgenes que puedan desplazar el ícono */
+    margin-right: 1rem;
+    /* margin-right se puede mantener si quieres separación adicional del borde */
   }
 
   /* nav-bar.component.css */
@@ -44,20 +56,33 @@
 
   /* en tu componente .css */
   .menu-list {
-    display: none; /* Oculta el menú por defecto */
+    display: none;
+    font-family: 'Bellota Text';
+    display: none;
+    /* Oculta el menú inicialmente */
     position: absolute;
-    top: 110%; /* Posiciona debajo del ícono */
-    left: 100%; /* Alinea el inicio del menú con el centro del ícono */
-    transform: translateX(-100%); /* Centra el menú respecto al ícono */
-    width: 13rem; /* Ajusta el ancho según el contenido, o establece un máximo */
-    background-color: #fff;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    border-radius: 4px;
+    /* Posicionamiento absoluto */
+    top: 5%;
+    /* Coloca el menú justo debajo del botón del menú */
+    right: 0%;
+    /* Alinea el menú a la derecha */
     z-index: 1000;
-}
+    /* Asegura que el menú esté sobre otros elementos */
+    background-color: #fff;
+    /* Fondo blanco para el menú */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    /* Sombra para un efecto 3D */
+    border-radius: 4px;
+    /* Bordes redondeados */
+    overflow: hidden;
+    /* Para que los hijos no sobresalgan de los bordes redondeados */
+    width: 16rem;
+    /* Resto de tu CSS para el menú */
+  }
 
   .menu-list.visible {
     display: block;
+    /* Se muestra cuando se añade la clase 'visible' */
   }
 
   .menu-list ul {
@@ -99,19 +124,8 @@
   .banda-inf {
     width: 100%;
     /* Hace que la imagen ocupe el 100% del ancho de su contenedor */
-    height: 1rem;
+    height: 1.3rem;
   }
-
-  .timer-menu-section {
-    display: flex;
-    align-items: center;
-    /* Asegura que todos los elementos estén alineados verticalmente en el centro */
-    justify-content: flex-end;
-    /* Alinea los elementos hacia la derecha de la sección */
-  }
-  .menu-icon-container {
-    position: relative; /* Permite un posicionamiento relativo para el menú */
-}
 }
 /*/////////////////////////////////*/
 /*/////////////////////////////////*/
@@ -183,9 +197,9 @@
     /* Oculta el menú inicialmente */
     position: absolute;
     /* Posicionamiento absoluto */
-    top: 9.4%;
+    top: 7.5%;
     /* Coloca el menú justo debajo del botón del menú */
-    right: 0%;
+    right: 1%;
     /* Alinea el menú a la derecha */
     z-index: 1000;
     /* Asegura que el menú esté sobre otros elementos */

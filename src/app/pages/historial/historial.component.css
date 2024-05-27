@@ -1,3 +1,11 @@
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0; /* Elimina cualquier margen por defecto */
+  padding: 0; /* Elimina cualquier padding por defecto */
+  font-family: Arial, sans-serif;
+}
+
 h2 {
   text-align: left;
   width: 100%;
