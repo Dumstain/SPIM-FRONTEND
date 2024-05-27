@@ -1,263 +1,106 @@
-/* Estilos Generales */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
-  margin: 0;
-  padding: 20px;
-}
-
 .container {
-  background-color: white;
-  margin: auto;
-  max-width: 75%;
-  display: flex; /* Añadido para usar Flexbox */
-  flex-direction: column;
-  align-items: flex-start; /* Alinea los elementos al principio de la dirección transversal */
-}
-
-/* Navegación */
-.navigation {
-  display: flex;
-  justify-content: space-between;
-  margin: 10px 0;
-}
-
-.nav-button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-
-.nav-button:hover {
-  background-color: #0056b3;
-}
-
-/* Mensaje de estado */
-.status-message {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  background-color: #d4edda;
-  color: #155724;
-  border-left: 5px solid #28a745;
-}
-
-.status-icon {
-  margin-right: 10px;
-}
-
-/* Sección del formulario y botón de agregar */
-.content {
-  display: flex; /* Utiliza flexbox para posicionar form y botón lado a lado */
-  width: 100%;
-}
-
-/* Formulario de ingreso de datos */
-.data-entry {
-  flex: 1; /* Toma el espacio restante */
   padding: 20px;
+  font-family: Bellota Text; /* Consistent font family */
 }
 
-.form-group {
-  margin-bottom: 15px; /* Espacio entre cada grupo del formulario */
+.data-entry {
+  margin-bottom: 20px;
 }
 
-label {
-  display: block;
-  margin-bottom: 5px;
-  font-family: "Bellota Text", sans-serif;
-  font-style: normal;
-  font-size: 3vh;
-  color: #333333;
-}
-
-input[type="text"] {
-  width: 160%; /* Ocupa el ancho del contenedor */
-  padding: 10px;
-  border: 1px solid #ced4da;
-}
-
-/* Botón de agregar infracciones */
 .add-infractions {
-  text-align: center;
-  padding: 10px;
   display: flex;
-  justify-content: center;
-  align-items: flex-start; /* Alinea el botón con el inicio del contenedor */
-}
-
-.add-button {
-  background-color: #28a745;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-
-.add-button:hover {
-  background-color: #1e7e34;
-}
-
-/* Estilos para los componentes de cabecera y pie de página */
-app-header,
-app-footer {
-  background-color: #007bff;
-  color: white;
-  padding: 10px;
-  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px; /* Space before the list */
 }
 
 .image-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   cursor: pointer;
-  /* Añade estilos para posicionar la imagen */
-  position: relative;
-  top: calc(
-    40px + 50%
-  ); /* Alinea la parte superior de la imagen con la mitad de la altura del botón */
-}
-
-.image-card:hover {
-  transform: scale(
-    1.05
-  ); /* Aumenta ligeramente el tamaño de la imagen al pasar el mouse por encima */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Agrega una sombra suave alrededor de la imagen */
 }
 
 .icono {
-  width: 80%;
+  width: 10rem;
+  height: 10rem;
 }
 
-@media (min-width: 992px) {
-  /* Estilos Generales */
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    margin: 0;
-    padding: 20px;
+.list-container {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px; /* Space above the table */
+}
+
+.table th, .table td {
+  border: 1px solid #ddd; /* Lighter border color */
+  padding: 12px; /* More padding for table cells */
+  text-align: left; /* Text align left */
+}
+
+.table th {
+  background-color: #f8f8f8; /* Lighter header background */
+  font-weight: normal; /* Normal font weight for headers */
+  font-family: Bellota Text;
+  color: #333; /* Darker text for better readability */
+}
+
+@media (max-width: 768px) {
+  .table, .table thead, .table tbody, .table th, .table td, .table tr {
+    display: block;
   }
 
-  .container {
-    background-color: white;
-    margin: auto;
-    max-width: 70%;
-    display: flex; /* Añadido para usar Flexbox */
-    flex-direction: unset;
-    align-items: flex-start; /* Alinea los elementos al principio de la dirección transversal */
+  .table thead tr {
+    display: none;
   }
 
-  /* Navegación */
-  .navigation {
+  .table tr {
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #ddd;
+  }
+
+  .table td {
     display: flex;
     justify-content: space-between;
-    margin: 10px 0;
-  }
-
-  .nav-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-  }
-
-  .nav-button:hover {
-    background-color: #0056b3;
-  }
-
-  /* Mensaje de estado */
-  .status-message {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    background-color: #d4edda;
-    color: #155724;
-    border-left: 5px solid #28a745;
-  }
-
-  .status-icon {
-    margin-right: 10px;
-  }
-
-  /* Sección del formulario y botón de agregar */
-  .content {
-    display: flex; /* Utiliza flexbox para posicionar form y botón lado a lado */
-    width: 100%;
-  }
-
-  /* Formulario de ingreso de datos */
-  .data-entry {
-    flex: 1; /* Toma el espacio restante */
-    padding: 20px;
-  }
-
-  .form-group {
-    margin-bottom: 15px; /* Espacio entre cada grupo del formulario */
-  }
-
-  label {
-    display: block;
-    margin-bottom: 5px;
-    font-family: "Bellota Text", sans-serif;
-    font-style: normal;
-    font-size: 3vh;
-    color: #333333;
-  }
-
-  input[type="text"] {
-    width: 100%; /* Ocupa el ancho del contenedor */
-    padding: 10px;
-    border: 1px solid #ced4da;
-  }
-
-  /* Botón de agregar infracciones */
-  .add-infractions {
-    text-align: center;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; /* Alinea el botón con el inicio del contenedor */
-  }
-
-  .add-button {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-  }
-
-  .add-button:hover {
-    background-color: #1e7e34;
-  }
-
-  /* Estilos para los componentes de cabecera y pie de página */
-  app-header,
-  app-footer {
-    background-color: #007bff;
-    color: white;
-    padding: 10px;
-    text-align: center;
-  }
-
-  .image-card {
-    cursor: pointer;
-    /* Añade estilos para posicionar la imagen */
+    padding-left: 50%;
     position: relative;
-    top: calc(
-      40px + 50%
-    ); /* Alinea la parte superior de la imagen con la mitad de la altura del botón */
+    text-align: right;
   }
 
-  .image-card:hover {
-    transform: scale(
-      1.05
-    ); /* Aumenta ligeramente el tamaño de la imagen al pasar el mouse por encima */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Agrega una sombra suave alrededor de la imagen */
+  .table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 15px;
+    font-weight: bold;
+    text-align: left;
+    white-space: nowrap;
   }
+}
 
-  .icono {
-    width: 80%;
-  }
+/* Styling the modal to fit centered and modern design */
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }

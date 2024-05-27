@@ -1,183 +1,512 @@
-/* Estilos para el encabezado h1 */
-h1 {
-  text-align: center; /* Alinea el texto al centro horizontalmente */
-  width: 100%; /* Asegura que el elemento h1 ocupe toda la anchura disponible */
-  margin-top: 0; /* Elimina el margen superior por defecto del h1 */
-  margin-bottom: 0.5em; /* Añade un pequeño margen inferior para separación */
-}
+@media (max-width: 1080px) {
+  body.infraccion-1 {
+    overflow-y: auto;
+    height: auto;
+  }
 
-/* Estilos para el contenedor de contenido */
-.content {
-  padding: 0 1.25rem; /* 20px convertido a rem */
-  max-width: 60rem; /* 960px convertido a rem */
-  margin: 7.5rem auto; /* 120px convertido a rem, centrado horizontalmente */
-  margin-top: 5%;
-}
+  h1 {
+    text-align: center;
+    /* Alinea el texto al centro horizontalmente */
+    width: 100%;
+    /* Asegura que el elemento h1 ocupe toda la anchura disponible */
+    margin-top: 0;
+    /* Elimina el margen superior por defecto del h1 */
+    margin-bottom: 0.5em;
+    /* Añade un pequeño margen inferior para separación */
+    font-family: Bellota Text;
+    font-size: 3rem;
+  }
 
-.content.h1 {
-  align-items: center; /* Alineación vertical de los elementos dentro de .content.h1 */
-}
+  /* Estilos para el contenedor de contenido */
+  .content {
+    padding: 0 1.25rem;
+    /* 20px convertido a rem */
+    max-width: 65rem;
+    /* 960px convertido a rem */
+    margin: 7.5rem auto;
+    /* 120px convertido a rem, centrado horizontalmente */
+    margin-top: 5%;
+    font-size: 2rem;
+    font-weight: 100;
+  }
 
-/* Estilos para los contenedores de iconos y puntos */
-.icon-line-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  padding: 0 6.25rem; /* 100px convertido a rem */
-  margin-top: 10rem;
-}
+  .content.h1 {
+    align-items: center;
+    /* Alineación vertical de los elementos dentro de .content.h1 */
+    font-family: Bellota Text;
+    margin-bottom: 1rem;
+  }
 
-.icon {
-  width: 3.125rem; /* 50px convertido a rem */
-  height: auto;
-  margin: 0 0.0625rem; /* 1px convertido a rem */
-}
+  /* Estilos para los contenedores de iconos y puntos */
+  .icon-line-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0rem 12rem;
+    /* 100px convertido a rem */
+    margin-top: 3rem;
+  }
 
-.dots {
-  flex-grow: 1;
-  margin: 0 0.625rem; /* 10px convertido a rem */
-  background-image: linear-gradient(to right, 
-  transparent, 
-  transparent 0.875rem, /* 14px convertido a rem */
-  #030303 0.9375rem, /* 15px convertido a rem */
-  transparent 1.25rem); /* 20px convertido a rem */
-  background-size: 1.25rem 100%; /* Ancho y alto de cada repetición del patrón */
-  background-repeat: repeat-x;
-  min-height: 0.3125rem; /* 5px convertido a rem */
-}
+  .icon {
+    width: 5rem;
+    /* 50px convertido a rem */
+    height: auto;
+    margin: 0 0.1rem;
+    /* 1px convertido a rem */
+  }
 
+  .dots {
+    flex-grow: 1;
+    margin: 0 0.6rem;
+    /* 10px convertido a rem */
+    background-image: linear-gradient(to right,
+        transparent,
+        transparent 0.875rem,
+        /* 14px convertido a rem */
+        #030303 0.9375rem,
+        /* 15px convertido a rem */
+        transparent 1.25rem);
+    /* 20px convertido a rem */
+    background-size: 1.25rem 100%;
+    /* Ancho y alto de cada repetición del patrón */
+    background-repeat: repeat-x;
+    min-height: 0.3125rem;
+    /* 5px convertido a rem */
+  }
 
-
-/*Formulario */
-/*Formulario */
-/*Formulario */
-/* Estilos generales para el formulario */
-.vehicle-form {
-  display: flex;
-  flex-direction: row; /* Alineación horizontal de los elementos del formulario */
-  justify-content: center; /* Centra los elementos del formulario horizontalmente */
-  align-items: center; /* Alinea los elementos del formulario verticalmente */
-  max-width: 100%;
-  width: 100%;
-  min-height: 50vh; /* Uso de unidades de viewport para la altura mínima */
-  margin: 0 auto; /* Centrado horizontal */
-  padding: 1.25rem; /* 20px convertido a rem */
-  gap: 1.25rem; /* 20px convertido a rem */
-  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* Sombra suave para el formulario */
-} 
-
-/* Estilos para las columnas dentro del formulario */
-.form-column {
-  display: flex;
-  flex-direction: column; /* Alineación vertical de los elementos */
-  align-items: center;
-  flex: 1;
-  min-width: 0;
-  padding: 0 0.9375rem; /* 15px convertido a rem */
-}
-
-/* Estilos para los grupos de formularios */
-.form-group {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin-bottom: 1.875rem; /* 30px convertido a rem */
-}
-
-/* Estilos para los selectores y botones dentro de los grupos de formularios */
-.form-group select, .form-group button {
-  width: auto; /* Permite que el elemento se ajuste al contenido */
-  padding: 0.75rem; /* 12px convertido a rem */
-  border: 1px solid #ccc;
-  border-radius: 0.25rem; /* 4px convertido a rem */
-  background-color: white;
-  min-width: 15.625rem; /* 250px convertido a rem */
-  max-width: 100%; /* Asegura que no exceda el ancho del contenedor */
-  box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
-}
-
-@media (max-width: 768px) {
   .vehicle-form {
-    flex-direction: column; /* Cambia la disposición a vertical en pantallas pequeñas */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    width: 100%;
+    min-height: 50vh;
+    margin: 0 auto;
+    padding: 1.25rem;
+    gap: 1.25rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
   }
+
   .form-column {
-    width: 100%; /* Las columnas ocupan el ancho completo en pantallas pequeñas */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    min-width: 0;
+    padding: 4rem 4rem;
+    margin-right: 3rem;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 1.875rem;
+  }
+
+  .form-group label {
+    margin-top: .2rem;
+  }
+
+  .form-group.checkbox {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .checkbox input[type="checkbox"] {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .form-group input,
+  .form-group select {
+    height: 4rem;
+    padding: 2rem 2rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Bellota Text', sans-serif;
+    font-size: 1.5rem;
+  }
+
+  /* Estilos específicos para el select con id state */
+  #state {
+    width: 100%;
+    font-size: 1.5rem; /* Ajusta el tamaño del texto */
+  }
+
+  /* Estilos para las opciones del select con id state */
+  #state option {
+    font-size: 1.2rem; /* Ajusta el tamaño del texto de las opciones */
+  }
+
+  .form-group input[type="checkbox"] {
+    width: auto;
+    margin-right: 1rem;
+  }
+
+  .form-group select,
+  .form-group button {
+    width: auto;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    background-color: white;
+    min-width: 15.625rem;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .color-picker {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.625rem;
+    margin-bottom: 0.625rem;
+  }
+
+  .color-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    border: 3px solid black;
+    transition: border 0.3s;
+  }
+
+  .color-option span {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    text-align: center;
+  }
+
+  .color-option.selected {
+    border: 3px solid black;
+  }
+
+  .selected-color-display {
+    display: inline-block;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    border: 3px solid rgba(0, 0, 0, 0.11);
+    margin-left: 0.625rem;
+  }
+
+  .form-group.color {
+    display: flex;
+    align-items: center;
+  }
+
+  .form-group.color .selected-color-display {
+    margin-left: 0.625rem;
+    /* Espacio entre el botón y el círculo */
+  }
+
+  .color-button-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .color-picker-modal {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    z-index: 1000;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+    padding: 0.625rem;
+    margin-bottom: 0.625rem;
+  }
+
+  .next-page-button {
+    position: fixed;
+    right: 0.625rem;
+    top: 50%;
+    transform: translateY(-50%);
+    bottom: 0.625rem;
+    z-index: 1000;
+    background-color: #011D4D;
+    color: white;
+    border: none;
+    border-top-left-radius: 1.875rem;
+    width: 3.125rem;
+    height: 3.125rem;
+    font-size: 1.5rem;
+    line-height: 3.125rem;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: -0.125rem 0.125rem 0.3125rem rgba(0, 0, 0, 0.2);
+  }
+
+  .navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-button {
+    background-color: #0044cc;
+    color: white;
+    border: none;
+    padding: 0.625rem 1.25rem;
+    font-size: 1rem;
+    border-radius: 0.3125rem;
+    cursor: pointer;
   }
 }
 
-/* Estilos para el selector de colores */
-.color-picker {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Cuatro columnas de igual ancho */
-  gap: 0.625rem; /* 10px convertido a rem */
-  margin-bottom: 0.625rem; /* 10px convertido a rem */
-}
+/*-------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------*/
+@media (min-width: 1081px) {
+  body.infraccion-1 {
+    overflow-y: auto;
+    height: auto;
+  }
 
-/* Estilos para las opciones de colores individuales */
-.color-option {
-  width: 2.5rem; /* 40px convertido a rem */
-  height: 2.5rem; /* 40px convertido a rem */
-  border-radius: 50%; /* Hace que los botones sean completamente redondos */
-  cursor: pointer;
-  border: 2px solid transparent; /* Borde inicialmente transparente */
-}
-  
-.color.selected {
-  border-color: #000; /* Borde negro cuando el color está seleccionado */
-}
+  h1 {
+    text-align: center;
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-family: 'Bellota Text', sans-serif;
+  }
 
-.selected-color-display {
-  display: inline-block;
-  width: 2.5rem; /* 40px convertido a rem */
-  height: 2.5rem; /* 40px convertido a rem */
-  border-radius: 50%; /* Hace que el display de color seleccionado sea redondo */
-  margin-left: 0.625rem; /* 10px convertido a rem */
-}
+  .content {
+    padding: 0 1.25rem;
+    max-width: 65rem;
+    margin: 7.5rem auto;
+    margin-top: 5%;
+  }
 
-.form-group.color {
-  display: flex;
-  align-items: center;
-}
+  .icon-line-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0rem 12rem;
+    margin-top: 3rem;
+  }
 
-.form-group.color .selected-color-display {
-  margin-left: auto; /* Empuja el display hacia la derecha */
-  margin-top: -2.5rem; /* 40px convertido a rem y negativo para alinear verticalmente */
-}
+  .icon {
+    width: 3.5rem;
+    height: auto;
+    margin: 0 0.1rem;
+  }
 
-/* Estilos para el botón de navegación a la siguiente página */
-.next-page-button {
-  position: fixed;
-  right: 0.625rem; /* 10px convertido a rem */
-  top: 50%; /* Centra verticalmente */
-  transform: translateY(-50%); /* Ajuste fino de la posición vertical */
-  bottom: 0.625rem; /* 10px convertido a rem */
-  z-index: 1000; /* Asegura que el botón esté sobre otros elementos */
-  background-color: #011D4D; /* Color de fondo azul oscuro */
-  color: white; /* Color de texto blanco */
-  border: none;
-  border-top-left-radius: 1.875rem; /* 30px convertido a rem para bordes redondeados */
-  width: 3.125rem; /* 50px convertido a rem */
-  height: 3.125rem; /* 50px convertido a rem */
-  font-size: 1.5rem; /* 24px convertido a rem */
-  line-height: 3.125rem; /* 50px convertido a rem */
-  text-align: center;
-  cursor: pointer; /* Indica que el botón es clickeable */
-  box-shadow: -0.125rem 0.125rem 0.3125rem rgba(0, 0, 0, 0.2); /* Sombra para efecto 3D */
-}
+  .dots {
+    flex-grow: 1;
+    margin: 0 0.6rem;
+    background-image: linear-gradient(to right,
+        transparent,
+        transparent 0.875rem,
+        #030303 0.9375rem,
+        transparent 1.25rem);
+    background-size: 1.25rem 100%;
+    background-repeat: repeat-x;
+    min-height: 0.3125rem;
+  }
 
-/* Estilos para botones de navegación dentro de un contenedor */
-.navigation-buttons {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+  .vehicle-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    width: 100%;
+    min-height: 50vh;
+    margin: 0 auto;
+    padding: 1.25rem;
+    gap: 1.25rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  }
 
-.nav-button {
-  background-color: #0044cc; /* Fondo azul */
-  color: white; /* Texto blanco */
-  border: none;
-  padding: 0.625rem 1.25rem; /* 10px y 20px convertidos a rem */
-  font-size: 1rem; /* 16px convertido a rem */
-  border-radius: 0.3125rem; /* 5px convertido a rem */
-  cursor: pointer; /* Estilo del cursor para indicar que es clickeable */
+  .form-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    min-width: 0;
+    padding: 0 0.9375rem;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: .2rem;
+    text-align: left;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 1.875rem;
+  }
+
+  .form-group label {
+    margin-top: .3rem;
+  }
+
+  .form-group.checkbox {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .checkbox input[type="checkbox"] {
+    width: 23px;
+    height: 23px;
+  }
+
+  .form-group input,
+  .form-group select {
+    height: 2.5rem;
+    padding: 0.375rem 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Bellota Text', sans-serif;
+  }
+
+  .form-group input[type="checkbox"] {
+    width: auto;
+    margin-right: 0.5rem;
+  }
+
+  .form-group select,
+  .form-group button {
+    width: auto;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    background-color: white;
+    min-width: 15.625rem;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .color-picker {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.625rem;
+    margin-bottom: 0.625rem;
+  }
+
+  .color-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    border: 3px solid black;
+    transition: border 0.3s;
+  }
+
+  .color-option span {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    text-align: center;
+  }
+
+  .color-option.selected {
+    border: 3px solid black;
+  }
+
+  .selected-color-display {
+    display: inline-block;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    border: 3px solid rgba(0, 0, 0, 0.11);
+    margin-left: 0.625rem;
+  }
+
+  .form-group.color {
+    display: flex;
+    align-items: center;
+  }
+
+  .form-group.color .selected-color-display {
+    margin-left: 0.625rem;
+    /* Espacio entre el botón y el círculo */
+  }
+
+  .color-button-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .color-picker-modal {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    z-index: 1000;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+    padding: 0.625rem;
+    margin-bottom: 0.625rem;
+  }
+
+  .next-page-button {
+    position: fixed;
+    right: 0.625rem;
+    top: 50%;
+    transform: translateY(-50%);
+    bottom: 0.625rem;
+    z-index: 1000;
+    background-color: #011D4D;
+    color: white;
+    border: none;
+    border-top-left-radius: 1.875rem;
+    width: 3.125rem;
+    height: 3.125rem;
+    font-size: 1.5rem;
+    line-height: 3.125rem;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: -0.125rem 0.125rem 0.3125rem rgba(0, 0, 0, 0.2);
+  }
+
+  .navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-button {
+    background-color: #0044cc;
+    color: white;
+    border: none;
+    padding: 0.625rem 1.25rem;
+    font-size: 1rem;
+    border-radius: 0.3125rem;
+    cursor: pointer;
+  }
 }

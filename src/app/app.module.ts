@@ -7,6 +7,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
+import { ReactiveFormsModule } from '@angular/forms'; // Import ReactiveFormsModule
+
 
 import { AppComponent } from './app.component';
 import { FondoLoginComponent } from './components/fondo-login/fondo-login.component';
@@ -57,12 +59,14 @@ import { ConsultaLabelComponent } from './components/consulta-label/consulta-lab
 import { NavBarInfraccion8Component } from './components/nav-bar-infraccion8/nav-bar-infraccion8.component';
 import { PerfilVehicularRegistradoComponent } from './pages/perfil-vehicular-registrado/perfil-vehicular-registrado.component';
 import { Infraccion6Component } from './pages/infraccion6/infraccion6.component';
-
-
+import { ListaInfraccionComponent } from './components/lista-infraccion/lista-infraccion.component';
+import { ManualEntryComponent } from './components/manual-entry/manual-entry.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ModalInfraccionesComponent } from './components/modal-infracciones/modal-infracciones.component';
 
 @NgModule({
   declarations: [
+    FormularioLoginComponent,
     AppComponent,
     FondoLoginComponent,
     FormularioLoginComponent,
@@ -103,6 +107,9 @@ import { HttpClientModule } from '@angular/common/http';
     NavBarInfraccion8Component,
     Infraccion6Component,
     PerfilVehicularRegistradoComponent,
+    ListaInfraccionComponent,
+    ManualEntryComponent,
+    ModalInfraccionesComponent,
 
   ],
   imports: [
@@ -116,8 +123,10 @@ import { HttpClientModule } from '@angular/common/http';
     MatIconModule,
     MatSidenavModule,
     MatToolbarModule,
+    ReactiveFormsModule,
     HttpClientModule,
-    
+    FormsModule // Importar FormsModule aquí
+
   ],
   providers: [],
   bootstrap: [AppComponent],

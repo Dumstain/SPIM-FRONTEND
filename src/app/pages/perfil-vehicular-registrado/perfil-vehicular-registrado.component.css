@@ -5,13 +5,21 @@
     flex-direction: column; /* Organizamos los contenedores verticalmente */
     justify-content: flex-start; /* Alineamos verticalmente desde el inicio */
     align-items: center; /* Alineamos horizontalmente al centro */
-    
+    width: 100%;
+    max-width: 100vw; /* Asegura que el ancho no exceda el ancho del viewport */
+    height: 100%;
+    max-height: 100vh; /* Asegura que la altura no exceda la altura del viewport */
+    overflow-x: hidden; /* Oculta el desplazamiento horizontal */
+    overflow-y: hidden; /* Permite el desplazamiento vertical solo si es necesario */
+    margin: 0; /* Elimina cualquier margen por defecto */
+    padding: 0; /* Elimina cualquier padding por defecto */
   }
  
   .contenedor-inicio {
     width: 100%; /* Aseguramos que el contenedor ocupe todo el ancho */
     padding: 1rem; /* Espaciado interno para separación */
   }
+  
   
   .contenedor-final {
     width: 100%; /* Aseguramos que el contenedor ocupe todo el ancho */
@@ -92,12 +100,22 @@
 }
 
 /*------ELEMENTOS DEL CONTENEDOR FINAL--------------------*/
-.botones-contenedor-final{
-    display: flex; /* Hacer que los elementos hijos estén en la misma línea */
-    gap: 1rem;
-    margin-top: 10%;
-    
+.botones-contenedor-final {
+    display: flex;
+    justify-content: space-evenly; /* Asegura que los elementos se distribuyan a lo largo del contenedor */
+    align-items: center; /* Centra los elementos verticalmente */
+    width: 100%; /* Ocupa todo el ancho del contenedor padre */
+    margin-left: .5rem;
 }
+
+
+#historial, #infraccionar {
+    flex-grow: 0; /* No permite que los botones crezcan */
+    flex-shrink: 1; /* Permite que los botones se reduzcan si es necesario */
+    flex-basis: auto; /* Base del tamaño del botón antes de crecer o encoger */
+    padding: 0.5rem 1.5rem; /* Ajusta el relleno según necesites */
+}
+
 #historial{
     margin: 0.625rem 0; /* Márgenes arriba y abajo */
     padding: 0.3rem 4.5rem; /* Padding arriba/abajo y a los lados */
@@ -143,36 +161,104 @@
 }
 
 #carImage {
-    width: 10%; /* Ancho relativo, ajustable */
-    height: auto; /* Mantener la relación de aspecto */
-    padding: 0 15%; /* Espacio interno a la izquierda y derecha */
-
+    width: 15%; /* Ancho relativo, ajustable */
+    height: 15%; /* Altura para mantener la consistencia con el ancho */
+    border-radius: 1rem; /* Borde redondeado */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra con desplazamiento vertical y difuminado */
 }
-
-
-
 
 /*-------------------RESPONSIVIDAD--------------------*/
 /*-----CIRCULOS  RESPONSIVIDAD------------------*/
 /* Reglas para pantallas pequeñas (hasta 480px) */
-@media (max-width: 480px) {
+@media (max-width: 1080px) {
     #semicirculo-superior {
-        width: 10rem; /* Reducir el ancho */
-        height: 10rem; /* Reducir la altura */
-        right: -5%; /* Cambiar la posición para que no salga de la vista */
-        margin-top: 2rem; /* Ajustar el margen superior */
+        width: 30rem; /* Reducir el ancho */
+        height: 30rem; /* Reducir la altura */
+        right: -57%; /* Cambiar la posición para que no salga de la vista */
+        top: 35rem;
+        overflow: hidden;
+        position: relative;
     }
 
     #semicirculo-inferior {
-        width: 7rem; /* Reducir el ancho */
-        height: 7rem; /* Reducir la altura */
-        right: -4%; /* Ajustar posición derecha */
-        margin-top: 15%; /* Ajustar margen superior para mantener la proporción */
+        width: 20rem; /* Reducir el ancho */
+        height: 20rem; /* Reducir la altura */
+        right: 90%; /* Ajustar posición derecha */
+        top: 50rem;
+        overflow: hidden;
+    }
+
+    .contenedor-inicio {
+        margin-top: -25rem;
+      }
+
+    .botones-contenedor-final {
+        display: flex;
+        flex-direction: column; /* Cambia la disposición a columna */
+        justify-content: center; /* Centra los elementos verticalmente */
+        align-items: center; /* Centra los elementos horizontalmente */
+        width: 100%; /* Ocupa todo el ancho del contenedor padre */
+        margin-left: 0; /* Ajustar si es necesario */
+    }
+    
+    #historial, #infraccionar {
+        flex-grow: 0; /* No permite que los botones crezcan */
+        flex-shrink: 1; /* Permite que los botones se reduzcan si es necesario */
+        flex-basis: auto; /* Base del tamaño del botón antes de crecer o encoger */
+        padding: 0.5rem 1.5rem; /* Ajusta el relleno según necesites */
+    }
+    
+    #historial{
+        margin: 2rem; /* Márgenes arriba y abajo */
+        padding: 1.5rem 6rem; /* Padding arriba/abajo y a los lados */
+        font-size: 2rem; /* Tamaño de fuente */
+        cursor: pointer; /* Cursor de puntero */
+        border: 0.125rem solid #011D4D; /* Borde del botón*/
+        background-color: #011D4D; /* Color de fondo del botón */
+        border-radius: 0.4em; /* Bordes redondeados para suavizar el botón */
+        transition: all 0.2s ease-in-out; /* Transición suave para cambios */
+        margin-top: 10rem;
+        font-family: 'Bellota Text', sans-serif; /* Aplicamos la fuente "Bellota Text" */
+        text-align: center; /* Alineamos el texto al centro horizontalmente */
+        color: #FFF; /* Color para el texto */  
+    }
+    /* Efecto hover para 'historial' */
+    #historial:hover {
+        background-color: #004080; /* Cambia el color de fondo al pasar el ratón */
+        transform: scale(1.05); /* Aumenta ligeramente el tamaño del botón */
+    }
+    
+    #infraccionar{
+        margin: 0.625rem 0; /* Márgenes arriba y abajo */
+        padding: 1.5rem 4.5rem; /* Padding arriba/abajo y a los lados */
+        font-size: 2rem; /* Tamaño de fuente */
+        cursor: pointer; /* Cursor de puntero */
+        border: 0.125rem solid #940A0A; /* Borde del botón*/
+        background-color: #940A0A; /* Color de fondo del botón */
+        border-radius: 0.4em; /* Bordes redondeados para suavizar el botón */
+        transition: all 0.2s ease-in-out; /* Transición suave para cambios */
+        font-family: 'Bellota Text', sans-serif; /* Aplicamos la fuente "Bellota Text" */
+        text-align: center; /* Alineamos el texto al centro horizontalmente */
+        color: #FFF; /* Color para el texto */
+        font-weight: bold;
+    }
+    
+    #infraccionar:hover {
+        background-color: #c42b2b; /* Cambia el color de fondo al pasar el ratón */
+        transform: scale(1.05); /* Aumenta ligeramente el tamaño del botón */
+    }
+    
+    #carImage {
+        width: 50%; /* Ancho relativo, ajustable */
+        height: 50%; /* Altura para mantener la consistencia con el ancho */
+        border-radius: 1rem; /* Borde redondeado */
+        margin-top: 7rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra con desplazamiento vertical y difuminado */
     }
 }
 
 /* Reglas para pantallas medianas (481px a 768px) */
-@media (min-width: 481px) and (max-width: 768px) {
+@media (min-width: 1081px) and (max-width: 768px) {
     #semicirculo-superior {
         width: 10rem; /* Ajustar ancho para pantallas medianas */
         height: 10rem; /* Ajustar altura */
@@ -189,20 +275,21 @@
     }
 }
 /*-----CONTENEDOR INICIO RESPONSIVIDAD------------------*/
-@media (max-width: 480px) {
+@media (max-width: 1080px) {
     .perfil-usuario {
-        margin-top: 2rem; /* Espacio superior reducido para pantallas pequeñas */
+        margin-top: 5rem; /* Espacio superior reducido para pantallas pequeñas */
     }
 
     #user-image {
-        width: 10rem;  /* Ancho Imagen Usuario*/
-        height: 8.33rem;  /*Altura Imagen Usuario */
+        width: 25rem;  /* Ancho Imagen Usuario*/
+        height: 23rem;  /*Altura Imagen Usuario */
         border-radius: 50%;  /* Imagen circular */
         margin-left: 6rem;  /*Margen de separacion (izquierda)*/
     }
 
     .usuario-info {
         margin-left: 2rem; /*Margen de separacion (izquierda) Informacion del usuario*/
+        font-size: 1.7rem;
     }
 }
 

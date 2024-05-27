@@ -1,78 +1,123 @@
-body {
-  background-color:#D9D9D9;
-  margin: 0;
-  height: 100vh;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-}
 
-.triangulo-base {
-  position: relative;
-}
-
-.triangulo {
-  width: 0;
-  height: 0;
-  border-left: 10vw solid transparent;
-  border-right: 10vw solid transparent;
-  border-bottom: 20vw solid #011d4d80;
-  position: absolute;
-  transform: rotate(-45deg); /* Rotación de -45 grados */
-}
-
-.hijo1 {
-
-  bottom: -5vw; /* Ajusta la distancia desde la parte inferior */
-  right: -5vw; /* Ajusta la distancia desde la parte derecha */
-}
-
-.hijo2 {
-  bottom: 1.5vw; /* Ajusta la distancia desde la parte inferior */
-  right: 1.5vw; /* Ajusta la distancia desde la parte derecha */
-}
-
-.hijo3 {
-  bottom: 7vw; /* Ajusta la distancia desde la parte inferior */
-  right: 7vw; /* Ajusta la distancia desde la parte derecha */
-}
-
-@media (min-width: 992px) {
+@media (max-width: 1080px) {
   body {
+    background-color:#D9D9D9;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+  
+  .triangulo-base {
+    position: relative;
+  }
+  
+  .triangulo {
+    border-left: 10vw solid transparent;
+    border-right: 10vw solid transparent;
+    border-bottom: 20vw solid #011d4d80;
+    position: absolute;
+    transform: rotate(-45deg); /* Rotación de -45 grados */
+  }
+  
+  .hijo1 {
+    bottom: 14rem; /* Ajusta la distancia desde la parte inferior */
+    right:-2rem; /* Ajusta la distancia desde la parte derecha */
+  }
+  
+  .hijo2 {
+    bottom: 19rem; /* Ajusta la distancia desde la parte inferior */
+    right: 3rem; /* Ajusta la distancia desde la parte derecha */
+  }
+  
+  .hijo3 {
+    bottom:23rem; /* Ajusta la distancia desde la parte inferior */
+    right: 7rem; /* Ajusta la distancia desde la parte derecha */
+  }
+}
+/*/////////////////////////////////*/
+/*/////////////////////////////////*/
+/*/////////////////////////////////*/
+/*/////////////////////////////////*/
+/*/////////////////////////////////*/
+
+@media (min-width: 1081px) {
+  body {
+    background-color:#D9D9D9;
     margin: 0;
     height: 100vh;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
   }
-
+  
   .triangulo-base {
     position: relative;
   }
-
+  
   .triangulo {
     width: 0;
     height: 0;
-    border-left: 6.5vw solid transparent;
-    border-right: 6.5vw solid transparent;
-    border-bottom: 12vw solid #011d4d80;
+    border-left: 10vw solid transparent;
+    border-right: 10vw solid transparent;
+    border-bottom: 20vw solid #011d4d80;
     position: absolute;
     transform: rotate(-45deg); /* Rotación de -45 grados */
-    
   }
-
+  
   .hijo1 {
-    bottom: -3vw; /* Ajusta la distancia desde la parte inferior */
-    right: 0vw; /* Ajusta la distancia desde la parte derecha */
+  
+    bottom: -5vw; /* Ajusta la distancia desde la parte inferior */
+    right: -5vw; /* Ajusta la distancia desde la parte derecha */
   }
-
+  
   .hijo2 {
-    bottom: 0.5vw; /* Ajusta la distancia desde la parte inferior */
-    right: 3.5vw; /* Ajusta la distancia desde la parte derecha */
+    bottom: 1.5vw; /* Ajusta la distancia desde la parte inferior */
+    right: 1.5vw; /* Ajusta la distancia desde la parte derecha */
   }
-
+  
   .hijo3 {
-    bottom: 4vw; /* Ajusta la distancia desde la parte inferior */
+    bottom: 7vw; /* Ajusta la distancia desde la parte inferior */
     right: 7vw; /* Ajusta la distancia desde la parte derecha */
+  }
+  
+  @media (min-width: 992px) {
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+  
+    .triangulo-base {
+      position: relative;
+    }
+  
+    .triangulo {
+      width: 0;
+      height: 0;
+      border-left: 6.5vw solid transparent;
+      border-right: 6.5vw solid transparent;
+      border-bottom: 12vw solid #011d4d80;
+      position: absolute;
+      transform: rotate(-45deg); /* Rotación de -45 grados */
+      
+    }
+  
+    .hijo1 {
+      bottom: -3vw; /* Ajusta la distancia desde la parte inferior */
+      right: 0vw; /* Ajusta la distancia desde la parte derecha */
+    }
+  
+    .hijo2 {
+      bottom: 0.5vw; /* Ajusta la distancia desde la parte inferior */
+      right: 3.5vw; /* Ajusta la distancia desde la parte derecha */
+    }
+  
+    .hijo3 {
+      bottom: 4vw; /* Ajusta la distancia desde la parte inferior */
+      right: 7vw; /* Ajusta la distancia desde la parte derecha */
+    }
   }
 }

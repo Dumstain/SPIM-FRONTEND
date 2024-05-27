@@ -1,40 +1,61 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { HistorialJuezService, HistorialItem } from '../../services/historial-juez.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-consulta-tabla-infracciones',
   templateUrl: './consulta-tabla-infracciones.component.html',
-  styleUrls: ['./consulta-tabla-infracciones.component.css'],
+  styleUrls: ['./consulta-tabla-infracciones.component.css']
 })
-export class ConsultaTablaInfraccionesComponent {
-  // Datos de ejemplo
-  records: any[] = [
-    {
-      clave: '001',
-      oficial: 'Juan Pérez',
-      fecha: '2024-05-07',
-      placaVehicular: 'XYZ123',
-      tipoDeLicencia: 'Tipo 1',
-      estado: 'Activo',
-      accion: 'Editar',
-    },
-    {
-      clave: '002',
-      oficial: 'Ana Gómez',
-      fecha: '2024-05-06',
-      placaVehicular: 'ABC456',
-      tipoDeLicencia: 'Tipo 2',
-      estado: 'Inactivo',
-      accion: 'Editar',
-    },
-  ];
-
-  
+export class ConsultaTablaInfraccionesComponent implements OnInit, OnDestroy {
+  records: HistorialItem[] = [];
   expandedIndex: number | null = null;
+  private subscription: Subscription | null = null;
+  selectedImage: string | null = null;
 
-  constructor() {}
-  
+  constructor(private historialJuezService: HistorialJuezService) {}
+
+  ngOnInit() {
+    this.subscription = this.historialJuezService.historial$.subscribe(
+      data => {
+        this.records = data;
+      }
+    );
+
+    // Cargar datos iniciales desde sessionStorage si existen
+    const storedData = sessionStorage.getItem('historialItems');
+    if (storedData) {
+      this.records = JSON.parse(storedData);
+    }
+  }
+
+  ngOnDestroy() {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
+  }
+
   toggleDetail(index: number): void {
     this.expandedIndex = this.expandedIndex === index ? null : index;
   }
 
+  getImageUrl(imagePath: string): string {
+    return `http://localhost:3000/${imagePath}`; // Ajuste esta URL base según su configuración
+  }
+
+  openModal(imageUrl: string): void {
+    this.selectedImage = imageUrl;
+    const modal = document.getElementById("imageModal");
+    if (modal) {
+      modal.style.display = "block";
+    }
+  }
+
+  closeModal(): void {
+    this.selectedImage = null;
+    const modal = document.getElementById("imageModal");
+    if (modal) {
+      modal.style.display = "none";
+    }
+  }
 }

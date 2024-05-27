@@ -1,4 +1,3 @@
-<!-- search-filter.component.html -->
 <div class="search-filter">
   <h1>Filtro de Busqueda</h1>
   <div class="filter-section">
@@ -6,6 +5,7 @@
     <input
       type="text"
       id="document-input"
+      [(ngModel)]="identifier"
       placeholder="Número de licencia, serie, placa, permiso"
     />
     <button type="button" class="btn btn-primary" (click)="onSearchDocument()">
@@ -18,14 +18,12 @@
 
     <div class="date-section">
       <label for="start-date">Inicio</label>
-
-      <input type="date" id="start-date" />
+      <input type="date" id="start-date" [(ngModel)]="startDate" />
     </div>
 
     <div class="date-section">
       <label for="end-date">Fin</label>
-
-      <input type="date" id="end-date" />
+      <input type="date" id="end-date" [(ngModel)]="endDate" />
     </div>
     <button type="button" class="btn btn-primary" (click)="onSearchByDate()">
       <i class="fa fa-search"></i> Buscar

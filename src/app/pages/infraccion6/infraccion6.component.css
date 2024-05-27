@@ -93,14 +93,15 @@
   #contenedor-derecha-letrero{
     font-family: 'Bellota Text', sans-serif; /* Aplicamos la fuente "Bellota Text" */
     text-align: center; /* Alineamos el texto al centro horizontalmente */
-    font-size: 1.5em; /* Tamaño del texto*/
+    font-size: 2em; /* Tamaño del texto*/
     color: #020202; /* Color para el texto */
     letter-spacing: 0.125em; /* Espaciado entre letras*/
+    margin-top: 2.5rem;
   }
-  
+
 /*---------------RESPONSIVIDAD-----------------*/
 /*--RESPONSIVIDAD ICON-LINE-LETRERO*/
-@media (max-width: 480px) {
+@media (max-width: 1080px) {
     #icon-line-letrero {
       font-size: 1.2em; /* Tamaño de fuente reducido para pantallas pequeñas */
       letter-spacing: 0.1em; /* Menos espaciado entre letras */
@@ -121,31 +122,33 @@
 
    /*---RESPONSIVIDAD ELEMENTOS----*/
 /*---- Responsividad para pantallas pequeñas (hasta 480px) ----*/
-  @media (max-width: 480px) {
+  @media (max-width: 1080px) {
   #contenedor-izquierda-letrero {
-    font-size: 1.2em; /* Tamaño de fuente reducido para pantallas pequeñas */
+    font-size: 2em; /* Tamaño de fuente reducido para pantallas pequeñas */
     letter-spacing: 0.1em; /* Espaciado entre letras ligeramente menor */
     padding: 0.5em; /* Espaciado interno para comodidad en pantallas pequeñas */
     
   }
   .ubicacion {
-      margin-top: 5%; /* Reduce el margen superior para pantallas pequeñas */
-      margin-left: 10%; /* Reduce el margen izquierdo para pantallas pequeñas */
+      margin-top: 17%; /* Reduce el margen superior para pantallas pequeñas */
+      margin-left: 15%; /* Reduce el margen izquierdo para pantallas pequeñas */
     }
   
     #boton-ubicacion {
       padding: 0.2em 0.9em; /* Menos padding para pantallas pequeñas */
-      font-size: 0.9rem; /* Reduce el tamaño de la fuente */
+      font-size: 2rem; /* Reduce el tamaño de la fuente */
     }
     #direccion {
-      margin-top: 5%; /* Porcentaje del viewport height */
-      margin-left: 5%; /* Porcentaje del viewport width */
-      font-size: 0.1rem; /* Tamaño de fuente más pequeño en 'rem' */
+      margin-top: 17%; /* Porcentaje del viewport height */
+      margin-left: 3%; /* Porcentaje del viewport width */
+      font-size: 2rem; /* Tamaño de fuente más pequeño en 'rem' */
+      width: 35rem;
     }
   
     #imagen-linea {
-      width: 10rem; /* Ancho reducido para pantallas pequeñas */
-      margin-inline: 25%; /* Ajusta el margen horizontal */
+      width: 25rem; /* Ancho reducido para pantallas pequeñas */
+      margin-top: 4rem;
+      margin-inline: 22%; /* Ajusta el margen horizontal */
     }
 }
 
